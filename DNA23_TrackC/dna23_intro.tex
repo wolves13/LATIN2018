@@ -1,0 +1,60 @@
+\documentclass{llncs}
+
+\title{Bit bifurcation by cotranscriptional folding\thanks{This work is in part supported by JST Program to Disseminate Tenure Tracking System, MEXT, Japan, No. 6F36 and JSPS Grant-in-Aid for Young Scientists (A) No. 16H05854 to S.~S.}}
+\author{Yusei Masuda \and Shinnosuke Seki\thanks{Corresponding author} \and Yuki Ubukata}
+\institute{
+Department of Computer and Network Engineering, 
+The University of Electro-Communications, 
+1-5-1, Chofugaoka, Chofu, Tokyo, 1828585, Japan \email{s.seki@uec.ac.jp}
+}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+We demonstrate cotranscriptional folding of a finite part of the Heighway dragon, a fractal also-known as the paperfolding sequence $P = LLRLLRRL \cdots$ by an oritatami system. 
+The $i$-th element of $P$ can be obtained by feeding $i$ in binary to a 4-state deterministic finite automaton with output (DFAO). 
+We implement this DFAO and a bit-string bifurcator as modules of oritatami system. 
+Combining them with a known binary counter module yields the target oritatami system. 
+%
+\begin{keywords}
+Heighway dragon, 
+Fractal, 
+Cotranscriptional folding, 
+Oritatami system, 
+Automatic sequence, 
+Bitstring bifurcation
+\end{keywords}
+\end{abstract}
+
+%-------------------------------------------------------------------------------------
+	\section{Introduction}
+%-------------------------------------------------------------------------------------
+
+Molecular shape self-assembly is an engineering technology that provides a design of molecules that organize into a complex target shape due to some simple foundational phenomenon in which molecules interact with each other locally without or with little external control. 
+The foundational phenomenon studied most intensively so far is the coalescence of DNA rectangular tiles via their sticky ends (see, e.g., \cite{EvansPhD,Patitz2016,RoPaWi2004}). 
+Geary, Rothemund, and Andersen have recently shed light on self-assembly capability of another phenomenon called \textit{RNA cotranscritpional folding} \cite{GeRoAn2014}. 
+An RNA sequence is synthesized (\textit{transcribed}) sequentially out of its template (complementary) DNA sequence by an RNA polymerase enzyme. 
+The sequence thus synthesized is called a transcript. 
+While being transcribed, the transcript folds into an intricate tertiary structure. 
+This is the cotranscriptional folding. 
+In \cite{GeRoAn2014}, the authors demonstrated an architecture of DNA template sequence whose RNA transcript folds into an RNA rectangular tile as intended in a laboratory. 
+\textit{Oritatami system} is a novel mathematical model of RNA cotranscriptional folding \cite{GeMeScSe2016}. 
+Computational aspects of RNA cotranscriptional folding such as counting in binary and Turing universality have been studied  \cite{GeMeScSe2017,GeMeScSe2016,HaKiOtSe2016,AnttiPhD}, but oritatami systems have not been used to self-assemble a shape, to our knowledge. 
+
+This paper proposes an oritatami system that self-assembles an $n$-bit fraction of the Heighway dragon (see Figure~\ref{} for 6-bit fraction), a kind of self-similar fractal dragon curve, for an arbitrary integer $n \ge 1$. 
+The $n$-bit fraction consists of the first $2^n$ turns of the Heighway dragon. 
+This fractal is also called the \textit{paperfolding sequence} named after its generating method: fold a paper slip in the middle, fold the result further in the middle, and so on. 
+The result being unfolded consists of left and right turns as $P = LLRLLRRL \cdots$, which is the paperfolding sequence. 
+There exists a deterministic finite automaton with output (DFAO) that returns the $i$-th element of $P$ when the binary representation of $i$ is fed into it from the least significant bit (LSB) \cite{AlloucheShallit2003}. 
+We implement a binary counter, this DFAO, and a turning mechanism in oritatami systems that share a common interface through which they can interlock with each other and propagate a current count $i$. 
+The turning mechanism is implemented by combining three instances of a module that bifurcates a given bit string in two ways and guides the system towards one of them according to the output of the preceding DFAO. 
+Since the oritatami binary counter is an existing technology \cite{GeMeScSe2016}, we will explain the DFAO and turning mechanism in this paper. 
+
+\bibliographystyle{splncs03}
+\bibliography{dna23}
+
+\end{document}
+
+
