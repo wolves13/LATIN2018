@@ -1,0 +1,184 @@
+This is e-pTeX, Version 3.14159265-p3.7-160201-2.6 (utf8.euc) (TeX Live 2016) (preloaded format=platex 2017.1.10)  4 SEP 2017 11:17
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**LATIN2018_main.tex
+(./LATIN2018_main.tex
+pLaTeX2e <2016/11/29> (based on LaTeX2e <2016/03/31> patch level 3)
+Babel <3.9r> and hyphenation patterns for 83 language(s) loaded.
+(./llncs.cls
+Document Class: llncs 2013/09/27 v2.18 
+ LaTeX document class for Lecture Notes in Computer Science
+(/usr/local/texlive/2016/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/local/texlive/2016/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count82
+\c@section=\count83
+\c@subsection=\count84
+\c@subsubsection=\count85
+\c@paragraph=\count86
+\c@subparagraph=\count87
+\c@figure=\count88
+\c@table=\count89
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen118
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/tools/multicol.sty
+Package: multicol 2016/04/07 v1.8p multicolumn formatting (FMi)
+\c@tracingmulticols=\count90
+\mult@box=\box41
+\multicol@leftmargin=\dimen119
+\c@unbalance=\count91
+\c@collectmore=\count92
+\doublecol@number=\count93
+\multicoltolerance=\count94
+\multicolpretolerance=\count95
+\full@width=\dimen120
+\page@free=\dimen121
+\premulticols=\dimen122
+\postmulticols=\dimen123
+\multicolsep=\skip43
+\multicolbaselineskip=\skip44
+\partial@page=\box42
+\last@line=\box43
+\maxbalancingoverflow=\dimen124
+\mult@rightbox=\box44
+\mult@grightbox=\box45
+\mult@gfirstbox=\box46
+\mult@firstbox=\box47
+\@tempa=\box48
+\@tempa=\box49
+\@tempa=\box50
+\@tempa=\box51
+\@tempa=\box52
+\@tempa=\box53
+\@tempa=\box54
+\@tempa=\box55
+\@tempa=\box56
+\@tempa=\box57
+\@tempa=\box58
+\@tempa=\box59
+\@tempa=\box60
+\@tempa=\box61
+\@tempa=\box62
+\@tempa=\box63
+\@tempa=\box64
+\c@columnbadness=\count96
+\c@finalcolumnbadness=\count97
+\last@try=\dimen125
+\multicolovershoot=\dimen126
+\multicolundershoot=\dimen127
+\mult@nat@firstbox=\box65
+\colbreak@box=\box66
+\mc@col@check@num=\count98
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/aliascnt.sty
+Package: aliascnt 2016/05/16 v1.4 Alias counters (HO)
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/carlisle/remreset.sty))
+\c@chapter=\count99
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 362.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 363.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 364.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 365.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 366.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 367.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 368.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 369.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 370.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 371.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 372.
+\tocchpnum=\dimen128
+\tocsecnum=\dimen129
+\tocsectotal=\dimen130
+\tocsubsecnum=\dimen131
+\tocsubsectotal=\dimen132
+\tocsubsubsecnum=\dimen133
+\tocsubsubsectotal=\dimen134
+\tocparanum=\dimen135
+\tocparatotal=\dimen136
+\tocsubparanum=\dimen137
+\@tempcntc=\count100
+\fnindent=\dimen138
+\c@@inst=\count101
+\c@@auth=\count102
+\c@auco=\count103
+\instindent=\dimen139
+\authrun=\box67
+\authorrunning=\toks15
+\tocauthor=\toks16
+\titrun=\box68
+\titlerunning=\toks17
+\toctitle=\toks18
+\c@theorem=\count104
+\c@case=\count105
+\c@conjecture=\count106
+\c@corollary=\count107
+\c@definition=\count108
+\c@example=\count109
+\c@exercise=\count110
+\c@lemma=\count111
+\c@note=\count112
+\c@problem=\count113
+\c@property=\count114
+\c@proposition=\count115
+\c@question=\count116
+\c@solution=\count117
+\c@remark=\count118
+\headlineindent=\dimen140
+)
+No file LATIN2018_main.aux.
+\openout1 = `LATIN2018_main.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for JY1/mc/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for JT1/mc/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <14.4> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 13.
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <14.4> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 13.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <14.4> on input line 13.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 13.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 13.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <9> on input line 13.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 13.
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <9> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 15.
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <9> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 15.
+No file LATIN2018_main.bbl.
+[1
+
+] (./LATIN2018_main.aux) ) 
+Here is how much of TeX's memory you used:
+ 688 strings out of 493683
+ 7992 string characters out of 6149653
+ 72023 words of memory out of 5000000
+ 4303 multiletter control sequences out of 15000+600000
+ 15932 words of font info for 61 fonts, out of 8000000 for 9000
+ 929 hyphenation exceptions out of 8191
+ 29i,9n,21p,257b,311s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+Output written on LATIN2018_main.dvi (1 page, 2116 bytes).
