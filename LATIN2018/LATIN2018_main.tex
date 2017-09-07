@@ -1,4 +1,18 @@
 \documentclass{llncs}
+\usepackage{amssymb}
+\setcounter{tocdepth}{3}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{docmute}
+\usetikzlibrary{automata}
+\usetikzlibrary{arrows}
+\usetikzlibrary{positioning}
+\usepackage{here}
+\usepackage{enumitem}
+\usepackage{wrapfig}
+\usetikzlibrary{decorations.markings}
+\DeclareMathOperator*{\argmin}{arg\,min}
 
 \title{Bit bifurcation by cotranscriptional folding\thanks{This work is in part supported by JST Program to Disseminate Tenure Tracking System, MEXT, Japan, No. 6F36 and JSPS Grant-in-Aid for Young Scientists (A) No. 16H05854 to S.~S.}}
 \author{Yusei Masuda \and Shinnosuke Seki\thanks{Corresponding author} \and Yuki Ubukata}
@@ -29,8 +43,8 @@ Bitstring bifurcation
 \end{abstract}
 
 \input{simu.tex}
-
-
+\input{Turner.tex}
+\input{Appendix.tex}
 \bibliographystyle{splncs03}
 \bibliography{dna23}
 
