@@ -1,18 +1,53 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Verificaion}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 We explain the correctness of the folding.
-The folding of each module depends on its environment, i.e. on the components already folded nearby.
-Figure~\ref{fig:environments} shows all environments of each components.
-Using the simulator developed for \cite{}, we have verified that all of the components fold correctly in all possible environments.
+The folding of each module depends on its environment, i.e. on the components already folded nearby and on the current minimum energy conformations output by previous step.
+Algorithm~\ref{alg:dragon} is an algorithm of designing the $n$-th iteration of the Heighway dragon.
+It shows all possible environments of each module and component.
+Using the simulator developed for \cite{HaKiOtSe2016}, we have verified that all of the components fold correctly in all possible environments.
 
 
+\begin{algorithm}                      
+\caption{The $n$-th iteration of the Heighway dragon}         
+\label{alg:dragon}                          
+\begin{algorithmic}                  
+\REQUIRE $n \geq , length \leq 0$
 
-\begin{figure}[htb]
-  \begin{center}
-  \includegraphics[width=0.8\linewidth, height=0.8\linewidth]{pic/Co-zig1.png}
-  \end{center}
-\caption{Module automaton.}
-\label{fig:environments}
+\STATE $current \Leftarrow 0$
+\WHILE{$current < 2^n - 1$}
 
-\end{figure}
+%%%%%%%%%%%%%%%%%%%Counter-zig%%%%%%%%%%%%%%%%%%%
+\STATE $carry = 1$
+\FOR{$i = 1$ to $n$}
+\IF{$carry = 1$}
 
+\IF{above component is body-rpx-0}
+\STATE Cozig-11 is folded.
+\STATE $carry \Leftarrow 0$ 
+\ELSIF{above component is body-rpx-1}
+\STATE Cozig-10 is folded.
+\ENDIF
 
+\ELSIF{$carry = 0$}
+
+\IF{above component is body-rpx-0}
+\STATE Cozig-00 is folded.
+\ELSIF{above component is body-rpx-1}
+\STATE Cozig-01 is folded.
+\ENDIF
+\ENDIF
+\STATE Spacer is folded.
+\ENDFOR
+
+\IF{$carry =1$}
+\STATE the folding stops (counter capacity exceeded)
+\ENDIF
+%%%%%%%%%%%%%%%%%%%Counter-zig%%%%%%%%%%%%%%%%%%%
+ 
+\STATE $current \Leftarrow current + 1$
+\ENDWHILE
+
+\end{algorithmic}
+\end{algorithm}
