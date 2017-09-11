@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017) (preloaded format=platex 2017.7.31)  11 SEP 2017 13:43
+=======
+This is e-pTeX, Version 3.14159265-p3.7-160201-2.6 (utf8.euc) (TeX Live 2016) (preloaded format=platex 2017.1.10)  11 SEP 2017 14:05
+>>>>>>> aefa3bbccafc712fd8e6d93963459a05caaf2c61
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -693,6 +697,7 @@ LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <12> not available
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <12> not available
 (Font)              Font shape `JY1/gt/m/n' tried instead on input line 2.
 File: pic/rna_origami.pdf Graphic file (type pdf)
+<<<<<<< HEAD
 <pic/rna_origami.pdf>
 LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <10> not available
 (Font)              Font shape `JT1/gt/m/n' tried instead on input line 15.
@@ -707,110 +712,41 @@ LaTeX Warning: Citation `GearyRothemundAndersen2014' on page 1 undefined on inp
 ut line 18.
 
 [1
+=======
+ <pic/rna_origami.pdf> [1
+>>>>>>> aefa3bbccafc712fd8e6d93963459a05caaf2c61
 
 ]
-
-LaTeX Warning: Citation `GeMeScSe2016' on page 2 undefined on input line 21.
-
-
-LaTeX Warning: Citation `Doty2012' on page 2 undefined on input line 22.
-
-
-LaTeX Warning: Citation ` Patitz2016' on page 2 undefined on input line 22.
-
-
-LaTeX Warning: Citation ` WinfreePhD' on page 2 undefined on input line 22.
-
-
-LaTeX Warning: Citation `RothemundPapadakisWinfree2004' on page 2 undefined on 
-input line 24.
-
-
-LaTeX Warning: Citation `WaStYuLiLu2016' on page 2 undefined on input line 26.
-
-
-LaTeX Warning: Citation `GeMeScSe2015' on page 2 undefined on input line 27.
-
-
-LaTeX Warning: Citation `GeMeScSe2016' on page 2 undefined on input line 28.
-
 Missing character: There is no ; in font nullfont!
-
-LaTeX Warning: Citation `AbelsondiSessa1981' on page 2 undefined on input line 
-73.
-
-
-LaTeX Warning: Citation `AlloucheShallit2003' on page 2 undefined on input line
- 73.
-
-
-LaTeX Warning: Citation `AlloucheShallit2003' on page 2 undefined on input line
- 75.
-
-
-LaTeX Warning: Citation `MaHoldener2005' on page 2 undefined on input line 75.
-
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [2]
-
-LaTeX Warning: Citation `AlloucheShallit2003' on page 3 undefined on input line
- 86.
-
 File: pic/6bit_heighway.pdf Graphic file (type pdf)
-<pic/6bit_heighway.pdf>
 
-LaTeX Warning: Citation `GeMeScSe2016' on page 3 undefined on input line 97.
-
-[3]
-
-LaTeX Warning: Citation `heighway_web' on page 4 undefined on input line 104.
-
-) (./preliminaries.tex [4]
+<pic/6bit_heighway.pdf> [3]) (./preliminaries.tex [4]
 Overfull \hbox (3.53142pt too wide) in paragraph at lines 27--37
 \OT1/cmr/m/n/10 set of h-interactions $\OML/cmm/m/it/10 H[] \OMS/cmsy/m/n/10 ^^
 R []$\OT1/cmr/m/n/10 ,
  []
 
-[5]) (./main_result.tex
-
-LaTeX Warning: Citation `HanKim2017' on page 6 undefined on input line 9.
-
-
-LaTeX Warning: Citation `PatitzRogers2017' on page 6 undefined on input line 11
-.
-
-[6]
+[5]) (./main_result.tex [6]
 File: pic/dragon_vol4.pdf Graphic file (type pdf)
 <pic/dragon_vol4.pdf>
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-LaTeX Warning: Citation `HaKiOtSe2016' on page 7 undefined on input line 61.
-
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <10> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 57.
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <10> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 57.
 
 Underfull \vbox (badness 2261) has occurred while \output is active []
 
  [7]
-
-LaTeX Warning: Citation `GeMeScSe2016' on page 8 undefined on input line 68.
-
-
-LaTeX Warning: Citation `GeMeScSe2015' on page 8 undefined on input line 68.
-
-
-LaTeX Warning: Citation ` HanKim2017' on page 8 undefined on input line 68.
-
-
-LaTeX Warning: Citation ` HaKiOtSe2016' on page 8 undefined on input line 68.
-
-
-LaTeX Warning: Citation ` OtaSeki2017' on page 8 undefined on input line 68.
-
 File: pic/counter_zig1.pdf Graphic file (type pdf)
+
 <pic/counter_zig1.pdf>
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -888,9 +824,6 @@ File: pic/turn-lgp.pdf Graphic file (type pdf)
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-LaTeX Warning: Citation `HaKiOtSe2016' on page 12 undefined on input line 281.
-
 [12]
 File: pic/change_route.pdf Graphic file (type pdf)
 <pic/change_route.pdf>
@@ -903,9 +836,16 @@ File: pic/move.pdf Graphic file (type pdf)
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[13])
-No file LATIN2018_main.bbl.
-[14] [15] [16] (./LATIN2018_main.aux)
+[13]) (./LATIN2018_main.bbl
+
+LaTeX Font Warning: Font shape `JT1/gt/m/it' undefined
+(Font)              using `JT1/gt/m/n' instead on input line 5.
+
+
+LaTeX Font Warning: Font shape `JY1/gt/m/it' undefined
+(Font)              using `JY1/gt/m/n' instead on input line 5.
+
+[14]) [15] [16] [17] (./LATIN2018_main.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -914,12 +854,23 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
+<<<<<<< HEAD
  14429 strings out of 493648
  304066 string characters out of 6148806
  520531 words of memory out of 5000000
  17693 multiletter control sequences out of 15000+600000
+=======
+ 14425 strings out of 493683
+ 304072 string characters out of 6149653
+ 519286 words of memory out of 5000000
+ 17663 multiletter control sequences out of 15000+600000
+>>>>>>> aefa3bbccafc712fd8e6d93963459a05caaf2c61
  22294 words of font info for 89 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
  55i,17n,71p,484b,2721s stack positions out of 5000i,500n,10000p,200000b,80000s
 
+<<<<<<< HEAD
 Output written on LATIN2018_main.dvi (16 pages, 161012 bytes).
+=======
+Output written on LATIN2018_main.dvi (17 pages, 165160 bytes).
+>>>>>>> aefa3bbccafc712fd8e6d93963459a05caaf2c61
