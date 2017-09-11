@@ -1,0 +1,11 @@
+\begin{thebibliography}{1}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+
+\bibitem{HaKiOtSe2016}
+Han, Y.S., Kim, H., Ota, M., Seki, S.: Nondeterministic seedless oritatami
+  systems and hardness of testing their equivalence. In: Proc. 22nd
+  International Conference on {DNA} Computing and Molecular Programming
+  (DNA22). LNCS, vol. 9818, pp. 19--34. Springer (2016)
+
+\end{thebibliography}
