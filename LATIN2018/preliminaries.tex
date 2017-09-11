@@ -1,0 +1,155 @@
+%-------------------------------------------------------------------------------------------
+	\section{Preliminaries}
+%-------------------------------------------------------------------------------------------
+
+Let $\Sigma$ be a set of types of abstract molecules, or \textit{beads}, and $\Sigma^*$ be the set of finite sequences of beads. 
+A bead of type $a \in \Sigma$ is called an $a$-bead. 
+Let $w = b_1 b_2\cdots b_n \in \Sigma^*$ be a string of length $n$ for some integer $n$ and bead types $b_1, \ldots, b_n \in \Sigma$.
+The \textit{length} of $w$ is denoted by $|w|$, that is, $|w| = n$. 
+For two indices $i,j$ with $1\leq i \leq j \leq n$, we let $w[i..j]$ refer to the subsequence $b_i b_{i+1} \cdots b_{j-1} b_{j}$; if $i=j$, then we simplify $w[i..i]$ as $w[i]$.
+For $k \ge 1$, $w[1..k]$ is called a \textit{prefix} of $w$. 
+
+Oritatami systems fold their transcript, a sequence of beads, over the triangular grid as suggested in Figure~\ref{fig:glider} cotranscriptionally based on hydrogen-bond-based interactions (\textit{h-interactions} for short) which the rule set of the system allow for between adjacent beads of particular types. 
+Let $\mathbb{T} = (V, E)$ be the triangular grid graph. 
+A directed path $P = p_1 p_2 \cdots p_n$ in $\mathbb{T}$ is a sequence of \textit{pairwise-distinct} points $p_1, p_2, \ldots, p_n \in V$ such that $\{p_i, p_{i+1}\} \in E$ for all $1 \leq i < n$.
+Its $i$-th point is referred to as $P[i]$. 
+A \textit{rule set} $\mathcal{H} \subseteq \Sigma \times \Sigma$ is a symmetric relation over the set of pairs of bead types, that is, for all bead types $a, b \in \Sigma$, $(a, b) \in \mathcal{H}$ implies $(b, a) \in \mathcal{H}$. 
+
+A \textit{conformation} $C$ is a triple $(P, w, H)$ of a directed path $P$ in $\mathbb{T}$, $w \in \Sigma^*$ of the same length as $P$, and a set of h-interactions $H \subseteq \{\{i,j\} \mid 1 \leq i, i+2 \leq j, \{P[i], P[j]\} \in E\}$.
+This is to be interpreted as the sequence $w$ being folded in such a manner that its $i$-th bead $w[i]$ is placed on the $i$-th point $P[i]$ along the path and there is an h-interaction between the $i$-th and $j$-th beads if and only if $(i, j) \in H$. 
+The condition $i+2 \leq j$ represents the topological restriction that two beads next to each other along the path cannot form an h-interaction between them.
+Let $\mathcal{H}$ be a rule set. 
+An h-interaction $(i, j) \in H$ is \textit{valid with respect to $\mathcal{H}$}, or simply \textit{$\mathcal{H}$-valid}, if $(w[i], w[j]) \in \mathcal{H}$. 
+This conformation is $\mathcal{H}$-valid if all of its h-interactions are $\mathcal{H}$-valid. 
+For an integer $\alpha \ge 1$, this conformation is \textit{of arity $\alpha$} if the maximum number of h-interactions per bead is $\alpha$, that is, if for any $k \ge 1$, $|\{i \mid (i, k) \in H)\}| + |\{j \mid (k, j) \in H\}| \le \alpha$ and this inequality holds as an equation of some $k$. 
+By $\mathcal{C}_{\le \alpha}$, we denote the set of all conformations of arity at most $\alpha$.
+
+Oritatami systems grow conformations by elongating them under their own rule set. 
+Given a rule set $\mathcal{H}$ and an $\mathcal{H}$-valid finite conformation $C_1 = (P, w, H)$, 
+we say that another conformation $C_2$ is an \textit{elongation of} $C_1$ \textit{by a bead} $b \in \Sigma$, written as $C_1 \xrightarrow{\mathcal{H}}_b C_2$, if $C_2 = (Pp, wb, H \cup H')$ for some point $p$ not along the path $P$ and set of h-interactions $H' \subseteq \left\{ \{i, |w|+1\} \bigm| 1\leq i < |w|, \{P[i], p\} \in E, (w[i], b) \in \mathcal{H}\right\}$, which can be empty.
+Note that $C_2$ is also $\mathcal{H}$-valid.
+This operation is recursively extended to the elongation by a finite sequence of beads as: 
+for any conformation $C$, $C \xrightarrow{\mathcal{H}}^*_\lambda C$; 
+and for a finite sequence of beads $w \in \Sigma^*$ and a bead $b \in \Sigma$,
+a conformation $C_1$ is elongated to a conformation $C_2$ by the sequence $wb$,
+written as $C_1 \xrightarrow{\mathcal{H}}^*_{wb} C_2$, if there is a conformation $C'$ that satisfies
+$C_1 \xrightarrow{\mathcal{H}}^*_w C'$ and $C' \xrightarrow{\mathcal{H}}_b C_2$.
+
+A finite \textit{oritatami system} is a 5-tuple $\Xi = (\mathcal{H}, \alpha, \delta, \sigma,w)$, where 
+$\mathcal{H}$ is a rule set,
+$\alpha$ is an arity, 
+$\delta \geq 1$ is a parameter called the \textit{delay}, 
+$\sigma$ is an initial $\mathcal{H}$-valid conformation of arity $\alpha$ called the \textit{seed}, upon which its finite \textit{transcript} $w \in \Sigma^*$ is to be folded by stabilizing beads of $w$ one at a time so as to minimize energy collaboratively with the succeeding $\delta -1$ nascent beads. 
+The energy of a conformation $C = (P, w, H)$, denoted by $\Delta G(C)$, is defined to be $-|H|;$ the more h-interactions a conformation has, the more stable it gets.
+The set $\mathcal{F}(\Xi)$ of conformations \textit{foldable} by this system is recursively defined as: 
+the seed $\sigma$ is in $\mathcal{F}(\Xi)$; and provided that an elongation $C_{i}$ of $\sigma$ by the prefix $w[1..i]$ be foldable (i.e., $C_0 = \sigma$), its further elongation $C_{i+1}$ by the next bead $w[i+1]$ is foldable if
+\begin{equation}\label{eq:cotranscriptional_folding}
+C_{i+1} \in \argmin_{
+\substack{
+C \in \mathcal{C}_{\le \alpha} s.t. \\
+C_i \xrightarrow{\mathcal{H}}_{w[i+1]}C \\
+}
+}
+\min \Big\{ \Delta G(C') \mid 
+C \xrightarrow{\mathcal{H}}^*_{w[i+2...i+k]}C', k\le \delta, C' \in \mathcal{C}_{\le \alpha}
+\Big\}.
+\end{equation}
+We say that the bead $w[i+1]$ and the h-interactions it forms are \textit{stabilized} according to $C_{i+1}$.
+Note that an arity-$\alpha$ oritatami system cannot fold any conformation of arity larger than $\alpha$.
+A conformation foldable by $\Xi$ is \textit{terminal} if none of its elongations is foldable by $\Xi$.
+
+The oritatami system $\Xi$ is \textit{deterministic} if for all $i \ge 0$, there exists at most one $C_{i+1}$ that satisfies \eqref{eq:cotranscriptional_folding}. 
+Thus, a deterministic system folds into a unique terminal conformation. 
+Let us provide an example of deterministic oritatami system that folds into a motif of great use called the \textit{glider}. 
+
+\begin{figure}[htb]
+\centering
+\scalebox{0.65}{\begin{tikzpicture}
+\tikzstyle{mol} = [fill,circle,inner sep=1pt]
+
+\foreach \x in {0, 4, 8, 13} {
+\draw[red] (\x, 0) node[mol] {} node[above] {$a$}
+-- ++(300:1) node[mol] {} 
+-- ++(240:1) node[mol] {} node[below] {$b'$}
+-- ++(0:1) node[mol] {} node[below] {$b$}
+-- ++(60:1) node[mol] {} 
+-- ++(120:1) node[mol] {} node[above] {$a'$}
+;
+\draw[dashed,red] (\x, 0) -- ++(0:1);
+}
+
+\draw[cyan, -latex] (1, 0) -- ++(120:1) node[mol] {} node[above] {$a$} -- ++(180:1) node[mol]{} -- ++(180:1) node[mol] {} node[above] {$b'$};
+\draw[cyan, -latex] (1, 0) -- ++(60:1) node[mol] {} node[above] {$a$} -- ++(0:1) node[mol] {} -- ++(300:1) node[mol] {} node[right] {$b'$};
+\draw[cyan, -latex] (1, 0) -- ++(0:1) node[mol] {} node[above] {$a$} -- ++(300:1) node[mol] {} -- ++(240:1) node[mol] {} node[below] {$b'$};
+
+\draw[dashed, cyan] (0,0)++(300:2) -- ++(0:1);
+
+\draw (3,0)++(300:1) node {\Large $\Rightarrow$};
+\draw (7,0)++(300:1) node {\Large $\Rightarrow$};
+\draw (12,0)++(300:1) node {\Large $\Rightarrow$};
+
+
+\draw[-latex] (5, 0) -- ++(0:1) node[mol] {} node[above] {$a$};
+
+\draw[cyan, -latex] (6, 0) -- ++(300:1) node[mol] {} -- ++(240:1) node[mol] {} node[below] {$b'$} -- ++(0:1) node[mol] {} node[below] {$b$};
+\draw[cyan, -latex] (5,0)++(300:2)++(240:0.3) -- ++(240:0.7) node[mol] {} node[below] {$b$};
+\draw[cyan, -latex] (5,0)++(300:2.3) -- ++(300:0.7) node[mol] {} node[below] {$b$};
+\draw[dashed, cyan] (4,0)++(300:2) -- ++(0:1);
+
+
+\draw[-latex] (9, 0) -- ++(0:1) node[mol] {} node[above] {$a$}
+-- ++(300:1) node[mol] {}
+;
+\draw[cyan, -latex] (10,0)++(300:1) -- ++(240:1) node[mol] {} node[below] {$b'$}
+-- ++(240:1) node[mol] {} node[below] {$b$}
+-- ++(180:1) node[mol] {}
+;
+\draw[cyan, -latex] (9,0)++(300:2) -- ++(0:1) node[mol] {} node[below] {$b$} -- ++(60:1) node[mol] {};
+\draw[cyan, -latex] (10,0)++(300:1) -- ++(60:1) node[mol] {} node[right] {$b'$}
+-- ++(120:1) node[mol] {} node[above] {$b$}
+-- ++(180:1) node[mol] {}
+;
+\draw[cyan,dashed] (8,0)++(300:2) -- ++(0:1);
+
+\draw[-latex] (14, 0) -- ++(0:1) node[mol] {} node[above] {$a$}
+-- ++(300:1) node[mol] {}
+-- ++(240:1) node[mol] {} node[below] {$b'$}
+;
+\draw[dashed] (13,0)++(300:2) -- ++(0:1);
+\draw[cyan, -latex] (14,0)++(300:2) -- ++(0:1) node[mol] {} node[below] {$b$}
+-- ++(60:1) node[mol] {}
+-- ++(120:1) node[mol] {} node[above] {$a'$}
+;
+\draw[cyan,dashed] (15,0) -- ++(0:1);
+
+\end{tikzpicture}}
+\caption{Progression of a glider by distance 1.}
+\label{fig:glider}
+\end{figure}
+
+
+\begin{example}\label{ex:glider}
+%A motif called the \emph{glider} explains well how oritatami systems behave. 
+Let $\Sigma = \{a, a', b, b', \bullet\}$. 
+Consider a delay-3 oritatami system whose seed is colored in red in Figure~\ref{fig:glider} (left), transcript is a repetition of $a \bullet b' b \bullet a'$, and the rule set is $\mathcal{H} = \{(a, a'), (b, b')\}$, which makes $\bullet$-beads inert. 
+
+By the fragment $a \bullet b'$ of the first three beads of the transcript, the seed can be elongated in many ways; three of them are shown in Figure~\ref{fig:glider} (left). 
+The only bead on the fragment capable of a new h-interaction is $b'$ (with a $b$-bead).
+In order for the $b'$-bead to form an h-interaction with a $b$-bead, the first $a$-bead must be located to the east of the last bead of the seed. 
+Thus, the $a$-bead is stabilized there. 
+The next bead is then transcribed, which is of type $b$.
+It is not capable of any h-interaction because any $b'$ around is either too far or too close.  
+Hence, the nascent fragment $\bullet b' b$ gets stabilized as being folded as done before up to at least the first two beads. 
+The $\bullet$ bead is stabilized southeastward. 
+%Thus, the only way for the nascent fragment $\bullet b' b$ to form an h-interaction is to let the $b'$ bind as done before, and for that, the $\bullet$ must be located to the southeast of the preceding $a$. 
+An inert bead pops up next so that the $b'$ gets stabilized southwestward as suggested before. 
+The first three beads $a, \bullet, b'$ have been thus stabilized and the glider has moved forward by unit distance. 
+It is easily induced inductively that gliders of arbitrary ``flight distance'' can be folded. 
+
+
+Gliders also provide a medium to propagate 1-bit straight at arbitrary distance. 
+The height (top or bottom) of the first bead determines whether the last bead is stabilized top or bottom after flying a given distance.
+For instance, the glider in Figure~\ref{fig:glider} launches top and thus its last bead (the $a'$) also comes top after traveling the distance 2.
+The oritatami system we shall propose exploits this information-carrying capability.
+\end{example}
+
