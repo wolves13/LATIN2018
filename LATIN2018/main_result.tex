@@ -545,12 +545,146 @@ Let us explain briefly how each of the components folds to fulfill its roles.
   \label{fig:DFAO-zig1}
 \end{figure} 
 
-
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{figure}[h]
+\begin{tabular}{c}
+
+%%%%%%%%%%%%%%Dzag-f0%%%%%%%%%%%%%%%%%
+\begin{minipage}{0.3\hsize}
 \centering
-\includegraphics[width=\linewidth]{pic/Dzag1.pdf}
+\scalebox{0.5}{
+\begin{tikzpicture}[node distance=1cm,every node/.style={draw,circle,fill,inner sep=1pt}]
+  \node (7) at (0:0)[label=above right:247]{};
+  \node (6) at (60:1)[label=above right:246]{};
+  \node (2)at (60:2)[label=above right:242]{};
+  
+  \node[right of =7](8)[label=above right:248]{};
+  \node[right of =8](9)[label=above right:249]{};
+  \node[right of =9](10)[label=above right:250]{};
+  \node[right of =10](15)[label=above right:255]{};
+  \node[right of =15](16)[label=above right:256]{};
+  \node[right of =16](21)[label=above right:261]{};
+  \node[right of =21](22)[label=above right:262]{};
+  
+  \node[right of =6](5)[label=above right:245]{};
+  \node[right of =5](4)[label=above right:244]{};
+  \node[right of =4](11)[label=above right:251]{};
+  \node[right of =11](14)[label=above right:254]{};
+  \node[right of =14](17)[label=above right:257]{};
+  \node[right of =17](20)[label=above right:260]{};
+  \node[right of =20](23)[label=above right:263]{};
+  
+  \node[left of= 2] (1) [label=above right:241]{};
+  \node[right of =2](3)[label=above right:243]{};
+  \node[right of =3](12)[label=above right:252]{};
+  \node[right of =12](13)[label=above right:253]{};
+  \node[right of =13](18)[label=above right:258]{};
+  \node[right of =18](19)[label=above right:259]{};
+  \node[right of =19](24)[label=above right:264]{};
+  
+  
+  \draw[thick](1)--(2)--(3)--(4)--(5)--(6)--(7)--(8)--(9)--(10)--(11)--(12)--(13)--(14)--(15)--(16)--(17)--(18)--(19)--(20)--(21)--(22)--(23)--(24);
+  \draw[dashed,thick,red](1)--(6);
+  \draw[dashed,thick,red](4)--(9);
+  \end{tikzpicture}
+  }
+  \end{minipage}
+  
+\begin{minipage}{0.05\hsize}
+\ \\
+\end{minipage}
+
+%%%%%%%%%%%%%%Dzag-0%%%%%%%%%%%%%%%%%
+\begin{minipage}{0.3\hsize}
+\centering
+\scalebox{0.5}{
+\begin{tikzpicture}[node distance=1cm,every node/.style={draw,circle,fill,inner sep=1pt}]
+  \node (3) at (0:0)[label=above right:243]{};
+  \node (2) at (60:1)[label=above right:242]{};
+  \node (6) at (60:2)[label=above right:246]{};
+  
+  \node[right of =3](4)[label=above right:244]{};
+  \node[right of =4](9)[label=above right:249]{};
+  \node[right of =9](10)[label=above right:250]{};
+  \node[right of =10](15)[label=above right:255]{};
+  \node[right of =15](16)[label=above right:256]{};
+  \node[right of =16](21)[label=above right:261]{};
+  \node[right of =21](22)[label=above right:262]{};
+  
+  \node[right of =2](5)[label=above right:245]{};
+  \node[right of =5](8)[label=above right:248]{};
+  \node[right of =8](11)[label=above right:251]{};
+  \node[right of =11](14)[label=above right:254]{};
+  \node[right of =14](17)[label=above right:257]{};
+  \node[right of =17](20)[label=above right:260]{};
+  \node[right of =20](23)[label=above right:263]{};
+  
+  \node[left of= 6] (1) [label=above right:241]{};
+  \node[right of =6](7)[label=above right:247]{};
+  \node[right of =7](12)[label=above right:252]{};
+  \node[right of =12](13)[label=above right:253]{};
+  \node[right of =13](18)[label=above right:258]{};
+  \node[right of =18](19)[label=above right:259]{};
+  \node[right of =19](24)[label=above right:264]{};
+  
+  
+  \draw[thick](1)--(2)--(3)--(4)--(5)--(6)--(7)--(8)--(9)--(10)--(11)--(12)--(13)--(14)--(15)--(16)--(17)--(18)--(19)--(20)--(21)--(22)--(23)--(24);
+  \draw[dashed,thick,red](1)--(6);
+  \draw[dashed,thick,red](4)--(9);
+  \draw[dashed,thick,red](7)--(12);
+  \end{tikzpicture}
+  }
+  \end{minipage}
+  
+\begin{minipage}{0.05\hsize}
+\ \\
+\end{minipage}
+
+%%%%%%%%%%%%%%Dzag-1%%%%%%%%%%%%%%%%%
+\begin{minipage}{0.3\hsize}
+\centering
+\scalebox{0.5}{
+\begin{tikzpicture}[node distance=1cm,every node/.style={draw,circle,fill,inner sep=1pt}]
+  \node (3) at (0:0)[label=above right:243]{};
+  \node (2) at (60:1)[label=above right:242]{};
+  \node (6) at (60:2)[label=above right:246]{};
+  
+  \node[right of =3](4)[label=above right:244]{};
+  \node[right of =4](9)[label=above right:249]{};
+  \node[right of =9](10)[label=above right:250]{};
+  \node[right of =10](19)[label=above right:259]{};
+  \node[right of =19](20)[label=above right:260]{};
+  \node[right of =20](21)[label=above right:261]{};
+  \node[right of =21](22)[label=above right:262]{};
+  
+  \node[right of =2](5)[label=above right:245]{};
+  \node[right of =5](8)[label=above right:248]{};
+  \node[right of =8](11)[label=above right:251]{};
+  \node[right of =11](18)[label=above right:258]{};
+  \node[right of =18](17)[label=above right:257]{};
+  \node[right of =17](16)[label=above right:256]{};
+  \node[right of =16](23)[label=above right:263]{};
+  
+  \node[left of= 6] (1) [label=above right:241]{};
+  \node[right of =6](7)[label=above right:247]{};
+  \node[right of =7](12)[label=above right:252]{};
+  \node[right of =12](13)[label=above right:253]{};
+  \node[right of =13](14)[label=above right:254]{};
+  \node[right of =14](15)[label=above right:255]{};
+  \node[right of =15](24)[label=above right:264]{};
+  
+  
+  \draw[thick](1)--(2)--(3)--(4)--(5)--(6)--(7)--(8)--(9)--(10)--(11)--(12)--(13)--(14)--(15)--(16)--(17)--(18)--(19)--(20)--(21)--(22)--(23)--(24);
+  \draw[dashed,thick,red](1)--(6);
+  \draw[dashed,thick,red](4)--(9);
+  \draw[dashed,thick,red](7)--(12);
+  \end{tikzpicture}
+  }
+  \end{minipage}
+
+
+  \end{tabular}
   \caption{The possible three conformations of DFAO-zag1: Dzag1-f0, Dzag1-0, and Dzag1-1 from left.}
   \label{fig:DFAO-zag1}
 \end{figure} 
@@ -568,18 +702,468 @@ Spacers have been already used to prevent undesirable interference among compone
 They are implemented as a glider (see Example~\ref{ex:glider}), hence capable of propagating 1bit on which phase the system is in.
 In the first zag, DFAO-zag1's just propagate 0's, 1's, and the first 0 by taking the proper one of the three conformations in Figure~\ref{fig:DFAO-zag1}.
 
-%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[h]
+\begin{tabular}{c}
+%%%%%%%%%%%%Dzig2-1%%%%%%%%%%%%%%%%%
+\begin{minipage}{0.3\hsize}
 \centering
-\includegraphics[width=\linewidth]{pic/Dzig2.pdf}
+\scalebox{0.5}{
+  \begin{tikzpicture}[node distance=1cm,every node/.style={draw,circle,fill,inner sep=1pt}]
+  \node (1) at (0:0)[label=above right:276]{};
+  \node (2) at (120:1)[label=above right:277]{};
+  \node (4)at (120:2)[label=above right:279]{};
+
+
+  \node[right of =4](3)[label=above right:278]{};
+  \node[left of =4](9)[label=above right:284]{};
+  \node[left of =9](10)[label=above right:285]{};
+  \node[left of =10](15)[label=above right:290]{};
+  \node[left of =15](16)[label=above right:291]{};
+  \node[left of =16](21)[label=above right:296]{};
+  \node[left of =21](22)[label=above right:297]{};
+  
+  \node[left of =2](5)[label=above right:280]{};
+  \node[left of =5](8)[label=above right:283]{};
+  \node[left of =8](11)[label=above right:286]{};
+  \node[left of =11](14)[label=above right:289]{};
+  \node[left of =14](17)[label=above right:292]{};
+  \node[left of =17](20)[label=above right:295]{};
+  \node[left of =20](23)[label=above right:298]{};
+  
+  \node[left of= 1](6)[label=above right:281]{};
+  \node[left of =6](7)[label=above right:282]{};
+  \node[left of =7](12)[label=above right:287]{};
+  \node[left of =12](13)[label=above right:288]{};
+  \node[left of =13](18)[label=above right:293]{};
+  \node[left of =18](19)[label=above right:294]{};
+  \node[left of =19](24)[label=above right:299]{};
+  
+  \draw[thick](1)--(2)--(3)--(4)--(5)--(6)--(7)--(8)--(9)--(10)--(11)--(12)--(13)--(14)--(15)--(16)--(17)--(18)--(19)--(20)--(21)--(22)--(23)--(24);
+  \draw[dashed,thick,red](1)--(6);
+  \draw[dashed,thick,red](2)--(5);
+  \draw[dashed,thick,red](5)--(8);
+  \draw[dashed,thick,red](4)--(9);
+  \end{tikzpicture}
+  }
+\end{minipage}
+
+\begin{minipage}{0.05\hsize}
+\ \\
+\end{minipage}
+
+%%%%%%%%%%%%Dzig2-0%%%%%%%%%%%%%%%%%
+\begin{minipage}{0.3\hsize}
+\centering
+\scalebox{0.5}{
+  \begin{tikzpicture}[node distance=1cm,every node/.style={draw,circle,fill,inner sep=1pt}]
+  \node (1) at (0:0)[label=above right:276]{};
+  \node (2) at (120:1)[label=above right:277]{};
+  \node (4)at (120:2)[label=above right:279]{};
+
+
+  \node[right of =4](3)[label=above right:278]{};
+  \node[left of =4](5)[label=above right:280]{};
+  \node[left of =5](6)[label=above right:281]{};
+  \node[left of =6](15)[label=above right:290]{};
+  \node[left of =15](16)[label=above right:291]{};
+  \node[left of =16](21)[label=above right:296]{};
+  \node[left of =21](22)[label=above right:297]{};
+  
+  \node[left of =2](9)[label=above right:284]{};
+  \node[left of =9](8)[label=above right:283]{};
+  \node[left of =8](7)[label=above right:282]{};
+  \node[left of =7](14)[label=above right:289]{};
+  \node[left of =14](17)[label=above right:292]{};
+  \node[left of =17](20)[label=above right:295]{};
+  \node[left of =20](23)[label=above right:298]{};
+  
+  \node[left of= 1](10)[label=above right:285]{};
+  \node[left of =10](11)[label=above right:286]{};
+  \node[left of =11](12)[label=above right:287]{};
+  \node[left of =12](13)[label=above right:288]{};
+  \node[left of =13](18)[label=above right:293]{};
+  \node[left of =18](19)[label=above right:294]{};
+  \node[left of =19](24)[label=above right:299]{};
+  
+  \draw[thick](1)--(2)--(3)--(4)--(5)--(6)--(7)--(8)--(9)--(10)--(11)--(12)--(13)--(14)--(15)--(16)--(17)--(18)--(19)--(20)--(21)--(22)--(23)--(24);
+
+  \draw[dashed,thick,red](5)--(8);
+  \draw[dashed,thick,red](4)--(9);
+  \end{tikzpicture}
+  }
+\end{minipage}
+
+\begin{minipage}{0.05\hsize}
+\ \\
+\end{minipage}
+
+%%%%%%%%%%%%Dzig2-f0%%%%%%%%%%%%%%%%%
+\begin{minipage}{0.3\hsize}
+\centering
+\scalebox{0.5}{
+  \begin{tikzpicture}[node distance=1cm,every node/.style={draw,circle,fill,inner sep=1pt}]
+  \node (1) at (0:0)[label=above right:276]{};
+  \node (2) at (120:1)[label=above right:277]{};
+  \node (4)at (120:2)[label=above right:279]{};
+
+
+  \node[right of =4](3)[label=above right:278]{};
+  \node[left of =4](5)[label=above right:280]{};
+  \node[left of =5](6)[label=above right:281]{};
+  \node[left of =6](15)[label=above right:290]{};
+  \node[left of =15](16)[label=above right:291]{};
+  \node[left of =16](17)[label=above right:292]{};
+  \node[left of =17](24)[label=above right:299]{};
+  
+  \node[left of =2](9)[label=above right:284]{};
+  \node[left of =9](8)[label=above right:283]{};
+  \node[left of =8](7)[label=above right:282]{};
+  \node[left of =7](14)[label=above right:289]{};
+  \node[left of =14](19)[label=above right:294]{};
+  \node[left of =19](18)[label=above right:293]{};
+  \node[left of =18](23)[label=above right:298]{};
+  
+  \node[left of= 1](10)[label=above right:285]{};
+  \node[left of =10](11)[label=above right:286]{};
+  \node[left of =11](12)[label=above right:287]{};
+  \node[left of =12](13)[label=above right:288]{};
+  \node[left of =13](20)[label=above right:295]{};
+  \node[left of =20](21)[label=above right:296]{};
+  \node[left of =21](22)[label=above right:297]{};
+  
+  \draw[thick](1)--(2)--(3)--(4)--(5)--(6)--(7)--(8)--(9)--(10)--(11)--(12)--(13)--(14)--(15)--(16)--(17)--(18)--(19)--(20)--(21)--(22)--(23)--(24);
+
+  \draw[dashed,thick,red](5)--(8);
+  \draw[dashed,thick,red](4)--(9);
+  \end{tikzpicture}
+  }
+\end{minipage}
+
+ \\
+ \\
+%%%%%%%%%%%%Dzig2-f00%%%%%%%%%%%%%%%%%
+\begin{minipage}{0.4\hsize}
+\centering
+\scalebox{0.5}{
+  \begin{tikzpicture}[node distance=1cm,every node/.style={draw,circle,fill,inner sep=1pt}]
+  \node (3) at (0:0)[label=above right:278]{};
+  \node (2) at (120:1)[label=above right:277]{};
+  \node (6)at (120:2)[label=above right:281]{};
+
+
+  \node[left of =3](4)[label=above right:279]{};
+  \node[left of =4](11)[label=above right:286]{};
+  \node[left of =11](12)[label=above right:287]{};
+  \node[left of =12](13)[label=above right:288]{};
+  \node[left of =13](18)[label=above right:293]{};
+  \node[left of =18](19)[label=above right:294]{};
+  \node[left of =19](24)[label=above right:299]{};
+  
+  \node[left of =2](5)[label=above right:280]{};
+  \node[left of =5](10)[label=above right:285]{};
+  \node[left of =10](9)[label=above right:284]{};
+  \node[left of =9](14)[label=above right:289]{};
+  \node[left of =14](17)[label=above right:292]{};
+  \node[left of =17](20)[label=above right:295]{};
+  \node[left of =20](23)[label=above right:298]{};
+    
+  \node[right of= 6](1)[label=above right:276]{};
+  \node[left of =6](7)[label=above right:282]{};
+  \node[left of =7](8)[label=above right:287]{};
+  \node[left of =8](15)[label=above right:290]{};
+  \node[left of =15](16)[label=above right:291]{};
+  \node[left of =16](21)[label=above right:296]{};
+  \node[left of =21](22)[label=above right:297]{};
+  
+  \draw[thick](1)--(2)--(3)--(4)--(5)--(6)--(7)--(8)--(9)--(10)--(11)--(12)--(13)--(14)--(15)--(16)--(17)--(18)--(19)--(20)--(21)--(22)--(23)--(24);
+  \draw[dashed,thick,red](1)--(6);
+  \draw[dashed,thick,red](2)--(5);
+  \draw[dashed,thick,red](5)--(8);
+  \draw[dashed,thick,red](4)--(9);
+  \end{tikzpicture}
+  }
+\end{minipage}
+
+\begin{minipage}{0.1\hsize}
+\ \\
+\end{minipage}
+
+%%%%%%%%%%%%Dzig2-f01%%%%%%%%%%%%%%%%%
+\begin{minipage}{0.4\hsize}
+\centering
+\scalebox{0.5}{
+  \begin{tikzpicture}[node distance=1cm,every node/.style={draw,circle,fill,inner sep=1pt}]
+  \node (8) at (0:0)[label=above right:283]{};
+  \node (7) at (120:1)[label=above right:282]{};
+  \node (2)at (120:2)[label=above right:277]{};
+
+  \node[left of =8](9)[label=above right:284]{};
+  \node[left of =9](10)[label=above right:285]{};
+  \node[left of =10](11)[label=above right:286]{};
+  \node[left of =11](15)[label=above right:290]{};
+  \node[left of =15](16)[label=above right:291]{};
+  \node[left of =16](23)[label=above right:298]{};
+  \node[left of =23](24)[label=above right:299]{};
+  
+  \node[left of =7](6)[label=above right:281]{};
+  \node[left of =6](5)[label=above right:280]{};
+  \node[left of =5](12)[label=above right:287]{};
+  \node[left of =12](14)[label=above right:289]{};
+  \node[left of =14](17)[label=above right:292]{};
+  \node[left of =17](22)[label=above right:297]{};
+  \node[left of =22](21)[label=above right:296]{};
+    
+  \node[right of= 2](1)[label=above right:276]{};
+  \node[left of =2](3)[label=above right:278]{};
+  \node[left of =3](4)[label=above right:279]{};
+  \node[left of =4](13)[label=above right:288]{};
+  \node[left of =13](18)[label=above right:293]{};
+  \node[left of =18](19)[label=above right:294]{};
+  \node[left of =19](20)[label=above right:295]{};
+  
+  \draw[thick](1)--(2)--(3)--(4)--(5)--(6)--(7)--(8)--(9)--(10)--(11)--(12)--(13)--(14)--(15)--(16)--(17)--(18)--(19)--(20)--(21)--(22)--(23)--(24);
+  \draw[dashed,thick,red](1)--(6);
+  \draw[dashed,thick,red](2)--(5);
+  \draw[dashed,thick,red](5)--(8);
+  \draw[dashed,thick,red](4)--(9);
+  \end{tikzpicture}
+  }
+\end{minipage}
+  
+\end{tabular}
+
   \caption{The possible five conformations of DFAO-zig2: (top) Dzig2-1, Dzig2-0, Dzig2-f0, (bottom) Dzig2-f00, and Dzig2-f01. }
   \label{fig:DFAO-zig2}
 \end{figure} 
 
-%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[h]
+\begin{tabular}{c}
+%%%%%%%%%%%%%%Dzag2-L0%%%%%%%%%%%%%%%%%
+\begin{minipage}{0.3\hsize}
 \centering
-\includegraphics[width=\linewidth]{pic/Dzag2.pdf}
+\scalebox{0.5}{
+\begin{tikzpicture}[node distance=1cm,every node/.style={draw,circle,fill,inner sep=1pt}]
+  \node (1) at (0:0)[label=above right:327]{};
+  \node (2) at (60:1)[label=above right:328]{};
+  \node (4)at (60:2)[label=above right:330]{};
+  
+  \node[right of =1](6)[label=above right:332]{};
+  \node[right of =6](7)[label=above right:333]{};
+  \node[right of =7](12)[label=above right:338]{};
+  \node[right of =12](13)[label=above right:339]{};
+  \node[right of =13](22)[label=above right:348]{};
+  \node[right of =22](23)[label=above right:349]{};
+  \node[right of =23](24)[label=above right:350]{};
+  
+  \node[right of =2](5)[label=above right:331]{};
+  \node[right of =5](8)[label=above right:334]{};
+  \node[right of =8](11)[label=above right:337]{};
+  \node[right of =11](14)[label=above right:340]{};
+  \node[right of =14](21)[label=above right:347]{};
+  \node[right of =21](20)[label=above right:346]{};
+  \node[right of =20](19)[label=above right:345]{};
+  
+  \node[left of= 4] (3) [label=above right:329]{};
+  \node[right of =4](9)[label=above right:335]{};
+  \node[right of =9](10)[label=above right:336]{};
+  \node[right of =10](15)[label=above right:341]{};
+  \node[right of =15](16)[label=above right:342]{};
+  \node[right of =16](17)[label=above right:343]{};
+  \node[right of =17](18)[label=above right:344]{};
+  
+  
+  \draw[thick](1)--(2)--(3)--(4)--(5)--(6)--(7)--(8)--(9)--(10)--(11)--(12)--(13)--(14)--(15)--(16)--(17)--(18)--(19)--(20)--(21)--(22)--(23)--(24);
+  \draw[dashed,thick,red](1)--(6);
+  \draw[dashed,thick,red](4)--(9);
+  \end{tikzpicture}
+  }
+  \end{minipage}
+  
+\begin{minipage}{0.05\hsize}
+\ \\
+\end{minipage}
+
+%%%%%%%%%%%%%%Dzag2-L1%%%%%%%%%%%%%%%%%
+\begin{minipage}{0.3\hsize}
+\centering
+\scalebox{0.5}{
+\begin{tikzpicture}[node distance=1cm,every node/.style={draw,circle,fill,inner sep=1pt}]
+  \node (1) at (0:0)[label=above right:327]{};
+  \node (2) at (60:1)[label=above right:328]{};
+  \node (4)at (60:2)[label=above right:330]{};
+  
+  \node[right of =1](6)[label=above right:332]{};
+  \node[right of =6](7)[label=above right:333]{};
+  \node[right of =7](12)[label=above right:338]{};
+  \node[right of =12](13)[label=above right:339]{};
+  \node[right of =13](18)[label=above right:344]{};
+  \node[right of =18](19)[label=above right:345]{};
+  \node[right of =19](24)[label=above right:350]{};
+  
+  \node[right of =2](5)[label=above right:331]{};
+  \node[right of =5](8)[label=above right:334]{};
+  \node[right of =8](11)[label=above right:337]{};
+  \node[right of =11](14)[label=above right:340]{};
+  \node[right of =14](17)[label=above right:343]{};
+  \node[right of =17](20)[label=above right:346]{};
+  \node[right of =20](23)[label=above right:349]{};
+  
+  \node[left of= 4] (3) [label=above right:329]{};
+  \node[right of =4](9)[label=above right:335]{};
+  \node[right of =9](10)[label=above right:336]{};
+  \node[right of =10](15)[label=above right:341]{};
+  \node[right of =15](16)[label=above right:342]{};
+  \node[right of =16](21)[label=above right:347]{};
+  \node[right of =21](22)[label=above right:348]{};
+  
+  
+  \draw[thick](1)--(2)--(3)--(4)--(5)--(6)--(7)--(8)--(9)--(10)--(11)--(12)--(13)--(14)--(15)--(16)--(17)--(18)--(19)--(20)--(21)--(22)--(23)--(24);
+  \draw[dashed,thick,red](1)--(6);
+  \draw[dashed,thick,red](4)--(9);
+  \draw[dashed,thick,red](7)--(12);
+  \end{tikzpicture}
+  }
+  \end{minipage}
+  
+\begin{minipage}{0.05\hsize}
+\ \\
+\end{minipage}
+
+%%%%%%%%%%%%%%Dzag2-T1%%%%%%%%%%%%%%%%%
+\begin{minipage}{0.3\hsize}
+\centering
+\scalebox{0.5}{
+\begin{tikzpicture}[node distance=1cm,every node/.style={draw,circle,fill,inner sep=1pt}]
+  \node (1) at (0:0)[label=above right:327]{};
+  \node (2) at (60:1)[label=above right:328]{};
+  \node (4)at (60:2)[label=above right:330]{};
+  
+  \node[right of =1](8)[label=above right:334]{};
+  \node[right of =8](9)[label=above right:335]{};
+  \node[right of =9](10)[label=above right:336]{};
+  \node[right of =10](19)[label=above right:345]{};
+  \node[right of =19](20)[label=above right:346]{};
+  \node[right of =20](21)[label=above right:347]{};
+  \node[right of =21](22)[label=above right:348]{};
+  
+  \node[right of =2](7)[label=above right:333]{};
+  \node[right of =7](6)[label=above right:332]{};
+  \node[right of =6](11)[label=above right:337]{};
+  \node[right of =11](18)[label=above right:344]{};
+  \node[right of =18](17)[label=above right:343]{};
+  \node[right of =17](16)[label=above right:342]{};
+  \node[right of =16](23)[label=above right:349]{};
+  
+  \node[left of= 4] (3) [label=above right:329]{};
+  \node[right of =4](5)[label=above right:331]{};
+  \node[right of =5](12)[label=above right:338]{};
+  \node[right of =12](13)[label=above right:339]{};
+  \node[right of =13](14)[label=above right:340]{};
+  \node[right of =14](15)[label=above right:341]{};
+  \node[right of =15](24)[label=above right:350]{};
+  
+  
+  \draw[thick](1)--(2)--(3)--(4)--(5)--(6)--(7)--(8)--(9)--(10)--(11)--(12)--(13)--(14)--(15)--(16)--(17)--(18)--(19)--(20)--(21)--(22)--(23)--(24);
+  \draw[dashed,thick,red](1)--(6);
+  \draw[dashed,thick,red](4)--(9);
+  \draw[dashed,thick,red](7)--(12);
+  \end{tikzpicture}
+  }
+  \end{minipage}
+
+\\
+
+%%%%%%%%%%%%%%Dzag-R0%%%%%%%%%%%%%%%%%
+\begin{minipage}{0.3\hsize}
+\centering
+\scalebox{0.5}{
+\begin{tikzpicture}[node distance=1cm,every node/.style={draw,circle,fill,inner sep=1pt}]
+  \node (3) at (0:0)[label=above right:329]{};
+  \node (2) at (60:1)[label=above right:328]{};
+  \node (6) at (60:2)[label=above right:332]{};
+  
+  \node[right of =3](4)[label=above right:330]{};
+  \node[right of =4](9)[label=above right:335]{};
+  \node[right of =9](10)[label=above right:336]{};
+  \node[right of =10](15)[label=above right:341]{};
+  \node[right of =15](16)[label=above right:342]{};
+  \node[right of =16](21)[label=above right:347]{};
+  \node[right of =21](22)[label=above right:348]{};
+  
+  \node[right of =2](5)[label=above right:331]{};
+  \node[right of =5](8)[label=above right:334]{};
+  \node[right of =8](11)[label=above right:337]{};
+  \node[right of =11](14)[label=above right:340]{};
+  \node[right of =14](17)[label=above right:343]{};
+  \node[right of =17](20)[label=above right:346]{};
+  \node[right of =20](23)[label=above right:349]{};
+  
+  \node[left of= 6] (1) [label=above right:327]{};
+  \node[right of =6](7)[label=above right:333]{};
+  \node[right of =7](12)[label=above right:338]{};
+  \node[right of =12](13)[label=above right:339]{};
+  \node[right of =13](18)[label=above right:344]{};
+  \node[right of =18](19)[label=above right:345]{};
+  \node[right of =19](24)[label=above right:350]{};
+  
+  
+  \draw[thick](1)--(2)--(3)--(4)--(5)--(6)--(7)--(8)--(9)--(10)--(11)--(12)--(13)--(14)--(15)--(16)--(17)--(18)--(19)--(20)--(21)--(22)--(23)--(24);
+  \draw[dashed,thick,red](1)--(6);
+  \draw[dashed,thick,red](4)--(9);
+  \draw[dashed,thick,red](7)--(12);
+  \end{tikzpicture}
+  }
+  \end{minipage}
+  
+\begin{minipage}{0.05\hsize}
+\ \\
+\end{minipage}
+%%%%%%%%%%%%%%Dzag-R1%%%%%%%%%%%%%%%%%
+\begin{minipage}{0.3\hsize}
+\centering
+\scalebox{0.5}{
+\begin{tikzpicture}[node distance=1cm,every node/.style={draw,circle,fill,inner sep=1pt}]
+  \node (3) at (0:0)[label=above right:329]{};
+  \node (2) at (60:1)[label=above right:328]{};
+  \node (6) at (60:2)[label=above right:332]{};
+  
+  \node[right of =3](4)[label=above right:330]{};
+  \node[right of =4](9)[label=above right:335]{};
+  \node[right of =9](10)[label=above right:336]{};
+  \node[right of =10](19)[label=above right:345]{};
+  \node[right of =19](20)[label=above right:346]{};
+  \node[right of =20](21)[label=above right:347]{};
+  \node[right of =21](22)[label=above right:348]{};
+  
+  \node[right of =2](5)[label=above right:331]{};
+  \node[right of =5](8)[label=above right:334]{};
+  \node[right of =8](11)[label=above right:337]{};
+  \node[right of =11](18)[label=above right:344]{};
+  \node[right of =18](17)[label=above right:343]{};
+  \node[right of =17](16)[label=above right:342]{};
+  \node[right of =16](23)[label=above right:349]{};
+  
+  \node[left of= 6] (1) [label=above right:327]{};
+  \node[right of =6](7)[label=above right:333]{};
+  \node[right of =7](12)[label=above right:338]{};
+  \node[right of =12](13)[label=above right:339]{};
+  \node[right of =13](14)[label=above right:340]{};
+  \node[right of =14](15)[label=above right:341]{};
+  \node[right of =15](24)[label=above right:350]{};
+  
+  
+  \draw[thick](1)--(2)--(3)--(4)--(5)--(6)--(7)--(8)--(9)--(10)--(11)--(12)--(13)--(14)--(15)--(16)--(17)--(18)--(19)--(20)--(21)--(22)--(23)--(24);
+  \draw[dashed,thick,red](1)--(6);
+  \draw[dashed,thick,red](4)--(9);
+  \draw[dashed,thick,red](7)--(12);
+  \end{tikzpicture}
+  }
+  \end{minipage}
+
+  \end{tabular}
+
   \caption{The possible five conformations of DFAO-zag2: (top) Dzag2-L0, Dzag2-L1, Dzag2-T1, (bottom) Dzag2-R0, and Dzag2-R1.}
   \label{fig:DFAO-zag2}
   \end{figure} 

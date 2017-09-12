@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017) (preloaded format=platex 2017.7.31)  12 SEP 2017 17:10
+This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017) (preloaded format=platex 2017.7.31)  12 SEP 2017 20:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -694,192 +694,38 @@ LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <12> not available
 (Font)              Font shape `JY1/gt/m/n' tried instead on input line 2.
 File: pic/rna_origami.pdf Graphic file (type pdf)
 <pic/rna_origami.pdf>
-LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <10> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 15.
-LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <10> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 15.
-
-
-LaTeX Warning: Citation `AJLMRRW2014' on page 1 undefined on input line 15.
-
-
-LaTeX Warning: Citation `GearyRothemundAndersen2014' on page 1 undefined on inp
-ut line 18.
-
-
-LaTeX Warning: Reference `fig:rna_origami' on page 1 undefined on input line 19
-.
-
-[1
+ [1
 
 ]
-
-LaTeX Warning: Citation `GeMeScSe2016' on page 2 undefined on input line 21.
-
-
-LaTeX Warning: Citation `Doty2012' on page 2 undefined on input line 22.
-
-
-LaTeX Warning: Citation `Patitz2016' on page 2 undefined on input line 22.
-
-
-LaTeX Warning: Citation `WinfreePhD' on page 2 undefined on input line 22.
-
-
-LaTeX Warning: Citation `RothemundPapadakisWinfree2004' on page 2 undefined on 
-input line 24.
-
-
-LaTeX Warning: Citation `WaStYuLiLu2016' on page 2 undefined on input line 26.
-
-
-LaTeX Warning: Citation `GeMeScSe2015' on page 2 undefined on input line 27.
-
-
-LaTeX Warning: Citation `GeMeScSe2016' on page 2 undefined on input line 28.
-
 Missing character: There is no ; in font nullfont!
-
-LaTeX Warning: Citation `AbelsondiSessa1981' on page 2 undefined on input line 
-73.
-
-
-LaTeX Warning: Citation `AlloucheShallit2003' on page 2 undefined on input line
- 73.
-
-
-LaTeX Warning: Citation `AlloucheShallit2003' on page 2 undefined on input line
- 75.
-
-
-LaTeX Warning: Citation `MaHoldener2005' on page 2 undefined on input line 75.
-
-
-LaTeX Warning: Reference `fig:heighway_dragon' on page 2 undefined on input lin
-e 76.
-
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [2]
-
-LaTeX Warning: Citation `AlloucheShallit2003' on page 3 undefined on input line
- 86.
-
 File: pic/6bit_heighway.pdf Graphic file (type pdf)
 <pic/6bit_heighway.pdf>
 
-LaTeX Warning: Reference `fig:heighway6_oritatami' on page 3 undefined on input
- line 96.
-
-
-LaTeX Warning: Citation `GeMeScSe2016' on page 3 undefined on input line 97.
-
-
-LaTeX Warning: Reference `fig:heighway6_oritatami' on page 3 undefined on input
- line 98.
-
-[3]
-
-LaTeX Warning: Citation `heighway_web' on page 4 undefined on input line 104.
-
-) (./preliminaries.tex
-
-LaTeX Warning: Reference `fig:glider' on page 4 undefined on input line 12.
-
-[4]
+[3]) (./preliminaries.tex [4]
 Overfull \hbox (3.53142pt too wide) in paragraph at lines 27--37
 \OT1/cmr/m/n/10 set of h-interactions $\OML/cmm/m/it/10 H[] \OMS/cmsy/m/n/10 ^^
 R []$\OT1/cmr/m/n/10 ,
  []
 
-
-LaTeX Warning: Reference `eq:cotranscriptional_folding' on page 5 undefined on 
-input line 61.
-
-
-LaTeX Warning: Reference `fig:glider' on page 5 undefined on input line 134.
-
-
-LaTeX Warning: Reference `fig:glider' on page 5 undefined on input line 136.
-
-[5]
-
-LaTeX Warning: Reference `fig:glider' on page 6 undefined on input line 152.
-
-) (./main_result.tex
-
-LaTeX Warning: Reference `fig:heighway6_oritatami' on page 6 undefined on input
- line 7.
-
-
-LaTeX Warning: Citation `HanKim2017' on page 6 undefined on input line 9.
-
-
-LaTeX Warning: Citation `PatitzRogers2017' on page 6 undefined on input line 11
-.
-
-[6]
+[5]) (./main_result.tex [6]
 File: pic/dragon_vol4.pdf Graphic file (type pdf)
 <pic/dragon_vol4.pdf>
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-LaTeX Warning: Reference `fig:abst_dragon' on page 7 undefined on input line 40
-.
-
-
-LaTeX Warning: Reference `subsubsec:module_counter' on page 7 undefined on inpu
-t line 49.
-
-
-LaTeX Warning: Reference `fig:heighway6_oritatami' on page 7 undefined on input
- line 54.
-
-
-LaTeX Warning: Reference `fig:abst_dragon' on page 7 undefined on input line 54
-.
-
-
-LaTeX Warning: Citation `HaKiOtSe2016' on page 7 undefined on input line 61.
-
-
-LaTeX Warning: Reference `fig:abst_dragon' on page 7 undefined on input line 61
-.
-
-
-LaTeX Warning: Reference `fig:abst_dfao' on page 7 undefined on input line 61.
-
-
-LaTeX Warning: Reference `fig:overall_turning' on page 7 undefined on input lin
-e 61.
-
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <10> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 57.
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <10> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 57.
 
 Underfull \vbox (badness 2261) has occurred while \output is active []
 
  [7]
-
-LaTeX Warning: Citation `GeMeScSe2016' on page 8 undefined on input line 68.
-
-
-LaTeX Warning: Reference `eq:cotranscriptional_folding' on page 8 undefined on 
-input line 68.
-
-
-LaTeX Warning: Citation `GeMeScSe2015' on page 8 undefined on input line 68.
-
-
-LaTeX Warning: Citation `HanKim2017' on page 8 undefined on input line 68.
-
-
-LaTeX Warning: Citation `HaKiOtSe2016' on page 8 undefined on input line 68.
-
-
-LaTeX Warning: Citation `OtaSeki2017' on page 8 undefined on input line 68.
-
-
 Overfull \hbox (18.47588pt too wide) in paragraph at lines 98--99
  [][] 
  []
@@ -907,22 +753,6 @@ Overfull \hbox (12.04993pt too wide) in paragraph at lines 72--180
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-LaTeX Warning: Reference `fig:abst_dragon' on page 8 undefined on input line 18
-6.
-
-
-LaTeX Warning: Reference `fig:half-adder' on page 8 undefined on input line 188
-.
-
-
-LaTeX Warning: Reference `fig:half-adder' on page 8 undefined on input line 189
-.
-
-
-LaTeX Warning: Reference `fig:half-adder' on page 8 undefined on input line 192
-.
-
 [8]
 File: pic/abst_DFAO.pdf Graphic file (type pdf)
 <pic/abst_DFAO.pdf>
@@ -949,16 +779,6 @@ Overfull \hbox (23.37408pt too wide) in paragraph at lines 338--339
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-LaTeX Warning: Reference `fig:abst_dfao' on page 9 undefined on input line 349.
-
-
-
-LaTeX Warning: Reference `fig:PFS' on page 9 undefined on input line 353.
-
-
-LaTeX Warning: Reference `fig:PFS' on page 9 undefined on input line 355.
-
 [9]
 Overfull \hbox (39.30867pt too wide) in paragraph at lines 402--403
  [][] 
@@ -979,50 +799,82 @@ Overfull \hbox (39.30867pt too wide) in paragraph at lines 540--541
  [][] 
  []
 
-File: pic/Dzag1.pdf Graphic file (type pdf)
-<pic/Dzag1.pdf>
 
-LaTeX Warning: Reference `fig:DFAO-zig1' on page 10 undefined on input line 561
-.
-
-
-LaTeX Warning: Reference `fig:DFAO-zig1' on page 10 undefined on input line 562
-.
+Overfull \hbox (14.63254pt too wide) in paragraph at lines 591--592
+ [][] 
+ []
 
 
-LaTeX Warning: Reference `ex:glider' on page 10 undefined on input line 568.
+Overfull \hbox (14.63254pt too wide) in paragraph at lines 637--638
+ [][] 
+ []
 
 
-LaTeX Warning: Reference `fig:DFAO-zag1' on page 10 undefined on input line 569
-.
+Overfull \hbox (14.63254pt too wide) in paragraph at lines 683--684
+ [][] 
+ []
 
 
-Underfull \vbox (badness 3312) has occurred while \output is active []
+Overfull \hbox (15.13847pt too wide) in paragraph at lines 551--688
+[][][][] 
+ []
 
- [10]
-File: pic/Dzig2.pdf Graphic file (type pdf)
-<pic/Dzig2.pdf>
-File: pic/Dzag2.pdf Graphic file (type pdf)
-<pic/Dzag2.pdf>
-
-
-LaTeX Warning: Reference `fig:DFAO-zig2' on page 11 undefined on input line 589
-.
+[10]
+Overfull \hbox (14.63254pt too wide) in paragraph at lines 748--749
+ [][] 
+ []
 
 
-LaTeX Warning: Reference `fig:DFAO-zag2' on page 11 undefined on input line 599
-.
+Overfull \hbox (14.63254pt too wide) in paragraph at lines 794--795
+ [][] 
+ []
+
+
+Overfull \hbox (14.63254pt too wide) in paragraph at lines 840--841
+ [][] 
+ []
+
+
+Overfull \hbox (15.13847pt too wide) in paragraph at lines 707--935
+[][][][] 
+ []
+
+
+Overfull \hbox (14.63254pt too wide) in paragraph at lines 981--982
+ [][] 
+ []
+
+
+Overfull \hbox (14.63254pt too wide) in paragraph at lines 1027--1028
+ [][] 
+ []
+
+
+Overfull \hbox (14.63254pt too wide) in paragraph at lines 1073--1074
+ [][] 
+ []
+
+
+Overfull \hbox (14.63254pt too wide) in paragraph at lines 1117--1118
+ [][] 
+ []
+
+
+Overfull \hbox (14.63254pt too wide) in paragraph at lines 1162--1163
+ [][] 
+ []
+
+
+Overfull \hbox (15.13847pt too wide) in paragraph at lines 942--1166
+[][][][] 
+ []
 
 [11] (./Turner.tex
 File: pic/overall_turn_part.pdf Graphic file (type pdf)
 <pic/overall_turn_part.pdf>
-
-
-LaTeX Warning: Reference `fig:overall_turning' on page 12 undefined on input li
-ne 16.
-
 File: pic/body-rpx.pdf Graphic file (type pdf)
 <pic/body-rpx.pdf>
+
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -1061,48 +913,6 @@ File: pic/turn-lgp.pdf Graphic file (type pdf)
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-LaTeX Warning: Reference `fig:abst_dragon' on page 12 undefined on input line 7
-6.
-
-
-LaTeX Warning: Reference `fig:body-rpx' on page 12 undefined on input line 79.
-
-
-LaTeX Warning: Reference `fig:body-lpx1' on page 12 undefined on input line 79.
-
-
-
-LaTeX Warning: Reference `fig:body-lpx2' on page 12 undefined on input line 79.
-
-
-
-LaTeX Warning: Reference `fig:body-gx' on page 12 undefined on input line 80.
-
-
-LaTeX Warning: Reference `fig:body-rgy' on page 12 undefined on input line 81.
-
-
-LaTeX Warning: Reference `fig:body-lgy' on page 12 undefined on input line 81.
-
-
-LaTeX Warning: Reference `fig:turn-rgp' on page 12 undefined on input line 82.
-
-
-LaTeX Warning: Reference `fig:turn-lgp' on page 12 undefined on input line 82.
-
-
-LaTeX Warning: Citation `HaKiOtSe2016' on page 12 undefined on input line 85.
-
-
-LaTeX Warning: Reference `fig:body-rgy' on page 12 undefined on input line 87.
-
-
-LaTeX Warning: Reference `fig:turn-rgp' on page 12 undefined on input line 92.
-
-
-LaTeX Warning: Reference `fig:turn-lgp' on page 12 undefined on input line 93.
-
 [12]
 File: pic/change_route.pdf Graphic file (type pdf)
 <pic/change_route.pdf>
@@ -1115,22 +925,7 @@ File: pic/move.pdf Graphic file (type pdf)
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-LaTeX Warning: Reference `fig:change_route' on page 13 undefined on input line 
-110.
-
-
-LaTeX Warning: Reference `fig:move' on page 13 undefined on input line 111.
-
-
-LaTeX Warning: Reference `fig:overall_turning' on page 13 undefined on input li
-ne 114.
-
-
-LaTeX Warning: Reference `fig:overall_turning' on page 13 undefined on input li
-ne 117.
-
-)) (./LATIN2018_main.bbl [13]
+[13])) (./LATIN2018_main.bbl
 
 LaTeX Font Warning: Font shape `JT1/gt/m/it' undefined
 (Font)              using `JT1/gt/m/n' instead on input line 5.
@@ -1139,24 +934,18 @@ LaTeX Font Warning: Font shape `JT1/gt/m/it' undefined
 LaTeX Font Warning: Font shape `JY1/gt/m/it' undefined
 (Font)              using `JY1/gt/m/n' instead on input line 5.
 
-[14]) [15] [16] [17] (./LATIN2018_main.aux)
+[14] [15]) [16] [17] (./LATIN2018_main.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
- 14572 strings out of 493648
- 305679 string characters out of 6148806
- 544176 words of memory out of 5000000
- 17834 multiletter control sequences out of 15000+600000
+ 14563 strings out of 493648
+ 305535 string characters out of 6148806
+ 671598 words of memory out of 5000000
+ 17828 multiletter control sequences out of 15000+600000
  22294 words of font info for 89 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
  55i,17n,71p,484b,2721s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on LATIN2018_main.dvi (17 pages, 402216 bytes).
+Output written on LATIN2018_main.dvi (17 pages, 776204 bytes).
