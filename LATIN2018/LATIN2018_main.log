@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017) (preloaded format=platex 2017.7.31)  11 SEP 2017 16:05
+This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017) (preloaded format=platex 2017.7.31)  12 SEP 2017 16:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -726,8 +726,29 @@ LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <10> not available
 Underfull \vbox (badness 2261) has occurred while \output is active []
 
  [7]
-File: pic/counter_zig1.pdf Graphic file (type pdf)
-<pic/counter_zig1.pdf>
+Overfull \hbox (18.47588pt too wide) in paragraph at lines 98--99
+ [][] 
+ []
+
+
+Overfull \hbox (18.47588pt too wide) in paragraph at lines 124--125
+ [][] 
+ []
+
+
+Overfull \hbox (18.47588pt too wide) in paragraph at lines 150--151
+ [][] 
+ []
+
+
+Overfull \hbox (18.47588pt too wide) in paragraph at lines 176--177
+ [][] 
+ []
+
+
+Overfull \hbox (12.04993pt too wide) in paragraph at lines 72--180
+[][][][] 
+ []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -735,10 +756,25 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 [8]
 File: pic/abst_DFAO.pdf Graphic file (type pdf)
 <pic/abst_DFAO.pdf>
-File: pic/Pi.pdf Graphic file (type pdf)
-<pic/Pi.pdf>
-File: pic/AO.pdf Graphic file (type pdf)
-<pic/AO.pdf>
+
+Overfull \hbox (23.37408pt too wide) in paragraph at lines 240--241
+ [][] 
+ []
+
+
+Overfull \hbox (23.37408pt too wide) in paragraph at lines 271--272
+ [][] 
+ []
+
+
+Overfull \hbox (23.37408pt too wide) in paragraph at lines 301--302
+[][] 
+ []
+
+
+Overfull \hbox (23.37408pt too wide) in paragraph at lines 332--333
+[][] 
+ []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -832,12 +868,12 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 14437 strings out of 493648
- 304157 string characters out of 6148806
+ 14503 strings out of 493648
+ 304863 string characters out of 6148806
  520594 words of memory out of 5000000
- 17696 multiletter control sequences out of 15000+600000
+ 17764 multiletter control sequences out of 15000+600000
  22294 words of font info for 89 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
  55i,17n,71p,484b,2721s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on LATIN2018_main.dvi (17 pages, 165744 bytes).
+Output written on LATIN2018_main.dvi (17 pages, 283508 bytes).

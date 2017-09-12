@@ -67,12 +67,120 @@ Using the simulator developed for \cite{HaKiOtSe2016}, we have verified that all
 
 The existing binary counter \cite{GeMeScSe2016} was modified so as to operate in the dynamics \eqref{eq:cotranscriptional_folding}, which is more prevailing \cite{GeMeScSe2015,HanKim2017,HaKiOtSe2016,OtaSeki2017} but less tractable than the one the original counter used. 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[h]
+\begin{tabular}{c}
+
+%%%%%%%%%%%%Counter-zig-01%%%%%%%%%%%%%%%%%
+\begin{minipage}{0.25\hsize}
 \centering
-\includegraphics[width=\linewidth]{pic/counter_zig1.pdf}
-\caption{All conformations of the half-adder component.}
+\scalebox{0.8}{
+\begin{tikzpicture}[node distance=1cm,every node/.style={draw,circle,fill,inner sep=1pt}]
+   \node (7) at (0:0)[label=above right:7]{};
+  \node (6) at (120:1)[label=above right:6]{};
+  \node (1)at (120:2)[label=above right:1]{};
+  \node[left of= 7] (8) [label=above right:8]{};
+  \node[left of =8](9)[label=above right:9]{};
+  \node[left of =9](10)[label=above right:10]{};
+  \node[left of =6](5)[label=above right:5]{};
+  \node[left of =5](4)[label=above right:4]{};
+  \node[left of =4](11)[label=above right:11]{};
+  \node[left of =1](2)[label=above right:2]{};
+  \node[left of =2](3)[label=above right:3]{};
+  \node[left of =3](12)[label=above right:12]{};
+  \draw[thick](1)--(2)--(3)--(4)--(5)--(6)--(7)--(8)--(9)--(10)--(11)--(12);
+  \draw[dashed,thick,red](1)--(6);
+  \draw[dashed,thick,red](4)--(10);
+ \draw[dashed,thick,red](9)--(5);
+\draw[dashed,thick,red](8)--(5);
+\draw[dashed,thick,red](3)--(12);
+  \end{tikzpicture}
+  }
+\end{minipage}
+
+%%%%%%%%%%%%Counter-zig-10%%%%%%%%%%%%%%%%%
+\begin{minipage}{0.25\hsize}
+\centering
+\scalebox{0.8}{
+\begin{tikzpicture}[node distance=1cm,every node/.style={draw,circle,fill,inner sep=1pt}]
+   \node (1) at (0:0)[label=above right:1]{};
+  \node (2) at (120:1)[label=above right:2]{};
+  \node (3)at (120:2)[label=above right:3]{};
+  \node[left of= 1] (6) [label=above right:6]{};
+  \node[left of =6](7)[label=above right:7]{};
+  \node[left of =7](12)[label=above right:12]{};
+  \node[left of =2](5)[label=above right:5]{};
+  \node[left of =5](8)[label=above right:8]{};
+  \node[left of =8](11)[label=above right:11]{};
+  \node[left of =3](4)[label=above right:4]{};
+  \node[left of =4](9)[label=above right:9]{};
+  \node[left of =9](10)[label=above right:10]{};
+  \draw[thick](1)--(2)--(3)--(4)--(5)--(6)--(7)--(8)--(9)--(10)--(11)--(12);
+  \draw[dashed,thick,red](1)--(6);
+\draw[dashed,thick,red](2)--(5);
+\draw[dashed,thick,red](8)--(12);
+\draw[dashed,thick,red](7)--(12);
+  \end{tikzpicture}
+}
+\end{minipage}
+
+%%%%%%%%%%%%Counter-zig-00%%%%%%%%%%%%%%%%%
+\begin{minipage}{0.25\hsize}
+\centering
+\scalebox{0.8}{
+\begin{tikzpicture}[node distance=1cm,every node/.style={draw,circle,fill,inner sep=1pt}]
+   \node (3) at (0:0)[label=above right:3]{};
+  \node (2) at (120:1)[label=above right:2]{};
+  \node (1)at (120:2)[label=above right:1]{};
+  \node[left of= 3] (4) [label=above right:4]{};
+  \node[left of =4](9)[label=above right:9]{};
+  \node[left of =9](10)[label=above right:10]{};
+  \node[left of =2](5)[label=above right:5]{};
+  \node[left of =5](8)[label=above right:8]{};
+  \node[left of =8](11)[label=above right:11]{};
+  \node[left of =1](6)[label=above right:6]{};
+  \node[left of =6](7)[label=above right:7]{};
+  \node[left of =7](12)[label=above right:12]{};
+  \draw[thick](1)--(2)--(3)--(4)--(5)--(6)--(7)--(8)--(9)--(10)--(11)--(12);
+  \draw[dashed,thick,red](1)--(6);
+  \draw[dashed,thick,red](7)--(12);
+ \draw[dashed,thick,red](9)--(5);
+\draw[dashed,thick,red](8)--(5);
+\end{tikzpicture}
+}
+\end{minipage}
+
+
+%%%%%%%%%%%%Counter-zig-11%%%%%%%%%%%%%%%%%
+\begin{minipage}{0.25\hsize}
+\centering
+\scalebox{0.8}{
+\begin{tikzpicture}[node distance=1cm,every node/.style={draw,circle,fill,inner sep=1pt}]
+   \node (1) at (0:0)[label=above right:1]{};
+  \node (2) at (120:1)[label=above right:2]{};
+  \node (3)at (120:2)[label=above right:3]{};
+  \node[left of= 1] (8) [label=above right:8]{};
+  \node[left of =8](9)[label=above right:9]{};
+  \node[left of =9](10)[label=above right:10]{};
+  \node[left of =2](7)[label=above right:7]{};
+  \node[left of =7](6)[label=above right:6]{};
+  \node[left of =6](11)[label=above right:11]{};
+  \node[left of =3](4)[label=above right:4]{};
+  \node[left of =4](5)[label=above right:5]{};
+  \node[left of =5](12)[label=above right:12]{};
+  \draw[thick](1)--(2)--(3)--(4)--(5)--(6)--(7)--(8)--(9)--(10)--(11)--(12);
+  \draw[dashed,thick,red](1)--(8);
+\draw[dashed,thick,red](3)--(7);
+\draw[dashed,thick,red](5)--(11);
+  \end{tikzpicture}
+}
+\end{minipage}
+
+\end{tabular}
+ \caption{All conformations of the half-adder component.}
 \label{fig:half-adder}
 \end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 The essential component of this module is the half-adder. 
 In Figure~\ref{fig:abst_dragon}, half-adder components are abstracted as small rhombuses at the top labeled with $a_n, a_{n-1}, \ldots, a_1$, where the one with $a_j$ is for the $j$-th bit of the current count $i$. 
@@ -102,23 +210,133 @@ A DFAO module receives the current count $i$ from the last copier module, comput
 \label{fig:abst_dfao}
 \end{figure}
 
-\begin{figure}[h]
-\centering
-\begin{minipage}{0.4\hsize}
-\includegraphics[width=\linewidth]{pic/Pi.pdf}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\begin{figure}[h]
+\begin{tabular}{c}
+
+%%%%%%%%%%%%PFS-L%%%%%%%%%%%%%%%%%
+\begin{minipage}{0.2\hsize}
+\centering
+\scalebox{0.75}{
+\begin{tikzpicture}[node distance=1cm,every node/.style={draw,circle,fill,inner sep=1pt}]
+  \node (3) at (0:0)[label=above right:359]{};
+  \node (2) at (60:1)[label=above right:358]{};
+  \node (6)at (60:2)[label=above right:362]{};
+  \node[right of =3](4)[label=above right:360]{};
+  \node[right of =4](9)[label=above right:365]{};
+  \node[right of =9](10)[label=above right:366]{};
+  \node[right of =2](5)[label=above right:361]{};
+  \node[right of =5](8)[label=above right:364]{};
+  \node[right of =8](11)[label=above right:367]{};
+  \node[left of= 6] (1) [label=above right:357]{};
+  \node[right of =6](7)[label=above right:363]{};
+  \node[right of =7](12)[label=above right:368]{};
+  \draw[thick](1)--(2)--(3)--(4)--(5)--(6)--(7)--(8)--(9)--(10)--(11)--(12);
+  \draw[dashed,thick,red](1)--(6);
+  \draw[dashed,thick,red](4)--(9);
+  \draw[dashed,thick,red](7)--(12);
+  \end{tikzpicture}
+}
 \end{minipage}
-\begin{minipage}{0.1\hsize}
+
+\begin{minipage}{0.03\hsize}
 \ \\
 \end{minipage}
-\begin{minipage}{0.4\hsize}
-\includegraphics[width=\linewidth]{pic/AO.pdf}
 
+%%%%%%%%%%%%PFS-R%%%%%%%%%%%%%%%%%
+\begin{minipage}{0.2\hsize}
+\centering
+\scalebox{0.75}{
+\begin{tikzpicture}[node distance=1cm,every node/.style={draw,circle,fill,inner sep=1pt}]
+  \node (1) at (0:0)[label=above right:357]{};
+  \node (2) at (60:1)[label=above right:358]{};
+  \node (4)at (60:2)[label=above right:360]{};
+  \node[right of =1](8)[label=above right:364]{};
+  \node[right of =8](9)[label=above right:365]{};
+  \node[right of =9](10)[label=above right:366]{};
+  \node[right of =2](7)[label=above right:363]{};
+  \node[right of =7](6)[label=above right:362]{};
+  \node[right of =6](11)[label=above right:367]{};
+  \node[left of= 4] (3) [label=above right:359]{};
+  \node[right of =4](5)[label=above right:361]{};
+  \node[right of =5](12)[label=above right:368]{};
+  \draw[thick](1)--(2)--(3)--(4)--(5)--(6)--(7)--(8)--(9)--(10)--(11)--(12);
+  \draw[dashed,thick,red](1)--(8);
+  \draw[dashed,thick,red](2)--(7);
+  \draw[dashed,thick,red](7)--(4);
+  \draw[dashed,thick,red](6)--(9);
+  \draw[dashed,thick,red](5)--(12);
+  \end{tikzpicture}
+}
+
+\end{minipage}
+
+\begin{minipage}{0.04\hsize}
+\ \\
+\end{minipage}
+
+%%%%%%%%%%%%AO-A%%%%%%%%%%%%%%%%%
+\begin{minipage}{0.2\hsize}
+\scalebox{0.75}{
+  \begin{tikzpicture}[node distance=1cm,every node/.style={draw,circle,fill,inner sep=1pt}]
+  \node (7) at (0:0)[label=above right:375]{};
+  \node (6) at (120:1)[label=above right:374]{};
+  \node (2) at (120:2)[label=above right:370]{};
+  \node[left of =7](8)[label=above right:376]{};
+  \node[left of =8](9)[label=above right:377]{};
+  \node[left of =9](10)[label=above right:378]{};
+  
+  \node[left of =6](5)[label=above right:373]{};
+  \node[left of =5](4)[label=above right:372]{};
+  \node[left of =4](11)[label=above right:379]{};
+  
+  \node[right of= 2](1)[label=above right:369]{};
+
+  \node[left of =2](3)[label=above right:371]{};
+  \node[left of =3](12)[label=above right:381]{};
+  \draw[thick](1)--(2)--(3)--(4)--(5)--(6)--(7)--(8)--(9)--(10)--(11)--(12);
+
+  \end{tikzpicture}
+  }
 \end{minipage}  
+
+\begin{minipage}{0.03\hsize}
+\ \\
+\end{minipage}
+
+%%%%%%%%%%%%AO-O%%%%%%%%%%%%%%%%%
+\begin{minipage}{0.2\hsize}
+\scalebox{0.75}{
+  \begin{tikzpicture}[node distance=1cm,every node/.style={draw,circle,fill,inner sep=1pt}]
+  \node (3) at (0:0)[label=above right:371]{};
+  \node (2) at (120:1)[label=above right:370]{};
+  \node (6)at (120:2)[label=above right:374]{};
+
+
+  \node[left of =3](4)[label=above right:372]{};
+  \node[left of =4](9)[label=above right:377]{};
+  \node[left of =9](10)[label=above right:378]{};
+  
+  \node[left of =2](5)[label=above right:373]{};
+  \node[left of =5](8)[label=above right:376]{};
+  \node[left of =8](11)[label=above right:378]{};
+  
+  \node[right of= 6](1)[label=above right:369]{};
+  \node[left of =6](7)[label=above right:375]{};
+  \node[left of =7](12)[label=above right:380]{};
+  \draw[thick](1)--(2)--(3)--(4)--(5)--(6)--(7)--(8)--(9)--(10)--(11)--(12);
+
+
+  \end{tikzpicture}
+  }
+\end{minipage}  
+
+\end{tabular}
 \caption{(left) The possible two conformations of PFS: PFS-L, PFS-R. (right) The possible two conformations of AO.}
 \label{fig:PFS}
 \end{figure}
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 DFAO is composed of the six components: DFAO-zig, DFAO-zag1, DFAO-zig2, DFAO-zag2, PFS, AO (or  ``$\overline{\rm AO}$").
