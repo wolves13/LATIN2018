@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017) (preloaded format=platex 2017.7.31)  12 SEP 2017 20:04
+This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017) (preloaded format=platex 2017.7.31)  16 SEP 2017 14:33
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -694,38 +694,123 @@ LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <12> not available
 (Font)              Font shape `JY1/gt/m/n' tried instead on input line 2.
 File: pic/rna_origami.pdf Graphic file (type pdf)
 <pic/rna_origami.pdf>
- [1
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <10> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 15.
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <10> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 15.
+
+
+LaTeX Warning: Citation `AJLMRRW2014' on page 1 undefined on input line 15.
+
+
+LaTeX Warning: Citation `GearyRothemundAndersen2014' on page 1 undefined on inp
+ut line 18.
+
+[1
 
 ]
+
+LaTeX Warning: Citation `GeMeScSe2016' on page 2 undefined on input line 21.
+
+
+LaTeX Warning: Citation `Doty2012' on page 2 undefined on input line 22.
+
+
+LaTeX Warning: Citation `Patitz2016' on page 2 undefined on input line 22.
+
+
+LaTeX Warning: Citation `WinfreePhD' on page 2 undefined on input line 22.
+
+
+LaTeX Warning: Citation `RothemundPapadakisWinfree2004' on page 2 undefined on 
+input line 24.
+
+
+LaTeX Warning: Citation `WaStYuLiLu2016' on page 2 undefined on input line 26.
+
+
+LaTeX Warning: Citation `GeMeScSe2015' on page 2 undefined on input line 27.
+
+
+LaTeX Warning: Citation `GeMeScSe2016' on page 2 undefined on input line 28.
+
 Missing character: There is no ; in font nullfont!
+
+LaTeX Warning: Citation `AbelsondiSessa1981' on page 2 undefined on input line 
+73.
+
+
+LaTeX Warning: Citation `AlloucheShallit2003' on page 2 undefined on input line
+ 73.
+
+
+LaTeX Warning: Citation `AlloucheShallit2003' on page 2 undefined on input line
+ 75.
+
+
+LaTeX Warning: Citation `MaHoldener2005' on page 2 undefined on input line 75.
+
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [2]
+
+LaTeX Warning: Citation `AlloucheShallit2003' on page 3 undefined on input line
+ 86.
+
 File: pic/6bit_heighway.pdf Graphic file (type pdf)
 <pic/6bit_heighway.pdf>
 
-[3]) (./preliminaries.tex [4]
+LaTeX Warning: Citation `GeMeScSe2016' on page 3 undefined on input line 97.
+
+[3]
+
+LaTeX Warning: Citation `heighway_web' on page 4 undefined on input line 104.
+
+) (./preliminaries.tex [4]
 Overfull \hbox (3.53142pt too wide) in paragraph at lines 27--37
 \OT1/cmr/m/n/10 set of h-interactions $\OML/cmm/m/it/10 H[] \OMS/cmsy/m/n/10 ^^
 R []$\OT1/cmr/m/n/10 ,
  []
 
-[5]) (./main_result.tex [6]
+[5]) (./main_result.tex
+
+LaTeX Warning: Citation `HanKim2017' on page 6 undefined on input line 9.
+
+
+LaTeX Warning: Citation `PatitzRogers2017' on page 6 undefined on input line 11
+.
+
+[6]
 File: pic/dragon_vol4.pdf Graphic file (type pdf)
 <pic/dragon_vol4.pdf>
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <10> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 57.
-LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <10> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 57.
+
+LaTeX Warning: Citation `HaKiOtSe2016' on page 7 undefined on input line 61.
+
 
 Underfull \vbox (badness 2261) has occurred while \output is active []
 
  [7]
+
+LaTeX Warning: Citation `GeMeScSe2016' on page 8 undefined on input line 68.
+
+
+LaTeX Warning: Citation `GeMeScSe2015' on page 8 undefined on input line 68.
+
+
+LaTeX Warning: Citation `HanKim2017' on page 8 undefined on input line 68.
+
+
+LaTeX Warning: Citation `HaKiOtSe2016' on page 8 undefined on input line 68.
+
+
+LaTeX Warning: Citation `OtaSeki2017' on page 8 undefined on input line 68.
+
+
 Overfull \hbox (18.47588pt too wide) in paragraph at lines 98--99
  [][] 
  []
@@ -780,92 +865,92 @@ Overfull \hbox (23.37408pt too wide) in paragraph at lines 338--339
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [9]
-Overfull \hbox (39.30867pt too wide) in paragraph at lines 402--403
+Overfull \hbox (39.30867pt too wide) in paragraph at lines 412--413
  [][] 
  []
 
 
-Overfull \hbox (39.30867pt too wide) in paragraph at lines 448--449
+Overfull \hbox (39.30867pt too wide) in paragraph at lines 468--469
  [][] 
  []
 
 
-Overfull \hbox (39.30867pt too wide) in paragraph at lines 493--494
+Overfull \hbox (39.30867pt too wide) in paragraph at lines 524--525
  [][] 
  []
 
 
-Overfull \hbox (39.30867pt too wide) in paragraph at lines 540--541
+Overfull \hbox (39.30867pt too wide) in paragraph at lines 583--584
  [][] 
  []
 
 
-Overfull \hbox (14.63254pt too wide) in paragraph at lines 591--592
+Overfull \hbox (14.63254pt too wide) in paragraph at lines 640--641
  [][] 
  []
 
 
-Overfull \hbox (14.63254pt too wide) in paragraph at lines 637--638
+Overfull \hbox (14.63254pt too wide) in paragraph at lines 691--692
  [][] 
  []
 
 
-Overfull \hbox (14.63254pt too wide) in paragraph at lines 683--684
+Overfull \hbox (14.63254pt too wide) in paragraph at lines 742--743
  [][] 
  []
 
 
-Overfull \hbox (15.13847pt too wide) in paragraph at lines 551--688
+Overfull \hbox (15.13847pt too wide) in paragraph at lines 594--747
 [][][][] 
  []
 
 [10]
-Overfull \hbox (14.63254pt too wide) in paragraph at lines 748--749
+Overfull \hbox (14.63254pt too wide) in paragraph at lines 817--818
  [][] 
  []
 
 
-Overfull \hbox (14.63254pt too wide) in paragraph at lines 794--795
+Overfull \hbox (14.63254pt too wide) in paragraph at lines 874--875
  [][] 
  []
 
 
-Overfull \hbox (14.63254pt too wide) in paragraph at lines 840--841
+Overfull \hbox (14.63254pt too wide) in paragraph at lines 929--930
  [][] 
  []
 
 
-Overfull \hbox (15.13847pt too wide) in paragraph at lines 707--935
+Overfull \hbox (15.13847pt too wide) in paragraph at lines 766--1049
 [][][][] 
  []
 
 
-Overfull \hbox (14.63254pt too wide) in paragraph at lines 981--982
+Overfull \hbox (14.63254pt too wide) in paragraph at lines 1109--1110
  [][] 
  []
 
 
-Overfull \hbox (14.63254pt too wide) in paragraph at lines 1027--1028
+Overfull \hbox (14.63254pt too wide) in paragraph at lines 1169--1170
  [][] 
  []
 
 
-Overfull \hbox (14.63254pt too wide) in paragraph at lines 1073--1074
+Overfull \hbox (14.63254pt too wide) in paragraph at lines 1226--1227
  [][] 
  []
 
 
-Overfull \hbox (14.63254pt too wide) in paragraph at lines 1117--1118
+Overfull \hbox (14.63254pt too wide) in paragraph at lines 1284--1285
  [][] 
  []
 
 
-Overfull \hbox (14.63254pt too wide) in paragraph at lines 1162--1163
+Overfull \hbox (14.63254pt too wide) in paragraph at lines 1343--1344
  [][] 
  []
 
 
-Overfull \hbox (15.13847pt too wide) in paragraph at lines 942--1166
+Overfull \hbox (15.13847pt too wide) in paragraph at lines 1056--1347
 [][][][] 
  []
 
@@ -914,9 +999,11 @@ File: pic/turn-lgp.pdf Graphic file (type pdf)
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [12]
+
+LaTeX Warning: Citation `HaKiOtSe2016' on page 13 undefined on input line 85.
+
 File: pic/change_route.pdf Graphic file (type pdf)
 <pic/change_route.pdf>
-
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -925,27 +1012,20 @@ File: pic/move.pdf Graphic file (type pdf)
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[13])) (./LATIN2018_main.bbl
-
-LaTeX Font Warning: Font shape `JT1/gt/m/it' undefined
-(Font)              using `JT1/gt/m/n' instead on input line 5.
-
-
-LaTeX Font Warning: Font shape `JY1/gt/m/it' undefined
-(Font)              using `JY1/gt/m/n' instead on input line 5.
-
-[14] [15]) [16] [17] (./LATIN2018_main.aux)
+[13]))
+No file LATIN2018_main.bbl.
+[14] [15] [16] (./LATIN2018_main.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 14563 strings out of 493648
- 305535 string characters out of 6148806
- 671598 words of memory out of 5000000
- 17828 multiletter control sequences out of 15000+600000
+ 14556 strings out of 493648
+ 305441 string characters out of 6148806
+ 696058 words of memory out of 5000000
+ 17823 multiletter control sequences out of 15000+600000
  22294 words of font info for 89 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
  55i,17n,71p,484b,2721s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on LATIN2018_main.dvi (17 pages, 776204 bytes).
+Output written on LATIN2018_main.dvi (16 pages, 805112 bytes).
