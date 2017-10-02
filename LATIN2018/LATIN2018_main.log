@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017) (preloaded format=platex 2017.7.31)  29 SEP 2017 15:05
+This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017) (preloaded format=platex 2017.7.31)  29 SEP 2017 15:45
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -79,7 +79,7 @@ Package: multicol 2017/04/11 v1.8q multicolumn formatting (FMi)
 (/usr/local/texlive/2017/texmf-dist/tex/latex/oberdiek/aliascnt.sty
 Package: aliascnt 2016/05/16 v1.4 Alias counters (HO)
 
-(/usr/local/texlive/2017/texmf-dist/tex/latex/carlisle/remreset.sty))
+(./remreset.sty))
 \c@chapter=\count99
 LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 362.
 LaTeX Font Info:    Redeclaring math symbol \Delta on input line 363.
@@ -906,14 +906,11 @@ No file LATIN2018_main.bbl.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
- 14429 strings out of 493648
- 304078 string characters out of 6148806
- 520532 words of memory out of 5000000
+ 14428 strings out of 493648
+ 303918 string characters out of 6148806
+ 520531 words of memory out of 5000000
  17689 multiletter control sequences out of 15000+600000
  22294 words of font info for 89 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
