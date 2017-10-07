@@ -1,4 +1,4 @@
-\documentclass[dvipdfmx,runningheads]{llncs}
+\documentclass[runningheads]{llncs}
 \setcounter{tocdepth}{3}
 \usepackage{amssymb}
 \usepackage{here}
@@ -22,7 +22,8 @@
 \institute{
 Department of Computer and Network Engineering, 
 The University of Electro-Communications, 
-1-5-1, Chofugaoka, Chofu, Tokyo, 1828585, Japan \email{s.seki@uec.ac.jp}
+1-5-1, Chofugaoka, Chofu, Tokyo, 1828585, Japan 
+\email{s.seki@uec.ac.jp}
 }
 
 \begin{document}
@@ -33,7 +34,7 @@ The University of Electro-Communications,
 RNA cotranscriptional folding has been recently proven capable of self-assembling a rectangular tile \textit{in vitro} (RNA origami). 
 The oritatami system is a novel computational model of cotranscriptional folding. 
 In this paper, we initiate the theoretical study on the algorithmic self-assembly of shapes by cotranscriptional folding using the oritatami system. 
-We propose an oritatami system that folds into an arbitrary finite portion of the Heighway dragon, which is a fractal also-known as the paperfolding sequence $P = RRLRRLLR \cdots$. 
+We propose an oritatami system that folds into an arbitrary finite portion of the Heighway dragon, which is a fractal also-known as the paperfolding sequence $P = {\rm RRLRRLLR} \cdots$. 
 The $i$-th element of $P$ can be obtained by feeding $i$ in binary to a 4-state deterministic finite automaton with output (DFAO). 
 We implement this DFAO and a bit-sequence bifurcation component as modules of oritatami system. 
 Combining them with a known binary counter module yields the proposed oritatami system. 
@@ -51,13 +52,10 @@ Combining them with a known binary counter module yields the proposed oritatami 
 
 We would like to thank Hwee Kim and Aleck Johnsen for their helpful advices and discussions.
 
-
-
-
-
-%-------------------------------------------------------------------------------------------
-	\bibliographystyle{plain}
+%--------------------------------------------------------
+%	References
+	\bibliographystyle{splncs03}
 	\bibliography{oritatami}
-%-------------------------------------------------------------------------------------------
+%--------------------------------------------------------
 
 \end{document}
