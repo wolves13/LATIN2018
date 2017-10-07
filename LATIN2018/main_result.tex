@@ -2,31 +2,38 @@
 	\section{Heighway dragon oritatami system}
 %-------------------------------------------------------------------------------------------
 
+
+
 We propose a generic design of deterministic oritatami system that allows us to fold an arbitrary finite portion of the Heighway dragon. 
-The design concept has been already explained in the introduction. 
-The dragon it folds into is actually slanted as illustrated in Figure~\ref{fig:heighway6_oritatami}, which is more natural than the conventional (upright) one to be folded over the triangular grid. 
-The design sets both delay and arity to 3 and employs 567 bead types, no matter which portion is folded. 
-Minimizing the number of bead types has just proven NP-hard \cite{HanKim2017}. 
+%The design concept has been already explained in the introduction. 
+The folded dragon is actually slanted as illustrated in Fig.~\ref{fig:heighway6_oritatami}, which is more natural than the conventional (upright) one to be folded over the triangular grid. 
+The design sets both delay and arity to 3 and employs 567 bead types and a fixed rule set $\mathcal{H}$, no matter how large the target portion is (some of the bead types might be saved but not easily due to the NP-hardness of minimizing the number of bead types \cite{HanKim2017}). 
+The design challenges an extra requirement that the transcript be periodic; a periodic RNA transcript is likely to be transcribed out of a circular DNA sequence \cite{GearyAndersen2014}. 
+Without requiring the periodicity, one could simply design left-turn and right-turn modules and concatenate their copies according to the paperfolding sequence $P$. 
+Such a ``hardcoding'' goes against the spirit of algorithmic self-assembly, and an oritatami system that folds into the infinite Heighway dragon, if any, could not take this approach in order to be describable in a finite mean. 
 
-Any finite portion of the Heighway dragon is expected to be foldable by \textit{hard-coding} if an arbitrary number of bead types is available and the shape can be scaled-up (though, if rescaling is not allowed, it is NP-hard to decide if for a given finite shape, there exists an oritatami system that folds into the shape \cite{PatitzRogers2017}). 
-The proposed design cannot take this approach because the number of bead types available is fixed. 
-An oritatami system $\Xi = (\mathcal{H}, \alpha, \delta, \sigma, w)$ that the design provides is periodic in the sense that its transcript is a periodic sequence. 
-If this system is for the $n$-th repetition of the Heighway dragon, then the length of its period is $|w|/2^{n-1}$. 
-One period corresponds to a successive two pairs of a red line segment and the following green L-shaped block. 
 
-Why do these two pairs have to be distinguished from each other? 
-The answer to this question lies in the fact that the Heighway dragon is slanted. 
+%Any finite portion of the Heighway dragon is expected to be foldable by \textit{hard-coding} if an arbitrary number of bead types is available and the shape can be scaled-up (though, if rescaling is not allowed, it is NP-hard to decide if for a given finite shape, there exists an oritatami system that folds into the shape \cite{PatitzRogers2017}). 
+%The proposed design cannot take this approach because the number of bead types available is fixed. 
+%An oritatami system $\Xi = (\mathcal{H}, \alpha, \delta, \sigma, w)$ that the design provides is periodic in the sense that its transcript is a periodic sequence. 
+%If this system is for the $n$-th repetition of the Heighway dragon, then the length of its period is $|w|/2^{n-1}$. 
+%One period corresponds to a successive two pairs of a red line segment and the following green L-shaped block. 
+
+One period folds into successive two line segments of the Heighway dragon. 
+Why do these two segments have to be distinguished from each other? 
+The answer lies in the fact that the dragon is slanted. 
 The slanted dragon involves two types of left turn as well as two types of right turn: acute and obtuse. 
-Capability of one turning module to make all of the four possible turns would shorten the period by half. 
-Such a turning module, however, would have to take quite a large number of conformations; recall that what the module has to turn is not a straw but a thick wire which bears the current count $i$. 
-Implementing such a module totally ignores the level of oritatami design techniques accumulated so far.  
+Capability of one turning module to make all of the four possible turns would halve the period. 
+Such a turning module, however, would have to take quite a number of conformations; recall that what the module has to turn is not a straw but a thick wire which bears the current count $i$. 
+Such a module is too advanced for the level of current oritatami design techniques.  
 Our approach makes it sufficient to implement a turning module capable of just an acute turn and an obtuse turn. 
 Observe that after the (slanted) vertical segment, certainly the left turn is obtuse while the right turn is acute, whereas after the horizontal segment, the left turn is acute while the right turn is obtuse. 
-In addition, we know \textit{a priori} which segments are vertical and which are horizontal; indeed vertical segments and horizontal segments occur alternately on the Heighway dragon. 
-Therefore, we can attach a proper interpreter to a DFAO module to convert its output L/R into a signal A(cute)/O(btuse). 
+%In addition, we know \textit{a priori} which segments are vertical and which are horizontal; indeed vertical segments and horizontal segments occur alternately on the Heighway dragon. 
+In addition, vertical segments and horizontal segments occur alternately on the dragon. 
+Therefore, we can attach a proper interpreter \textit{a priori} to a DFAO module to convert its output L/R into a signal A(cute)/O(btuse). 
 Two types of interpreters are hence needed: vertical interpreter converts L into obtuse and R into acute, while horizontal one converts them the other way around. 
 
-\begin{figure}[h]
+\begin{figure}[tb]
 \includegraphics[width=\linewidth]{pic/dragon_vol4.pdf}
 \caption{
 Folding of one segment plus turn of the Heighway dragon, flow of information through it, and two ways of collision avoidance between two turns.
@@ -51,21 +58,21 @@ Before explaining the implementation of each module, we should point out one sig
 It rises when the Heighway dragon makes a turn where it has already made another turn before, that is, when two turns share a point. 
 By definition, oritatami systems cannot put a bead anywhere occupied by another bead. 
 This is the reason of the L-shape of the turning module. 
-As shown in Figures~\ref{fig:heighway6_oritatami} and \ref{fig:abst_dragon}, the proposed system makes an acute turn by having three bifurcation components direct the growth of further folding acutely one after another, while an obtuse turn by having them direct the growth rather obtusely. 
+As shown in Figures~\ref{fig:heighway6_oritatami} and \ref{fig:abst_dragon}, the proposed system makes an acute turn by having three bifurcation components direct the growth of further folding acutely one after another, while it makes an obtuse turn by having them direct the growth rather obtusely. 
 
 %-------------------------------------------------------------------------------------------
 		\subsection{Modules}
 %-------------------------------------------------------------------------------------------
 
-Now it suffices to explain how modules and their components are implemented, interlocked with each other, and collaborate. 
-Using the simulator developed for \cite{HaKiOtSe2016}, we have verified that all of the components fold correctly in all possible environments, which are abstracted in Figures~\ref{fig:abst_dragon}, \ref{fig:abst_dfao}, and \ref{fig:overall_turning}. 
+Now it suffices to explain how modules and their components have been implemented, interlocked with each other, and collaborate. 
+Using the simulator developed for \cite{HaKiOtSe2016}, we verified that all of the components fold correctly in all possible environments, which are abstracted in Figs.~\ref{fig:abst_dragon}, \ref{fig:abst_dfao}, and \ref{fig:overall_turning}. 
 
 %-------------------------------------------------------------------------------------------
-			\subsubsection{Counter and copier modules}
+			\subsubsection{Counter module}
 			\label{subsubsec:module_counter}
 %-------------------------------------------------------------------------------------------
 
-The existing binary counter \cite{GeMeScSe2016} was modified so as to operate in the dynamics \eqref{eq:cotranscriptional_folding}, which is more prevailing \cite{GeMeScSe2015,HanKim2017,HaKiOtSe2016,OtaSeki2017} but less tractable than the one the original counter used. 
+The existing binary counter \cite{GeMeScSe2016} was modified so as to operate in the dynamics \eqref{eq:cotranscriptional_folding}, which is more prevailing \cite{GeMeScSe2015,HanKim2017,HaKiOtSe2016,OtaSeki2017} but less tractable. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[h]
@@ -77,7 +84,7 @@ The existing binary counter \cite{GeMeScSe2016} was modified so as to operate in
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 The essential component of this module is the half-adder. 
-In Figure~\ref{fig:abst_dragon}, half-adder components are abstracted as small rhombuses at the top labeled with $a_n, a_{n-1}, \ldots, a_1$, where the one with $a_j$ is for the $j$-th bit of the current count $i$. 
+In Fig.~\ref{fig:abst_dragon}, half-adders are abstracted as small rhombuses at the top labeled with $a_n, a_{n-1}, \ldots, a_1$, where the one with $a_j$ is for the $j$-th bit of the current count $i$. 
 Though not described, two horizontally adjacent half-adders sandwitch a glider of even length as a space to keep them away from each other sufficiently to prevent any undesirable interference. 
 Figure~\ref{fig:half-adder} illustrates its four possible conformations. 
 The whole oritatami system is designed in such a manner that a 1-bit input (1 or 0) is exposed to the specific position (colored red or yellow in Figure~\ref{fig:half-adder}) as a pair of bead types by the previous turning module. 
