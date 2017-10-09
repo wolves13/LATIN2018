@@ -20,8 +20,8 @@ This is to be interpreted as the sequence $w$ being folded in such a manner that
 The condition $i+2 \leq j$ represents the topological restriction that two consecutive beads along the path cannot form an h-interaction between them.
 Let $\mathcal{H}$ be a rule set. 
 An h-interaction $(i, j) \in H$ is \textit{valid with respect to $\mathcal{H}$}, or simply \textit{$\mathcal{H}$-valid}, if $(w[i], w[j]) \in \mathcal{H}$. 
-This conformation is $\mathcal{H}$-valid if all of its h-interactions are $\mathcal{H}$-valid. 
-For an integer $\alpha \ge 1$, this conformation is \textit{of arity $\alpha$} if the maximum number of h-interactions per bead is $\alpha$, that is, if for any $k \ge 1$, $|\{i \mid (i, k) \in H)\}| + |\{j \mid (k, j) \in H\}| \le \alpha$ and this inequality holds as an equation of some $k$. 
+This conformation $C$ is $\mathcal{H}$-valid if all of its h-interactions are $\mathcal{H}$-valid. 
+For an integer $\alpha \ge 1$, $C$ is \textit{of arity $\alpha$} if the maximum number of h-interactions per bead is $\alpha$, that is, if for any $k \ge 1$, $|\{i \mid (i, k) \in H)\}| + |\{j \mid (k, j) \in H\}| \le \alpha$ and this inequality holds as an equation of some $k$. 
 By $\mathcal{C}_{\le \alpha}$, we denote the set of all conformations of arity at most $\alpha$.
 
 Oritatami systems grow conformations by elongating them under their own rule set. 
@@ -31,7 +31,7 @@ Note that $C_2$ is also $\mathcal{H}$-valid.
 This operation is recursively extended to the elongation by a finite sequence of beads as: 
 for any conformation $C$, $C \xrightarrow{\mathcal{H}}^*_\lambda C$; 
 and for a finite sequence of beads $w \in \Sigma^*$ and a bead $b \in \Sigma$,
-a conformation $C_1$ is elongated to a conformation $C_2$ by the sequence $wb$,
+a conformation $C_1$ is elongated to a conformation $C_2$ by $wb$,
 written as $C_1 \xrightarrow{\mathcal{H}}^*_{wb} C_2$, if there is a conformation $C'$ that satisfies
 $C_1 \xrightarrow{\mathcal{H}}^*_w C'$ and $C' \xrightarrow{\mathcal{H}}_b C_2$.
 
@@ -56,10 +56,10 @@ C \xrightarrow{\mathcal{H}}^*_{w[i+2...i+k]}C', k\le \delta, C' \in \mathcal{C}_
 \end{equation}
 We say that the bead $w[i+1]$ and the h-interactions it forms are \textit{stabilized} according to $C_{i+1}$.
 Note that an arity-$\alpha$ OS cannot fold any conformation of arity larger than $\alpha$.
-A conformation foldable by $\Xi$ is \textit{terminal} if none of its elongations is foldable by $\Xi$.
+%A conformation foldable by $\Xi$ is \textit{terminal} if none of its elongations is foldable by $\Xi$.
 
 The OS $\Xi$ is \textit{deterministic} if for all $i \ge 0$, there exists at most one $C_{i+1}$ that satisfies \eqref{eq:cotranscriptional_folding}. 
-Thus, a deterministic system folds into a unique terminal conformation. 
+%Thus, a deterministic system folds into a unique terminal conformation. 
 Let us provide an example of deterministic OS that folds into a motif of great use called the \textit{glider}. 
 
 \begin{figure}[htb]
@@ -80,7 +80,7 @@ Let us provide an example of deterministic OS that folds into a motif of great u
 
 \draw[cyan, -latex] (1, 0) -- ++(120:1) node[mol] {} node[above] {$a$} -- ++(180:1) node[mol]{} -- ++(180:1) node[mol] {} node[above] {$b'$};
 \draw[cyan, -latex] (1, 0) -- ++(60:1) node[mol] {} node[above] {$a$} -- ++(0:1) node[mol] {} -- ++(300:1) node[mol] {} node[right] {$b'$};
-\draw[cyan, -latex] (1, 0) -- ++(0:1) node[mol] {} node[above] {$a$} -- ++(300:1) node[mol] {} -- ++(240:1) node[mol] {} node[below] {$b'$};
+\draw[ultra thick, cyan, -latex] (1, 0) -- ++(0:1) node[mol] {} node[above] {$a$} -- ++(300:1) node[mol] {} -- ++(240:1) node[mol] {} node[below] {$b'$};
 
 \draw[dashed, cyan] (0,0)++(300:2) -- ++(0:1);
 
@@ -131,25 +131,26 @@ Let us provide an example of deterministic OS that folds into a motif of great u
 \begin{example}\label{ex:glider}
 %A motif called the \emph{glider} explains well how oritatami systems behave. 
 Let $\Sigma = \{a, a', b, b', \bullet\}$. 
-Consider a delay-3 oritatami system whose seed is colored in red in Figure~\ref{fig:glider} (left), transcript is a repetition of $a \bullet b' b \bullet a'$, and the rule set is $\mathcal{H} = \{(a, a'), (b, b')\}$, which makes $\bullet$-beads inert. 
+Consider a delay-3 OS whose seed is colored in red in Fig.~\ref{fig:glider}, transcript is a repetition of $a \bullet b' b \bullet a'$, and the rule set is $\mathcal{H} = \{(a, a'), (b, b')\}$, which makes $\bullet$-beads inert. 
 
-By the fragment $a \bullet b'$ of the first three beads of the transcript, the seed can be elongated in many ways; three of them are shown in Figure~\ref{fig:glider} (left). 
-The only bead on the fragment capable of a new h-interaction is $b'$ (with a $b$-bead).
-In order for the $b'$-bead to form an h-interaction with a $b$-bead, the first $a$-bead must be located to the east of the last bead of the seed. 
-Thus, the $a$-bead is stabilized there. 
-The next bead is then transcribed, which is of type $b$.
-It is not capable of any h-interaction because any $b'$ around is either too far or too close.  
-Hence, the nascent fragment $\bullet b' b$ gets stabilized as being folded as done before up to at least the first two beads. 
-The $\bullet$ bead is stabilized southeastward. 
-%Thus, the only way for the nascent fragment $\bullet b' b$ to form an h-interaction is to let the $b'$ bind as done before, and for that, the $\bullet$ must be located to the southeast of the preceding $a$. 
-An inert bead pops up next so that the $b'$ gets stabilized southwestward as suggested before. 
+By the fragment $a \bullet b'$ of the first three beads of the transcript, the seed can be elongated in various ways, only three of which are shown in Fig.~\ref{fig:glider} (left). 
+The only bead on the fragment capable of a new h-interaction is $b'$ (with a $b$-bead according to $\mathcal{H}$), and there is only one elongation to let the $b'$-bead to interact, which is bolded in Fig.~\ref{fig:glider} (left). 
+Thus, the first bead, $a$, is stabilized to the east of the previous bead. 
+%In order for the $b'$-bead to form an h-interaction with a $b$-bead, the first $a$-bead must be located to the east of the last bead of the seed. 
+%Thus, the $a$-bead is stabilized there. 
+The next bead, $b$, is then transcribed but it is not capable of any h-interaction because any $b'$ around is either too far or too close.  
+The bead transcribed afterward is inert. 
+As a result, energy minimization ignores them and even the second and third bead, $\bullet b'$, are stabilized as in the bolded elongation. 
+%Hence, the nascent fragment $\bullet b' b$ gets stabilized as being folded as done before up to at least the first two beads. 
+%The $\bullet$ bead is stabilized southeastward. 
+%An inert bead pops up next so that the $b'$ gets stabilized southwestward as suggested before. 
 The first three beads $a, \bullet, b'$ have been thus stabilized and the glider has moved forward by unit distance. 
 It is easily induced inductively that gliders of arbitrary ``flight distance'' can be folded. 
 
 
-Gliders also provide a medium to propagate 1-bit straight at arbitrary distance. 
-The height (top or bottom) of the first bead determines whether the last bead is stabilized top or bottom after flying a given distance.
-For instance, the glider in Figure~\ref{fig:glider} launches top and thus its last bead (the $a'$) also comes top after traveling the distance 2.
+Gliders also provide a medium to propagate 1-bit at arbitrary distance as the position of their last beads, which is determined by the height (top or bottom) of the first bead and a flying distance.  
+%The height (top or bottom) of the first bead determines whether the last bead is stabilized top or bottom after flying a given distance.
+For instance, the glider in Fig.~\ref{fig:glider} launches top and thus its last bead (the $a'$) also comes top after traveling the distance 2.
 The oritatami system we shall propose exploits this information-carrying capability.
 \end{example}
 
