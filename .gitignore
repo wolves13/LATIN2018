@@ -10,3 +10,7 @@ LATIN2018/LATIN2018_main.tex
 *.log
 *.gz
 *.dvi
+*.dvi
+*.pdf
+LATIN2018/LATIN2018_main.pdf
+LATIN2018/LATIN2018_main.pdf
