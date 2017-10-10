@@ -24,17 +24,17 @@ Such a ``hardcoding'' goes against the spirit of algorithmic self-assembly, and 
 
 One period folds into successive two line segments of the dragon. 
 Why do these two segments have to be distinguished from each other? 
-The answer lies in the slant of the dragon. 
+The answer lies in that the dragon is slanted. 
 The slanted dragon involves two types of left turn as well as two types of right turn: acute and obtuse. 
 Capability of one turning module to make all of the four possible turns would halve the period. 
 Such a turning module, however, would have to take quite a number of conformations; recall that what the module has to turn is not a straw but a thick wire through which the current count $i$ propagates. 
 Such a module is too advanced for the level of current oritatami design techniques.  
 Our approach makes it enough for a turning module to handle just two tasks: turning acutely and obtusely. 
-Observe that after the (slanted) vertical segment, certainly the left turn is obtuse while the right turn is acute, whereas after the horizontal segment, the left turn is acute while the right turn is obtuse. 
+Observe that after the (slanted) vertical segment, the left turn is obtuse while the right turn is acute, whereas after the horizontal segment, the left turn is acute while the right turn is obtuse. 
 %In addition, we know \textit{a priori} which segments are vertical and which are horizontal; indeed vertical segments and horizontal segments occur alternately on the Heighway dragon. 
 In addition, vertical and horizontal segments occur alternately on the dragon. 
-Therefore, we can attach a proper interpreter \textit{a priori} to a DFAO module to convert its output L/R into a signal A(cute)/O(btuse). 
-Two types of interpreters are hence needed: vertical interpreter converts L into obtuse and R into acute, while horizontal one converts them the other way around. 
+Hence, we can attach a proper interpreter \textit{a priori} to a DFAO module to convert its output L/R into a signal A(cute)/O(btuse). 
+Two types of interpreters are hence needed: vertical interpreter converts L into O and R into A, while horizontal one converts them the other way around. 
 
 \begin{figure}[tb]
 \includegraphics[width=\linewidth]{pic/dragon_vol4.pdf}
@@ -44,10 +44,11 @@ Folding of one segment plus turn of the Heighway dragon, flow of information thr
 \label{fig:abst_dragon}
 \end{figure}
 
-The sole difference between the first and second halves of a period is anyway the type of interpreter (AO or $\overline{\rm AO}$). 
-Thus, it should suffice to explain only the first half. 
-The half, or more precisely, its transcript, consists of three subsequences for the counter, DFAO, and turning modules. 
-It folds as abstracted in Fig.~\ref{fig:abst_dragon} into one line segment plus one turn of the dragon and has its three modules accomplish the following tasks, respectively: 
+The sole difference between the first and second halves of a period is the type of interpreter (AO or $\overline{\rm AO}$). 
+%Thus, it should suffice to explain only the first half. 
+Hence, we just explain the first half. 
+Its transcript consists of three subsequences for the counters, DFAO, and turning modules. 
+It folds as abstracted in Fig.~\ref{fig:abst_dragon} into one line segment plus one turn of the dragon and has its three subsequences accomplish the following tasks, respectively: 
 \begin{enumerate}[itemsep=0pt]
 \item $i \gets i + 1$ (count-up) and copy $i$ (drawing a line segment);
 \item Compute $P[i]$ and interpret it as either A or O;
@@ -55,7 +56,7 @@ It folds as abstracted in Fig.~\ref{fig:abst_dragon} into one line segment plus 
 \end{enumerate}
 The length of the half is proportional to $n^2$ and hence so is that of a period. 
 The seed of the system replaces the first counter module of the first period and encodes the initial count $j_1$ as a sequence of bead types in a format that the following counters can ``read.'' 
-We shall explain how modules read something in Sect.~\ref{subsubsec:module_counter}. 
+We shall explain how modules read something later. 
 Before explaining the implementation of each module, we should point out one significant issue specific to the folding by oritatami systems. 
 It rises when the dragon makes a turn where it has already turned before, that is, when two turns share a point. 
 By definition, oritatami systems cannot put a bead anywhere occupied by another bead. 
@@ -63,7 +64,7 @@ This is the reason of the L-shape of the turning module.
 As shown in Figs.~\ref{fig:heighway6_oritatami} and \ref{fig:abst_dragon}, the proposed system makes an acute turn by having three bifurcation components direct the growth of further folding acutely one after another, while it makes an obtuse turn by having them direct the growth rather obtusely. 
 
 %-------------------------------------------------------------------------------------------
-		\subsection{Modules}
+%		\subsection{Modules}
 %-------------------------------------------------------------------------------------------
 
 Now it suffices to explain how modules and their components have been implemented, interlocked with each other, and collaborate. 
@@ -71,33 +72,41 @@ Using the simulator developed for \cite{HaKiOtSe2016}, we verified that all of t
 
 %-------------------------------------------------------------------------------------------
 			\subsubsection{Counter module}
-			\label{subsubsec:module_counter}
 %-------------------------------------------------------------------------------------------
 
 The existing binary counter \cite{GeMeScSe2016} was modified so as to operate in the dynamics \eqref{eq:cotranscriptional_folding}, which is more prevailing \cite{GeMeScSe2015,HanKim2017,HaKiOtSe2016,OtaSeki2017} but less tractable. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[h]
+%\begin{figure}[h]
+\begin{wrapfigure}{r}{0.65\linewidth}
 \centering
-\includegraphics[width=0.7\linewidth]{pic/counter_zig.png}
- \caption{All conformations of the half-adder component.}
+\includegraphics[width=\linewidth]{pic/counter_zig.png}
+\caption{All conformations of the half-adder component.
+The first and third are diverted to implement the body-lpx2 component of the turning module. 
+}
 \label{fig:half-adder}
-\end{figure}
+\end{wrapfigure}
+%\end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The essential component of this module is the half-adder. 
-In Fig.~\ref{fig:abst_dragon}, half-adders are abstracted as small rhombuses at the top labeled with $a_n, a_{n-1}, \ldots, a_1$, where the one with $a_j$ is for the $j$-th bit of the current count $i$. 
-Though not described, two horizontally adjacent half-adders sandwitch a glider of even length as a space to keep them away from each other sufficiently to prevent any undesirable interference. 
-Figure~\ref{fig:half-adder} illustrates its four possible conformations. 
-The whole oritatami system is designed in such a manner that a 1-bit input (1 or 0) is exposed to the specific position (colored red or yellow in Figure~\ref{fig:half-adder}) as a pair of bead types by the previous turning module. 
-The system is also designed in such a manner that a half-adder starts folding either at the top, as in the first and third conformations, or at the bottom as in the other two. 
-The half-adder considers the top start position as non-carry and the bottom start position as carry. 
-Thus, only when a half-adder takes 1 and carry, it ends at the bottom (second conformation in Figure~\ref{fig:half-adder}), which is propagated to the next half-adder as it is via the spacer between them. 
+A counter module folds into one zigzag. 
+Its essential component is the half-adder. 
+The first half of its transcript is a catenation of $n$ half-adders. 
+In Fig.~\ref{fig:abst_dragon}, half-adders are abstracted as small parallelograms at the top labeled with $a_n$, $a_{n-1}$, $\ldots$, $a_1$, where the one with $a_j$ is for the $j$-th bit of the current count $i$. 
+%Though not described, two horizontally adjacent half-adders sandwitch a glider of even length as a space to keep them away from each other sufficiently to prevent any undesirable interference. 
+As illustrated in Fig.~\ref{fig:half-adder}, the whole system is designed in such a manner that a half-adder starts folding at one of two positions (top/bottom) relative to the 1-bit input (0/1) that is encoded as a sequence of bead types colored in red or yellow and it folds into one of the four possible conformations. 
+Starting at the bottom should be interpreted as carry-in while at the top as no carry-in, and the position of ending should be interpreted analogously for carry-out. 
+%The whole system is designed in such a manner that a 1-bit input (1 or 0) is exposed to the specific position (colored red or yellow in Fig.~\ref{fig:half-adder}) as a pair of bead types by the previous turning module. 
+%The system is also designed in such a manner that a half-adder starts folding either at the top, as in the first and third conformations, or at the bottom as in the other two. 
+%The half-adder considers starting at the top as non-carry and at the bottom as carry. 
+%Thus, only when a half-adder takes 1 and carry, it ends at the bottom (second conformation in Figure~\ref{fig:half-adder}), which is propagated to the next half-adder as it is via the spacer between them. 
 These four conformations expose sequences of four bead types below that are distinct enough to convey the intended 1-bit output to another computing component, or in other words, we can design a component that can ``read'' the output. 
 From this point forward, conformations for other components will be illustrated; their input and output will be labeled by their meaning mutually understood by the components that exchange them. 
-
-Being fed with non-carry, the counter module serves as the copier module. 
-Combining them one after another yields a line segment of arbitrary length, through which the current count $i$ is propagated. 
+Observe that a half-adder can output 1 in two different formats {\tt HA-1a} and {\tt HA-1b} and also 0 as {\tt HA-0a} and {\tt HA-0b}. 
+The role of the zag is to reformat them into {\tt HA-1} and {\tt HA-0} so that other components can read them easily. 
+A counter module either increments an input by 1 if being fed with carry, or propagates the input otherwise. 
+%Being fed with non-carry, the counter module serves as the copier module. 
+Concatenating counter modules and feeding carry-in only to the first one yields a line segment through which the current count $i$ is incremented by 1 and propagated through. 
 
 
 %-------------------------------------------------------------------------------------------
@@ -105,7 +114,7 @@ Combining them one after another yields a line segment of arbitrary length, thro
 %-------------------------------------------------------------------------------------------
 
 
-A DFAO module receives the current count $i$ from the last copier module, computes $P[i]$, interprets it properly either A or O, and outputs it together with the count $i$ at the very end of a red line segment. 
+As abstracted in Fig.~\ref{fig:abst_dfao}, a DFAO module receives the current count $i$ from the previous counter module, computes $P[i]$, interprets it properly either A or O, and outputs it together with the count $i$. 
 
 \begin{figure}[h]
 \includegraphics[width=\linewidth]{pic/abst_DFAO.png}
@@ -117,64 +126,63 @@ A DFAO module receives the current count $i$ from the last copier module, comput
 
 \begin{figure}[h]
 \includegraphics[width=\linewidth]{pic/PFS.png}
-\caption{(left) The possible two conformations of PFS: PFS-L, PFS-R. (right) The possible two conformations of AO.}
+\caption{The possible two conformations of PFS above and the possible two interpretations of its output L/R by (left) AO and (right) $\overline{\rm AO}$.}
 \label{fig:PFS}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-DFAO is composed of the six components: DFAO-zig, DFAO-zag1, DFAO-zig2, DFAO-zag2, PFS, AO (or  ``$\overline{\rm AO}$").
-At the component-level, it folds into two zig-zags as abstracted in Figure~\ref{fig:abst_dfao}.
-What the module does in the first zig-zag is to have DFAO-zig1s and DFAO-zag1s read the current count $i$ from its LSB and ``mark" the first 0, while propagating $i$.
-In the second zig-zag, it employs DFAO-zig2s and DFAO-zag2s to check whether the automaton transitions to the state $q_2$ ($P_i = L$) or else ($P_i = R$).
-The second zag is to end at the top if $P_i = L$ or at the bottom if $P_i = R$.
-PFS takes one of the two conformations in Fig.~\ref{fig:PFS} and outputs $P_i$ downward.
-In vertical segments, PFS is followed by AO, while in horizontal segments, it is followed by $\overline{\rm AO}$.
-AO interprets the PFS' output $P_i = R$ as acute and $P_i = L$ as obtuse, as shown in Fig.~\ref{fig:PFS}.
-$\overline{\rm AO}$ interprets them the other way around.
+The DFAO module is composed of the six components: DFAO-zig1, DFAO-zag1, DFAO-zig2, DFAO-zag2, PFS, AO (or  ``$\overline{\rm AO}$").
+It folds into two zigzags as abstracted in Fig.~\ref{fig:abst_dfao}.
+What the module does in addition to propagating the current count $i$ is to have DFAO-zig1's and -zag1's read $i$ from its LSB and ``mark" the first 0 in the first zigzag, and to have DFAO-zig2's and -zag2's check whether the marked 0 is followed by 0 ($P[i] = L$) or 1 ($P[i] = R$) in the second zigzag.
+The second zag is to end at the top if $P[i] = L$ or at the bottom if $P[i] = R$.
+PFS takes one of the two conformations in Fig.~\ref{fig:PFS} and outputs $P[i]$ downward.
+In vertical segments, AO interprets the output L as obtuse and R as acute as shown in Fig.~\ref{fig:PFS} (left), while in horizontal ones $\overline{\rm AO}$ interprets them the other way around as shown in Fig.~\ref{fig:PFS} (right). 
 Let us explain briefly how each of the components folds to fulfill its roles.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[h]
+%\begin{figure}[h]
+\begin{wrapfigure}{r}{0.6\linewidth}
 \centering
-\includegraphics[width=0.6\linewidth]{pic/DFAO-zig1.png}  
-  \caption{The possible four conformations of DFAO-zig1: (top) Dzig1-1 and Dzig1-f0; (bottom) Dzig1-20 and Dzig1-21.}
+\includegraphics[width=\linewidth]{pic/DFAO-zig1.png}  
+  \caption{The four conformations of DFAO-zig1: (top) Dzig1-1 and Dzig1-f0; (bottom) Dzig1-20 and Dzig1-21.}
   \label{fig:DFAO-zig1}
-\end{figure} 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{figure}[h]
-  \includegraphics[width=\linewidth]{pic/DFAO-zag1.png}
-  \caption{The possible three conformations of DFAO-zag1: Dzag1-f0, Dzag1-0, and Dzag1-1 from left.}
-  \label{fig:DFAO-zag1}
-\end{figure} 
-%%%%%%%%%%
+\end{wrapfigure}
+%\end{figure} 
 
 DFAO-zig1's collaboratively detect the first 0 in two phases.
 Phase1 is to copy all the 1's before the first 0 and Phase2 is to copy all the bits after the first 0.
-These phases are distinguished by the relative position at which a DFAO-zig1 starts folding to the copier above (in Phase1 it is at the bottom, while in Phase2 it is at the top, as suggested in Figure~\ref{fig:DFAO-zig1}).
-In Phase1, DFAO-zig1s certainly take the conformation Dzig1-1 (the top left conformation in Figure~\ref{fig:DFAO-zig1}).
-In Phase1, if the half-adder above outputs 0, this is the first 0. 
-Then the DFAO-zig1 takes the conformation Dzig1-f0 instead, ending at the top to transition to Phase 2.
+These phases are distinguished by the relative position at which a DFAO-zig1 starts folding to the input (in Phase1 it is at the bottom, while in Phase2 it is at the top, as suggested in Fig.~\ref{fig:DFAO-zig1}).
+In Phase1, DFAO-zig1s certainly take the conformation Dzig1-1 (the top left conformation in Fig.~\ref{fig:DFAO-zig1}).
+At the first
+ 0, the DFAO-zig1 folds into Dzig1-f0 instead, ending at the top to transition to Phase 2.
 Each of the succeeding DFAO-zig1s takes one of the other two conformations Dzig1-20 and Dzig1-21 to copy all the remaining bits. 
 Note that there is a cushion between two DFAO-zig1s called \textit{spacer}.
-Spacers have been already used to prevent undesirable interference among components.
+Spacers are used to prevent undesirable interference among components.
 They are implemented as a glider (see Example~\ref{ex:glider}), hence capable of propagating 1bit on which phase the system is in.
-In the first zag, DFAO-zag1's just propagate 0's, 1's, and the first 0 by taking the proper one of the three conformations in Figure~\ref{fig:DFAO-zag1}.
+In the first zag, DFAO-zag1's just propagate 0's, 1's, and the first 0 by taking the proper one of the three conformations in Fig.~\ref{fig:DFAO-zag1}.
+
+\begin{figure}[tb]
+  \includegraphics[width=\linewidth]{pic/DFAO-zag1.png}
+  \caption{The three conformations of DFAO-zag1: Dzag1-f0, Dzag1-0, and Dzag1-1.}
+  \label{fig:DFAO-zag1}
+\end{figure} 
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[h]
 \includegraphics[width=\linewidth]{pic/DFAO-zig2.png}
-  \caption{The possible five conformations of DFAO-zig2: (top) Dzig2-1, Dzig2-0, Dzig2-f0, (bottom) Dzig2-f00, and Dzig2-f01. }
+  \caption{The five conformations of DFAO-zig2: (top) Dzig2-1, Dzig2-0, Dzig2-f0, (bottom) Dzig2-f00, and Dzig2-f01. }
   \label{fig:DFAO-zig2}
 \end{figure} 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[h]
 \includegraphics[width=\linewidth]{pic/DFAO-zag2.png}
-  \caption{The possible five conformations of DFAO-zag2: (top) Dzag2-L0, Dzag2-L1, Dzag2-T1, (bottom) Dzag2-R0, and Dzag2-R1.}
-  \label{fig:DFAO-zag2}
+\caption{The five conformations of DFAO-zag2: (top) Dzag2-L0, Dzag2-L1, Dzag2-T1, (bottom) Dzag2-R0, and Dzag2-R1.
+The first and second halves are diverted to implement the body-rgy and body-gx components of the turning module, respectively. 
+}
+\label{fig:DFAO-zag2}
   \end{figure} 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
