@@ -13,8 +13,42 @@ All the white components in the middle are spacers, some of which are implemente
 \end{figure}
 
 Lastly, we explain the turning module. 
-It consists of two parts: bit-sequence bifurcation submodule and steering arm component (colored in blue in Fig.~\ref{fig:overall_turning}). 
+It consists of two parts: bit-sequence bifurcation submodule and steering arm component (colored in blue in Figure~\ref{fig:overall_turning}). 
 
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.8\linewidth]{pic/body-rpx1.png}
+\caption{The possible two conformations of body-rpx component.}
+\label{fig:body-rpx}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.8\linewidth]{pic/body-lpx1.png}
+\caption{The possible two conformations of body-lpx1 component.}
+\label{fig:body-lpx1}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.55\linewidth]{pic/body-lpx2.pdf}
+\caption{The possible two conformations of body-lpx2 component.}
+\label{fig:body-lpx2}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\linewidth]{pic/body-gx.pdf}
+\caption{The possible four conformations of body-gx component.}
+\label{fig:body-gx}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\linewidth]{pic/body-rgy.pdf}
+\caption{The possible two conformations of body-rgy component.}
+\label{fig:body-rgy}
+\end{figure}
 
 \begin{figure}[h]
 \centering
@@ -39,13 +73,13 @@ It consists of two parts: bit-sequence bifurcation submodule and steering arm co
 
 
 
-The bifurcation submodule sends bits of the current count $i$ and the reinterpreted signal (A or O) as shown in Fig.~\ref{fig:abst_dragon} while folding into zig-zags.
+The bifurcation submodule sends bits of the current count $i$ and the reinterpreted signal (A or O) as shown in Figure~\ref{fig:abst_dragon} while folding into zig-zags.
 For that, it employs the following four types of components: 
 \begin{enumerate}[itemsep=0pt]
-\item components to propagate 1-bit vertically: body-rpx (Fig.~\ref{fig:body-rpx} (left)), body-lpx1 (Fig.~\ref{fig:body-rpx} (right)), and body-lpx2 (Fig.~\ref{fig:half-adder});
-\item a component to let 1-bit cross another 1-bit: body-gx (Fig.~\ref{fig:DFAO-zag2}); 
-\item components to fork 1-bit vertically and horizontally: body-rgy (Fig.~\ref{fig:DFAO-zag2}) and body-lgy (Fig.~\ref{fig:body-lgy});  
-\item components to undergo transition between a zig and a zag and exposes 1-bit outside: turn-rgp (Fig.~\ref{fig:turn-rgp}) and turn-lgp (Fig.~\ref{fig:turn-lgp}). 
+\item components to propagate 1-bit vertically: body-rpx (Figure~\ref{fig:body-rpx}), body-lpx1 (Figure~\ref{fig:body-lpx1}), body-lpx2 (Figure~\ref{fig:body-lpx2}); 
+\item a component to let 1-bit cross another 1-bit: body-gx (Figure~\ref{fig:body-gx}); 
+\item components to fork 1-bit vertically and horizontally: body-rgy (Figure~\ref{fig:body-rgy}) and body-lgy (Figure~\ref{fig:body-lgy});  
+\item components to undergo transition between a zig and a zag and exposes 1-bit outside: turn-rgp (Figure~\ref{fig:turn-rgp}) and turn-lgp (Figure~\ref{fig:turn-lgp}). 
 \end{enumerate} 
 %that propagates 1bit vertically (body-rpx, body-lpx1, and body-lpx2 in Figure~\ref{fig:overall_turning}), that lets 1bit cross another 1bit (body-gx), that forks 1bit vertically and horizontally (body-rgy, body-lgy), and that undergoes transition from a zig to a zag or from a zag to a zig and exposes 1bit outside (turn-rgp, turn-lgp).
 The first two types have already been implemented (see, e.g., \cite{HaKiOtSe2016}) so that we shall explain the others.
@@ -80,8 +114,8 @@ Indeed, the second and third turning modules are supposed to turn in the same ma
 It hence suffices to append A and O to the bifurcated bit sequences on the acute side and obtuse side, respectively, as shown in Figure~\ref{fig:overall_turning}.
 
 \begin{remark}
-As suggested in Figure~\ref{fig:overall_turning}, the bifurcation component actually outputs an input bit sequence also downward.
-That is, it trifurcates the input.
+In fact, as suggested in Figure~\ref{fig:overall_turning}, the bifurcation component outputs an input bit sequence also downward.
+That is, it bifurcates the sequence into three ways.
 This provides a more space-efficient way to replicate a bit sequence many-folds.
 \end{remark}
 
