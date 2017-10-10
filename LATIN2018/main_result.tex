@@ -22,18 +22,21 @@ Such a ``hardcoding'' goes against the spirit of algorithmic self-assembly, and 
 %One period corresponds to a successive two pairs of a red line segment and the following green L-shaped block. 
 
 One period folds into successive two line segments of the dragon. 
-Why do these two segments have to be distinguished from each other? 
+Why do these segments have to be distinguished? 
 The answer lies in that the dragon is slanted. 
 The slanted dragon involves two types of left turn as well as two types of right turn: acute and obtuse. 
-Capability of one turning module to make all of the four possible turns would halve the period. 
-Such a turning module, however, would have to take quite a number of conformations; recall that what the module has to turn is not a straw but a thick wire through which the current count $i$ propagates. 
-Such a module is too advanced for the level of current oritatami design techniques.  
+%Capability of one turning module to make all of the four possible turns would halve the period. 
+%Such a turning module, however, would have to take quite a number of conformations; recall that what the module has to turn is not a straw but a thick wire through which the current count $i$ propagates. 
+Capability of one turning module to make all of the four possible turns would halve the period but require quite a number of conformations. 
+Recall that what the module has to turn is not a straw but a thick wire through which the count $i$ propagates. 
+Such a module is too advanced for the current oritatami technology.  
 Our approach makes it enough for a turning module to handle just two tasks: turning acutely and obtusely. 
-Observe that after the (slanted) vertical segment, the left turn is obtuse while the right turn is acute, whereas after the horizontal segment, the left turn is acute while the right turn is obtuse. 
+Observe that after (slanted) vertical segments, the left turn is obtuse while the right turn is acute, whereas after horizontal ones, the left turn is acute while the right turn is obtuse. 
 %In addition, we know \textit{a priori} which segments are vertical and which are horizontal; indeed vertical segments and horizontal segments occur alternately on the Heighway dragon. 
-In addition, vertical and horizontal segments occur alternately on the dragon. 
-Hence, we can attach a proper interpreter \textit{a priori} to a DFAO module to convert its output L/R into a signal A(cute)/O(btuse). 
-Two types of interpreters are hence needed: vertical interpreter converts L into O and R into A, while horizontal one converts them the other way around. 
+Moreover, vertical and horizontal segments occur alternately on the dragon. 
+%Hence, we can attach a proper interpreter \textit{a priori} to each DFAO module to convert its output L/R into a signal A(cute)/O(btuse). 
+The alternation enables to endow each segment with a proper interpreter \textit{a priori} of the direction L/R, computed through a line segment, into a signal A(cute)/O(btuse).  
+Two types of interpreters are hence needed: the vertical one interprets L as O and R as A, while the horizontal one does conversely. 
 
 \begin{figure}[tb]
 \includegraphics[width=\linewidth]{pic/dragon_vol4.pdf}
