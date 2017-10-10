@@ -7,10 +7,9 @@
 We propose a generic design of deterministic oritatami system that allows us to fold an arbitrary finite portion of the Heighway dragon. 
 %The design concept has been already explained in the introduction. 
 The folded dragon is actually slanted as illustrated in Fig.~\ref{fig:heighway6_oritatami}, which is more natural than the conventional (upright) one to be folded over the triangular grid. 
-Let $P[j_1 .. j_2]$ be the target portion. 
-Let $n = \min\{m \mid j_2 < 2^m\}$. 
+Let $P[j_1 .. j_2]$ be the target portion and $n = \min\{m \mid j_2 < 2^m\}$. 
 %Let $n$ be the minimum integer such that if the last turn of a target portion corresponds to $P[j]$, then $j \le n$. 
-Independently of $n$, the design sets both delay and arity to 3 and employs 567 bead types and a fixed rule set $\mathcal{H}$ (some of the bead types might be saved but not easily due to the NP-hardness of minimizing the number of bead types \cite{HanKim2017}). 
+Independently of $n$, the design sets both delay and arity to 3 and employs 567 bead types and a fixed rule set $\mathcal{H}$ (some of the bead types could be saved but not easily due to the NP-hardness of minimizing the number of bead types \cite{HanKim2017}). 
 The design challenges an extra requirement that the transcript be periodic; a periodic RNA transcript is likely to be transcribed out of a circular DNA sequence \cite{GearyAndersen2014}. 
 Without requiring the periodicity, one could simply design left-turn and right-turn modules and concatenate their copies according to the paperfolding sequence $P$. 
 Such a ``hardcoding'' goes against the spirit of algorithmic self-assembly, and an OS that folds into the infinite Heighway dragon, if any, could not take this approach in order to be describable by a finite mean. 
@@ -39,20 +38,20 @@ Two types of interpreters are hence needed: vertical interpreter converts L into
 \begin{figure}[tb]
 \includegraphics[width=\linewidth]{pic/dragon_vol4.pdf}
 \caption{
-Folding of one segment plus turn of the Heighway dragon, flow of information through it, and two ways of collision avoidance between two turns.
+Folding of one segment plus turn of the Heighway dragon, flow of information through it, and the two ways of collision avoidance between two turns.
 }
 \label{fig:abst_dragon}
 \end{figure}
 
-The sole difference between the first and second halves of a period is the type of interpreter (AO or $\overline{\rm AO}$). 
-%Thus, it should suffice to explain only the first half. 
-Hence, we just explain the first half. 
-Its transcript consists of three subsequences for the counters, DFAO, and turning modules. 
-It folds as abstracted in Fig.~\ref{fig:abst_dragon} into one line segment plus one turn of the dragon and has its three subsequences accomplish the following tasks, respectively: 
+The first and second halves of a period differ only in the type of interpreter (AO or $\overline{\rm AO}$) so that we just explain the first. 
+%Its transcript consists of three subsequences respectively for the counters, DFAO, and turning modules. 
+%It folds as abstracted in Fig.~\ref{fig:abst_dragon} into one line segment plus one turn of the dragon and has its three subsequences accomplish the following tasks, respectively: 
+Its transcript folds as abstracted in Fig.~\ref{fig:abst_dragon} into one line segment plus one turn of the dragon. 
+The transcript consists of three subsequences responsible for the following tasks, respectively:  
 \begin{enumerate}[itemsep=0pt]
-\item $i \gets i + 1$ (count-up) and copy $i$ (drawing a line segment);
-\item Compute $P[i]$ and interpret it as either A or O;
-\item Make a turn accordingly.
+\item $i \gets i + 1$ and propagate $i$, drawing a line segment;
+\item (DFAO module) Compute $P[i]$ and interpret it as either A or O;
+\item (Turning module) Make a turn accordingly.
 \end{enumerate}
 The length of the half is proportional to $n^2$ and hence so is that of a period. 
 The seed of the system replaces the first counter module of the first period and encodes the initial count $j_1$ as a sequence of bead types in a format that the following counters can ``read.'' 

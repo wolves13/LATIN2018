@@ -9,23 +9,23 @@ The \textit{length} of $w$ is denoted by $|w|$, that is, $|w| = n$.
 For two indices $i,j$ with $1\leq i \leq j \leq n$, we let $w[i..j]$ refer to the subsequence $b_i b_{i+1} \cdots b_{j-1} b_{j}$; if $i=j$, then we simplify $w[i..i]$ as $w[i]$.
 For $k \ge 1$, $w[1..k]$ is called a \textit{prefix} of $w$. 
 
-Oritatami systems fold their transcript, a sequence of beads, over the triangular grid as suggested in Fig.~\ref{fig:glider} cotranscriptionally based on hydrogen-bond-based interactions (\textit{h-interactions} for short) which the rule set of the system allow for between adjacent beads of particular types. 
+Oritatami systems fold their transcript, a sequence of beads, over the triangular grid as suggested in Fig.~\ref{fig:glider} cotranscriptionally based on hydrogen-bond-based interactions (\textit{h-interactions} for short) which their own rule set allow for between adjacent beads of particular types. 
 Let $\mathbb{T} = (V, E)$ be the triangular grid graph. 
 A directed path $P = p_1 p_2 \cdots p_n$ in $\mathbb{T}$ is a sequence of \textit{pairwise-distinct} points $p_1, p_2, \ldots, p_n \in V$ such that $\{p_i, p_{i+1}\} \in E$ for all $1 \leq i < n$.
 Its $i$-th point is referred to as $P[i]$. 
 A \textit{rule set} $\mathcal{H} \subseteq \Sigma \times \Sigma$ is a symmetric relation over the set of pairs of bead types, that is, for all bead types $a, b \in \Sigma$, $(a, b) \in \mathcal{H}$ implies $(b, a) \in \mathcal{H}$. 
-
-A \textit{conformation} $C$ is a triple $(P, w, H)$ of a directed path $P$ in $\mathbb{T}$, $w \in \Sigma^*$ of the same length as $P$, and a set of h-interactions $H \subseteq \{\{i,j\} \mid 1 \leq i, i+2 \leq j, \{P[i], P[j]\} \in E\}$.
+A (finite) \textit{conformation} $C$ is a triple $(P, w, H)$ of a directed path $P$ in $\mathbb{T}$, $w \in \Sigma^*$ of the same length as $P$, and a set of h-interactions $H \subseteq \{\{i,j\} \mid 1 \leq i, i+2 \leq j, \{P[i], P[j]\} \in E\}$.
 This is to be interpreted as the sequence $w$ being folded in such a manner that its $i$-th bead $w[i]$ is placed on the $i$-th point $P[i]$ along the path and there is an h-interaction between the $i$-th and $j$-th beads if and only if $(i, j) \in H$. 
-The condition $i+2 \leq j$ represents the topological restriction that two consecutive beads along the path cannot form an h-interaction between them.
-Let $\mathcal{H}$ be a rule set. 
-An h-interaction $(i, j) \in H$ is \textit{valid with respect to $\mathcal{H}$}, or simply \textit{$\mathcal{H}$-valid}, if $(w[i], w[j]) \in \mathcal{H}$. 
-This conformation $C$ is $\mathcal{H}$-valid if all of its h-interactions are $\mathcal{H}$-valid. 
-For an integer $\alpha \ge 1$, $C$ is \textit{of arity $\alpha$} if the maximum number of h-interactions per bead is $\alpha$, that is, if for any $k \ge 1$, $|\{i \mid (i, k) \in H)\}| + |\{j \mid (k, j) \in H\}| \le \alpha$ and this inequality holds as an equation of some $k$. 
+The condition $i+2 \leq j$ represents the topological restriction that two consecutive beads along the path cannot h-interact with each other.
+%Let $\mathcal{H}$ be a rule set. 
+%An h-interaction $(i, j) \in H$ is \textit{valid with respect to $\mathcal{H}$}, or simply \textit{$\mathcal{H}$-valid}, if $(w[i], w[j]) \in \mathcal{H}$. 
+%This conformation $C$ is $\mathcal{H}$-valid if all of its h-interactions are $\mathcal{H}$-valid. 
+The conformation $C$ is \textit{$\mathcal{H}$-valid} if for all h-interaction $(i, j) \in H$, $(w[i], w[j]) \in \mathcal{H}$. 
+For an integer $\alpha \ge 1$, $C$ is \textit{of arity $\alpha$} if the maximum number of h-interactions per bead is $\alpha$, that is, if for any $k \ge 1$, $|\{i \mid (i, k) \in H)\}| + |\{j \mid (k, j) \in H\}| \le \alpha$ and the both sides become equal for some $k$. 
 By $\mathcal{C}_{\le \alpha}$, we denote the set of all conformations of arity at most $\alpha$.
 
 Oritatami systems grow conformations by elongating them under their own rule set. 
-Given a rule set $\mathcal{H}$ and an $\mathcal{H}$-valid finite conformation $C_1 = (P, w, H)$, 
+Given a rule set $\mathcal{H}$ and an $\mathcal{H}$-valid conformation $C_1 = (P, w, H)$, 
 we say that another conformation $C_2$ is an \textit{elongation of} $C_1$ \textit{by a bead} $b \in \Sigma$, written as $C_1 \xrightarrow{\mathcal{H}}_b C_2$, if $C_2 = (Pp, wb, H \cup H')$ for some point $p$ not along the path $P$ and set of h-interactions $H' \subseteq \left\{ \{i, |w|+1\} \bigm| 1\leq i < |w|, \{P[i], p\} \in E, (w[i], b) \in \mathcal{H}\right\}$, which can be empty.
 Note that $C_2$ is also $\mathcal{H}$-valid.
 This operation is recursively extended to the elongation by a finite sequence of beads as: 
@@ -57,7 +57,6 @@ C \xrightarrow{\mathcal{H}}^*_{w[i+2...i+k]}C', k\le \delta, C' \in \mathcal{C}_
 We say that the bead $w[i+1]$ and the h-interactions it forms are \textit{stabilized} according to $C_{i+1}$.
 Note that an arity-$\alpha$ OS cannot fold any conformation of arity larger than $\alpha$.
 %A conformation foldable by $\Xi$ is \textit{terminal} if none of its elongations is foldable by $\Xi$.
-
 The OS $\Xi$ is \textit{deterministic} if for all $i \ge 0$, there exists at most one $C_{i+1}$ that satisfies \eqref{eq:cotranscriptional_folding}. 
 %Thus, a deterministic system folds into a unique terminal conformation. 
 Let us provide an example of deterministic OS that folds into a motif of great use called the \textit{glider}. 
