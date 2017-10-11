@@ -80,17 +80,34 @@ The existing binary counter \cite{GeMeScSe2016} was modified so as to operate in
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\begin{figure}[h]
-\begin{wrapfigure}{r}{0.65\linewidth}
+\begin{wrapfigure}{r}{0.6\linewidth}
+\vspace*{-5mm}
 \centering
 \includegraphics[width=\linewidth]{pic/counter_zig.png}
-\caption{All conformations of the half-adder component.
+\caption{All conformations of the half-adder.
 The first and third are diverted to implement the body-lpx2 component of the turning module. 
 }
 \label{fig:half-adder}
+\vspace*{-3mm}
 \end{wrapfigure}
 %\end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+A counter module for $n$-bit sequences is a catenation of the following components in the order: right-turner, $n$ half-adders, left-turner, and $n$ formatters. 
+It folds into one zigzag. 
+Suppose each bit of an $n$-bit input $a_n a_{n-1} \cdots a_1$ is given as a specific sequence of 4-bead types as suggested in Fig.~\ref{fig:half-adder} and the input is provided as the catenation of such bit sequences for $a_n, a_{n-1}, \ldots, a_1$. 
+The right-turner folds in such a way that the first bead of the first half-adder comes at a distance of either 1 or 3 southeastward from the rightmost bead of the LSB $a_1$. 
+Thus, the first half-adder encounters only the four surrounding environments (contexts) shown in Fig.~\ref{fig:half-adder}, in which the half-adder, or actually its transcript {\tt 1}-{\tt 2}-\dots-{\tt 12}, folds deterministically as illustrated, or more precisely, the generic rule set $\mathcal{H}$ is designed so as for the transcript to favor the illustrated conformation the most in each context. 
+Interpret the first bead {\tt 1} (resp.~last bead {\tt 12}) being far from the input as carry-in (resp.~carry-out) and close as no carry-in (resp.~no carry-out). 
+Then we can see carry be out only when $a_1 = 1$ and carry is in (the second context in Fig.~\ref{fig:half-adder}). 
+Being concatenated, half-adders ripple carry from one to the other. 
+The half-adder can expose four sequences below: {\tt HA-1a}, {\tt -0a}, {\tt -0b}, and {\tt -1b}. 
+They are pairwise distinct enough for another component to ``read'' the output. 
+After the left-turner guides the counter module from its zig to zag, $n$ formatters format each bit as {\tt HA-1a/1b} $\to$ {\tt HA-1} and {\tt HA-0a/0b} $\to$ {\tt HA-0} using its two conformations. 
+Thus, a counter module increments an input by 1 if its first half-adder is fed with carry (i.e., the right-turner locates its {\tt 1} away from $a_1$), or just propagates it otherwise. 
+Concatenating counter modules and feeding carry-in only to the first one yields a line segment through which the current count $i$ is incremented by 1 and propagated through. 
+
+\begin{comment}
 A counter module folds into one zigzag. 
 Its essential component is the half-adder. 
 The first half of its transcript is a catenation of $n$ half-adders. 
@@ -108,8 +125,7 @@ Observe that a half-adder can output 1 in two different formats {\tt HA-1a} and 
 The role of the zag is to reformat them into {\tt HA-1} and {\tt HA-0} so that other components can read them easily. 
 A counter module either increments an input by 1 if being fed with carry, or propagates the input otherwise. 
 %Being fed with non-carry, the counter module serves as the copier module. 
-Concatenating counter modules and feeding carry-in only to the first one yields a line segment through which the current count $i$ is incremented by 1 and propagated through. 
-
+\end{comment}
 
 %-------------------------------------------------------------------------------------------
 			\subsubsection{DFAO module}
@@ -128,40 +144,44 @@ As abstracted in Fig.~\ref{fig:abst_dfao}, a DFAO module receives the current co
 
 \begin{figure}[h]
 \includegraphics[width=\linewidth]{pic/PFS.png}
-\caption{The possible two conformations of PFS above and the possible two interpretations of its output L/R by (left) AO and (right) $\overline{\rm AO}$.}
+\caption{The two conformations of PFS above and the corresponding two conformations of (left) AO and (right) of $\overline{\rm AO}$.}
 \label{fig:PFS}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-The DFAO module is composed of the six components: DFAO-zig1, DFAO-zag1, DFAO-zig2, DFAO-zag2, PFS, AO (or  ``$\overline{\rm AO}$").
-It folds into two zigzags as abstracted in Fig.~\ref{fig:abst_dfao}.
-What the module does in addition to propagating the current count $i$ is to have DFAO-zig1's and -zag1's read $i$ from its LSB and ``mark" the first 0 in the first zigzag, and to have DFAO-zig2's and -zag2's check whether the marked 0 is followed by 0 ($P[i] = L$) or 1 ($P[i] = R$) in the second zigzag.
-The second zag is to end at the top if $P[i] = L$ or at the bottom if $P[i] = R$.
-PFS takes one of the two conformations in Fig.~\ref{fig:PFS} and outputs $P[i]$ downward.
-In vertical segments, AO interprets the output L as obtuse and R as acute as shown in Fig.~\ref{fig:PFS} (left), while in horizontal ones $\overline{\rm AO}$ interprets them the other way around as shown in Fig.~\ref{fig:PFS} (right). 
+The DFAO module is composed of the six components: DFAO-zig1, DFAO-zag1, DFAO-zig2, DFAO-zag2, PFS, and AO (or  ``$\overline{\rm AO}$").
+It folds into two zigzags and one more zig.
+In the first zigzag, DFAO-zig1's and -zag1's read $i$ from its LSB and ``mark" the first 0. 
+In the second zigzag, DFAO-zig2's and -zag2's check whether the marked 0 is followed by 0 ($P[i] = L$) or 1 ($P[i] = R$) and have PFS output $P[i]$ downward (see Fig.~\ref{fig:PFS} also for AO and $\overline{\rm AO}$). 
+The last zig is equipped with AO if this module is for a vertical segment or with $\overline{\rm AO}$ otherwise; AO interprets the output L of PFS as obtuse and A as acute, while $\overline{\rm AO}$ interprets them the other way around. 
+%The second zag is to end at the top if $P[i] = L$ or at the bottom if $P[i] = R$.
+%PFS takes one of the two conformations in Fig.~\ref{fig:PFS} and outputs $P[i]$ downward.
+%In vertical segments, AO interprets the output L as obtuse and R as acute as shown in Fig.~\ref{fig:PFS} (left), while in horizontal ones $\overline{\rm AO}$ interprets them the other way around as shown in Fig.~\ref{fig:PFS} (right). 
 Let us explain briefly how each of the components folds to fulfill its roles.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\begin{figure}[h]
-\begin{wrapfigure}{r}{0.6\linewidth}
+\begin{wrapfigure}{r}{0.65\linewidth}
+\vspace*{-5mm}
 \centering
 \includegraphics[width=\linewidth]{pic/DFAO-zig1.png}  
-  \caption{The four conformations of DFAO-zig1: (top) Dzig1-1 and Dzig1-f0; (bottom) Dzig1-20 and Dzig1-21.}
-  \label{fig:DFAO-zig1}
+\caption{The four conformations of DFAO-zig1: (top) Dzig1-1 and Dzig1-f0; (bottom) Dzig1-20 and Dzig1-21.}
+\label{fig:DFAO-zig1}
+\vspace*{-3mm}
 \end{wrapfigure}
 %\end{figure} 
 
-DFAO-zig1's collaboratively detect the first 0 in two phases.
-Phase1 is to copy all the 1's before the first 0 and Phase2 is to copy all the bits after the first 0.
-These phases are distinguished by the relative position at which a DFAO-zig1 starts folding to the input (in Phase1 it is at the bottom, while in Phase2 it is at the top, as suggested in Fig.~\ref{fig:DFAO-zig1}).
-In Phase1, DFAO-zig1s certainly take the conformation Dzig1-1 (the top left conformation in Fig.~\ref{fig:DFAO-zig1}).
-At the first
- 0, the DFAO-zig1 folds into Dzig1-f0 instead, ending at the top to transition to Phase 2.
-Each of the succeeding DFAO-zig1s takes one of the other two conformations Dzig1-20 and Dzig1-21 to copy all the remaining bits. 
+DFAO-zig1's collaboratively detect the first 0 read from the LSB in two phases.
+See Fig.~\ref{fig:DFAO-zig1} for its possible contexts and corresponding conformations. 
+Phase1 is to copy all the 1's prior to the first 0 and Phase2 is to copy all the bits after the first 0.
+These phases are distinguished by the relative position where a DFAO-zig1 starts folding to the input (far in Phase~1 while close in Phase~2).
+In Phase1, DFAO-zig1s certainly take the conformation Dzig1-1 (the top left one in Fig.~\ref{fig:DFAO-zig1}).
+At the first 0, the DFAO-zig1 folds into Dzig1-f0 instead, ending at the top to transition to Phase 2.
+Each of the succeeding DFAO-zig1s takes Dzig1-20 or -21 to copy all the remaining bits. 
 Note that there is a cushion between two DFAO-zig1s called \textit{spacer}.
 Spacers are used to prevent undesirable interference among components.
-They are implemented as a glider (see Example~\ref{ex:glider}), hence capable of propagating 1bit on which phase the system is in.
+They are implemented as a glider (see Sect.~\ref{sect:preliminaries}), hence capable of propagating 1bit on which phase the system is in.
 In the first zag, DFAO-zag1's just propagate 0's, 1's, and the first 0 by taking the proper one of the three conformations in Fig.~\ref{fig:DFAO-zag1}.
 
 \begin{figure}[tb]
@@ -203,7 +223,7 @@ The second zag starts at the bottom and copy 0's and 1's by the two conformation
 Such DFAO-zag2 takes the special conformation Dzag2-T1 and changes the ending position to the top, letting the remaining DFAO-zag2s rather take Dzag2-R0 and Dzag2-R1 for copying, which end at the top.
 As such, the second zag can feed $P[i]$ to PFS as explained before, while propagating the current count $i$.
 
-The third zig lets $P[i]$ go through its AO (or $\overline{\rm AO}$) component to be reinterpreted either as A(cute) or as O(btuse) and propagates the current count $i$.   
+%The third zig lets $P[i]$ go through its AO (or $\overline{\rm AO}$) component to be reinterpreted either as A(cute) or as O(btuse) and propagates the current count $i$.   
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

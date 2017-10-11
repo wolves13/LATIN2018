@@ -1,5 +1,6 @@
 %-------------------------------------------------------------------------------------------
 	\section{Preliminaries}
+	\label{sect:preliminaries}
 %-------------------------------------------------------------------------------------------
 
 Let $\Sigma$ be a set of types of abstract molecules, or \textit{beads}, and $\Sigma^*$ be the set of finite sequences of beads. 
@@ -59,27 +60,32 @@ Note that an arity-$\alpha$ OS cannot fold any conformation of arity larger than
 %A conformation foldable by $\Xi$ is \textit{terminal} if none of its elongations is foldable by $\Xi$.
 The OS $\Xi$ is \textit{deterministic} if for all $i \ge 0$, there exists at most one $C_{i+1}$ that satisfies \eqref{eq:cotranscriptional_folding}. 
 %Thus, a deterministic system folds into a unique terminal conformation. 
-Let us provide an example of deterministic OS that folds into a motif of great use called the \textit{glider}. 
 
-\begin{figure}[htb]
+Let us provide an example of deterministic OS that folds into a motif of great use called the \textit{glider}. 
+Let $\Sigma = \{a, a', b, b', \bullet\}$. 
+Consider a delay-3 OS whose seed is colored in red in Fig.~\ref{fig:glider}, whose transcript $w$ is a repetition of $a \bullet b' b \bullet a'$, and whose rule set is $\mathcal{H} = \{(a, a'), (b, b')\}$, which makes $\bullet$-beads inert. 
+
+%\begin{figure}[htb]
+\begin{wrapfigure}{r}{0.6\linewidth}
+\vspace*{-5mm}
 \centering
-\scalebox{0.65}{\begin{tikzpicture}
+\scalebox{0.4}{\begin{tikzpicture}
 \tikzstyle{mol} = [fill,circle,inner sep=1pt]
 
 \foreach \x in {0, 4, 8, 13} {
-\draw[red] (\x, 0) node[mol] {} node[above] {$a$}
+\draw[thick, red] (\x, 0) node[mol] {} node[above] {\Large $a$}
 -- ++(300:1) node[mol] {} 
--- ++(240:1) node[mol] {} node[below] {$b'$}
--- ++(0:1) node[mol] {} node[below] {$b$}
+-- ++(240:1) node[mol] {} node[below] {\Large $b'$}
+-- ++(0:1) node[mol] {} node[below] {\Large $b$}
 -- ++(60:1) node[mol] {} 
--- ++(120:1) node[mol] {} node[above] {$a'$}
+-- ++(120:1) node[mol] {} node[above] {\Large $a'$}
 ;
-\draw[dashed,red] (\x, 0) -- ++(0:1);
+\draw[thick, dashed,red] (\x, 0) -- ++(0:1);
 }
 
-\draw[cyan, -latex] (1, 0) -- ++(120:1) node[mol] {} node[above] {$a$} -- ++(180:1) node[mol]{} -- ++(180:1) node[mol] {} node[above] {$b'$};
-\draw[cyan, -latex] (1, 0) -- ++(60:1) node[mol] {} node[above] {$a$} -- ++(0:1) node[mol] {} -- ++(300:1) node[mol] {} node[right] {$b'$};
-\draw[ultra thick, cyan, -latex] (1, 0) -- ++(0:1) node[mol] {} node[above] {$a$} -- ++(300:1) node[mol] {} -- ++(240:1) node[mol] {} node[below] {$b'$};
+\draw[cyan, -latex] (1, 0) -- ++(120:1) node[mol] {} node[above] {\Large $a$} -- ++(180:1) node[mol]{} -- ++(240:1) node[mol] {} node[above] {\Large $b'$};
+\draw[cyan, -latex] (1, 0) -- ++(60:1) node[mol] {} node[above] {\Large $a$} -- ++(0:1) node[mol] {} -- ++(300:1) node[mol] {} node[right] {\Large $b'$};
+\draw[ultra thick, cyan, -latex] (1, 0) -- ++(0:1) node[mol] {} node[above] {\huge $a$} -- ++(300:1) node[mol] {} -- ++(240:1) node[mol] {} node[below] {\huge $b'$};
 
 \draw[dashed, cyan] (0,0)++(300:2) -- ++(0:1);
 
@@ -88,68 +94,62 @@ Let us provide an example of deterministic OS that folds into a motif of great u
 \draw (12,0)++(300:1) node {\Large $\Rightarrow$};
 
 
-\draw[-latex] (5, 0) -- ++(0:1) node[mol] {} node[above] {$a$};
+\draw[thick, -latex] (5, 0) -- ++(0:1) node[mol] {} node[above] {\Large $a$};
 
-\draw[cyan, -latex] (6, 0) -- ++(300:1) node[mol] {} -- ++(240:1) node[mol] {} node[below] {$b'$} -- ++(0:1) node[mol] {} node[below] {$b$};
-\draw[cyan, -latex] (5,0)++(300:2)++(240:0.3) -- ++(240:0.7) node[mol] {} node[below] {$b$};
-\draw[cyan, -latex] (5,0)++(300:2.3) -- ++(300:0.7) node[mol] {} node[below] {$b$};
+\draw[cyan, -latex] (6, 0) -- ++(300:1) node[mol] {} -- ++(240:1) node[mol] {} node[below] {\Large $b'$} -- ++(0:1) node[mol] {} node[below] {\Large $b$};
+\draw[cyan, -latex] (5,0)++(300:2)++(240:0.3) -- ++(240:0.7) node[mol] {} node[below] {\Large $b$};
+\draw[cyan, -latex] (5,0)++(300:2.3) -- ++(300:0.7) node[mol] {} node[below] {\Large $b$};
 \draw[dashed, cyan] (4,0)++(300:2) -- ++(0:1);
 
 
-\draw[-latex] (9, 0) -- ++(0:1) node[mol] {} node[above] {$a$}
+\draw[thick, -latex] (9, 0) -- ++(0:1) node[mol] {} node[above] {\Large $a$}
 -- ++(300:1) node[mol] {}
 ;
-\draw[cyan, -latex] (10,0)++(300:1) -- ++(240:1) node[mol] {} node[below] {$b'$}
--- ++(240:1) node[mol] {} node[below] {$b$}
+\draw[cyan, -latex] (10,0)++(300:1) -- ++(240:1) node[mol] {} node[below] {\Large $b'$}
+-- ++(240:1) node[mol] {} node[below] {\Large $b$}
 -- ++(180:1) node[mol] {}
 ;
-\draw[cyan, -latex] (9,0)++(300:2) -- ++(0:1) node[mol] {} node[below] {$b$} -- ++(60:1) node[mol] {};
-\draw[cyan, -latex] (10,0)++(300:1) -- ++(60:1) node[mol] {} node[right] {$b'$}
--- ++(120:1) node[mol] {} node[above] {$b$}
+\draw[cyan, -latex] (9,0)++(300:2) -- ++(0:1) node[mol] {} node[below] {\Large $b$} -- ++(60:1) node[mol] {};
+\draw[cyan, -latex] (10,0)++(300:1) -- ++(60:1) node[mol] {} node[right] {\Large $b'$}
+-- ++(120:1) node[mol] {} node[above] {\Large $b$}
 -- ++(180:1) node[mol] {}
 ;
 \draw[cyan,dashed] (8,0)++(300:2) -- ++(0:1);
 
-\draw[-latex] (14, 0) -- ++(0:1) node[mol] {} node[above] {$a$}
+\draw[thick, -latex] (14, 0) -- ++(0:1) node[mol] {} node[above] {\Large $a$}
 -- ++(300:1) node[mol] {}
--- ++(240:1) node[mol] {} node[below] {$b'$}
+-- ++(240:1) node[mol] {} node[below] {\Large $b'$}
 ;
 \draw[dashed] (13,0)++(300:2) -- ++(0:1);
-\draw[cyan, -latex] (14,0)++(300:2) -- ++(0:1) node[mol] {} node[below] {$b$}
+\draw[cyan, -latex] (14,0)++(300:2) -- ++(0:1) node[mol] {} node[below] {\Large $b$}
 -- ++(60:1) node[mol] {}
--- ++(120:1) node[mol] {} node[above] {$a'$}
+-- ++(120:1) node[mol] {} node[above] {\Large $a'$}
 ;
 \draw[cyan,dashed] (15,0) -- ++(0:1);
 
 \end{tikzpicture}}
 \caption{Progression of a glider by distance 1.}
 \label{fig:glider}
-\end{figure}
+\vspace*{-3mm}
+\end{wrapfigure}
+%\end{figure}
 
-
-\begin{example}\label{ex:glider}
+%\begin{example}\label{ex:glider}
 %A motif called the \emph{glider} explains well how oritatami systems behave. 
-Let $\Sigma = \{a, a', b, b', \bullet\}$. 
-Consider a delay-3 OS whose seed is colored in red in Fig.~\ref{fig:glider}, transcript is a repetition of $a \bullet b' b \bullet a'$, and the rule set is $\mathcal{H} = \{(a, a'), (b, b')\}$, which makes $\bullet$-beads inert. 
 
-By the fragment $a \bullet b'$ of the first three beads of the transcript, the seed can be elongated in various ways, only three of which are shown in Fig.~\ref{fig:glider} (left). 
-The only bead on the fragment capable of a new h-interaction is $b'$ (with a $b$-bead according to $\mathcal{H}$), and there is only one elongation to let the $b'$-bead to interact, which is bolded in Fig.~\ref{fig:glider} (left). 
-Thus, the first bead, $a$, is stabilized to the east of the previous bead. 
-%In order for the $b'$-bead to form an h-interaction with a $b$-bead, the first $a$-bead must be located to the east of the last bead of the seed. 
-%Thus, the $a$-bead is stabilized there. 
-The next bead, $b$, is then transcribed but it is not capable of any h-interaction because any $b'$ around is either too far or too close.  
-The bead transcribed afterward is inert. 
-As a result, energy minimization ignores them and even the second and third bead, $\bullet b'$, are stabilized as in the bolded elongation. 
-%Hence, the nascent fragment $\bullet b' b$ gets stabilized as being folded as done before up to at least the first two beads. 
-%The $\bullet$ bead is stabilized southeastward. 
-%An inert bead pops up next so that the $b'$ gets stabilized southwestward as suggested before. 
-The first three beads $a, \bullet, b'$ have been thus stabilized and the glider has moved forward by unit distance. 
+By the fragment $w[1..3] = a \bullet b'$, the seed can be elongated in various ways, only three of which are shown in Fig.~\ref{fig:glider} (left). 
+The only bead on the fragment capable of a new h-interaction is $b'$ (with a $b$-bead according to $\mathcal{H}$), and for that, the fragment must be folded as bolded in Fig.~\ref{fig:glider} (left). 
+The first bead $w[1] = a$ is hence stabilized to the east of the previous bead. 
+The next two beads $w[2], w[3]$ are stabilized as illustrated one after another, but we can easily see that the bolded elongation dominates even their stabilization. 
+It suffices to observe that neither $w[4]$ nor $w[5]$ can form any new h-interaction. 
+When $w[4] = b$ is transcribed (after $w[1]$ is stabilized), $b'$-beads around are either too far or too close. (recall that $w[4]$ cannot interact with $w[3] = b'$). 
+In addition, $w[5]$ is inert. 
+Thus, they cannot override the bolded ``decision.''
 It is easily induced inductively that gliders of arbitrary ``flight distance'' can be folded. 
-
 
 Gliders also provide a medium to propagate 1-bit at arbitrary distance as the position of their last beads, which is determined by the height (top or bottom) of the first bead and a flying distance.  
 %The height (top or bottom) of the first bead determines whether the last bead is stabilized top or bottom after flying a given distance.
 For instance, the glider in Fig.~\ref{fig:glider} launches top and thus its last bead (the $a'$) also comes top after traveling the distance 2.
 The oritatami system we shall propose exploits this information-carrying capability.
-\end{example}
+%\end{example}
 
