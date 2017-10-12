@@ -16,3 +16,9 @@ LATIN2018/LATIN2018_main.pdf
 LATIN2018/LATIN2018_main.pdf
 *.gz
 LATIN2018/LATIN2018_main.tex
+*.aux
+*.aux
+*.log
+*.pdf
+*.gz
+LATIN2018/LATIN2018_main.tex
