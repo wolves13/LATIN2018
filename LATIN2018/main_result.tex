@@ -177,18 +177,13 @@ See Fig.~\ref{fig:DFAO-zig1} for its possible contexts and corresponding conform
 Phase1 is to copy all the 1's prior to the first 0 and Phase2 is to copy all the bits after the first 0.
 These phases are distinguished by the relative position where a DFAO-zig1 starts folding to the input (far in Phase~1 while close in Phase~2).
 In Phase1, DFAO-zig1s certainly take the conformation Dzig1-1 (the top left one in Fig.~\ref{fig:DFAO-zig1}).
-At the first 0, the DFAO-zig1 folds into Dzig1-f0 instead, ending at the top to transition to Phase 2.
+At the first 0, a DFAO-zig1 folds into Dzig1-f0 instead, ending at the top in order to transition to Phase~2.
 Each of the succeeding DFAO-zig1s takes Dzig1-20 or -21 to copy all the remaining bits. 
 Note that there is a cushion between two DFAO-zig1s called \textit{spacer}.
 Spacers are used to prevent undesirable interference among components.
 They are implemented as a glider (see Sect.~\ref{sect:preliminaries}), hence capable of propagating 1bit on which phase the system is in.
-In the first zag, DFAO-zag1's just propagate 0's, 1's, and the first 0 by taking the proper one of the three conformations in Fig.~\ref{fig:DFAO-zag1}.
+In the first zag, DFAO-zag1's just propagate 0's, 1's, and the first 0 using the three conformations in Fig.~\ref{fig:DFAO-zag1}.
 
-\begin{figure}[tb]
-  \includegraphics[width=\linewidth]{pic/DFAO-zag1.png}
-  \caption{The three conformations of DFAO-zag1: Dzag1-f0, Dzag1-0, and Dzag1-1.}
-  \label{fig:DFAO-zag1}
-\end{figure} 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -209,19 +204,18 @@ The first and second halves are diverted to implement the body-rgy and body-gx c
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 In the second zig, DFAO-zig2's check whether the first 0 is followed by 0 or 1, being read from LSB.
-They first copy all the 1's up to the first 0 by taking the conformation Dzig2-1 (top left in Figure~\ref{fig:DFAO-zig2}).
-The next letter is the first 0, which is distinguished from other 0's by the special conformation Dzag1-f0 of the DFAO-zag1 responsible for the bit, or more precisely, by its marker f0. 
-Starting at the bottom and reading 0, the DFAO-zig2 can take two conformations Dzig2-0 and Dzig2-f0.
-These conformations share the first half.
+They first copy the 1's by the conformation Dzig2-1 (top left in Fig.~\ref{fig:DFAO-zig2}) until the first 0, read from the LSB, which is distinguished from the other 0's by the mark. 
+Starting at the bottom and reading 0, the DFAO-zig2 can take two conformations Dzig2-0 and -f0.
+They share the first half.
 The marker f0 folds the second half so as to end at the top, yielding Dzig2-f0. 
-The next DFAO-zig2 therefore starts to fold at the top so that it takes one of the two conformations Dzig2-f00 and Dzig2-f01 depending on the bit read.
+The next DFAO-zig2 therefore starts to fold at the top so that it takes one of the two conformations Dzig2-f00 and -f01 depending on the bit read.
 Recall that reading 1 here is equivalent to transitioning to $q_2$, that is, $P[i] = L$.
 Observe that Dzig2-f01 is provided with the marker $q_2$, which lets the DFAO-zag2 component below know $P[i] = L$. 
 These conformations end at the bottom.
-The remaining 0's and 1's are copied by Dzig2-0 and Dzig2-1, respectively.
-The second zag starts at the bottom and copy 0's and 1's by the two conformations Dzag2-L0 and Dzag2-L1 of DFAO-zag2 (top left and center in Figure~\ref{fig:DFAO-zag2}) until a DFAO-zag2 encounters a 1, or more precisely, its marker $q_2$, if any. 
-Such DFAO-zag2 takes the special conformation Dzag2-T1 and changes the ending position to the top, letting the remaining DFAO-zag2s rather take Dzag2-R0 and Dzag2-R1 for copying, which end at the top.
-As such, the second zag can feed $P[i]$ to PFS as explained before, while propagating the current count $i$.
+The remaining 0's and 1's are copied by Dzig2-0 and -1.
+The second zag starts at the bottom and copy 0's and 1's by the two conformations Dzag2-L0 and -L1 of DFAO-zag2 (top left and center in Fig.~\ref{fig:DFAO-zag2}) until a DFAO-zag2 encounters the 1 marked by $q_2$, if any. 
+At the encounter, the DFAO-zag2 takes the special conformation Dzag2-T1 and changes the ending position to the top, letting the remaining DFAO-zag2s rather take Dzag2-R0 and -R1 for copying, which end at the top.
+As such, the second zag can feed $P[i]$ to PFS as the position of its first bead.
 
 %The third zig lets $P[i]$ go through its AO (or $\overline{\rm AO}$) component to be reinterpreted either as A(cute) or as O(btuse) and propagates the current count $i$.   
 
