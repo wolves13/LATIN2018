@@ -1,4 +1,4 @@
-\documentclass[runningheads,dvipdfmx]{llncs}
+\documentclass[runningheads]{llncs}
 \setcounter{tocdepth}{3}
 \usepackage{amssymb}
 \usepackage{here}
@@ -13,6 +13,8 @@
 \usetikzlibrary{arrows}
 \usetikzlibrary{positioning}
 \usetikzlibrary{lindenmayersystems}
+
+\usepackage{comment}
 
 \usetikzlibrary{decorations.markings}
 \DeclareMathOperator*{\argmin}{arg\,min}
@@ -64,8 +66,18 @@ We would like to thank Hwee Kim and Aleck Johnsen for their helpful advices and 
 
 %--------------------------------------------------------
 	\newpage
+	\appendix
 	\section*{Appendix}
 %--------------------------------------------------------
+
+\section{Figures omitted}
+
+\begin{figure}[h]
+  \includegraphics[width=\linewidth]{pic/DFAO-zag1.png}
+  \caption{The three conformations of DFAO-zag1: Dzag1-f0, Dzag1-0, and Dzag1-1.}
+  \label{fig:DFAO-zag1}
+\end{figure} 
+
 
 \begin{figure}[h]
 \centering
@@ -83,6 +95,28 @@ We would like to thank Hwee Kim and Aleck Johnsen for their helpful advices and 
 \caption{(Left) The two conformations of body-rpx component. 
 (Right) The two conformations of body-lpx1 component.}
 \label{fig:body-rpx}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\linewidth]{pic/body-lgy.png}
+\caption{The possible two conformations of body-lgy component.}
+\label{fig:body-lgy}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.8\linewidth]{pic/turn-lgp.pdf}
+\caption{The possible two conformations of turn-lgp component.}
+\label{fig:turn-lgp}
+\end{figure}
+
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\linewidth]{pic/move.pdf}
+\caption{The two conformations of move component.}
+\label{fig:move}
 \end{figure}
 
 

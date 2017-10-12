@@ -62,7 +62,7 @@ They shall be reused in this paper.
 \end{minipage}
 \caption{
 Heighway dragon. 
-(Left) A DFAO that reads the binary representation of $i$ from the LSB and outputs the direction to turn. 
+(Left) A DFAO that outputs the direction of the $i$-th turn (L/R) given the binary representation of $i \ge 0$ from the LSB as input. 
 (Right) The first $2^{10}{-}1$ turns of the dragon. 
 }
 \label{fig:heighway_dragon}
@@ -89,6 +89,7 @@ An arbitrary portion of the Heighway dragon can be represented by a factor of $P
 
 %\begin{figure}[htb]
 \begin{wrapfigure}{l}{0.6\linewidth}
+\vspace*{-5mm}
 \centering
 \includegraphics[width=\linewidth]{pic/6bit_heighway.pdf}
 \caption{The portion $P[0 .. 62]$ of the Heighway dragon folded by the proposed oritatami system.}
