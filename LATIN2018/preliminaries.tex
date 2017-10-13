@@ -57,7 +57,7 @@ C \xrightarrow{\mathcal{H}}^*_{w[i+2...i+k]}C', k\le \delta, C' \in \mathcal{C}_
 \end{equation}
 We say that the bead $w[i+1]$ and the h-interactions it forms are \textit{stabilized} according to $C_{i+1}$.
 Note that an arity-$\alpha$ OS cannot fold any conformation of arity larger than $\alpha$.
-%A conformation foldable by $\Xi$ is \textit{terminal} if none of its elongations is foldable by $\Xi$.
+A conformation foldable by $\Xi$ is \textit{terminal} if none of its elongations is foldable by $\Xi$.
 The OS $\Xi$ is \textit{deterministic} if for all $i \ge 0$, there exists at most one $C_{i+1}$ that satisfies \eqref{eq:cotranscriptional_folding}. 
 %Thus, a deterministic system folds into a unique terminal conformation. 
 
@@ -152,4 +152,9 @@ Gliders also provide a medium to propagate 1-bit at arbitrary distance as the po
 For instance, the glider in Fig.~\ref{fig:glider} launches top and thus its last bead (the $a'$) also comes top after traveling the distance 2.
 The oritatami system we shall propose exploits this information-carrying capability.
 %\end{example}
+
+A \textit{shape} is a set of points on the triangular grid. 
+For an integer $c \ge 1$, the \textit{$c$-rhombus scaling} of a shape $S$ is a shape obtained by expanding the distance between the points in $S$ equally by $c$ to obtain another shape $S'$ and replacing each point $\vec{p} \in S'$ by the rhombus whose sides are of length $c$. 
+Let $\diamondsuit_c(S)$ be its $c$-rhombus scaling of a shape $S$. 
+We say that an OS $\Xi$ \textit{weakly folds} (or ``self-assembles'') $\diamondsuit_c(S)$ if every terminal assembly of $\Xi$ puts its bead only at positions in $\diamondsuit_c(S)$ and it puts at least one bead in all rhombuses of $\diamondsuit_c(S)$. 
 

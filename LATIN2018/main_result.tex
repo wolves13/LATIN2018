@@ -149,16 +149,16 @@ As abstracted in Fig.~\ref{fig:abst_dfao}, a DFAO module receives the current co
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+Observe in Fig.~\ref{fig:heighway_dragon} that what the DFAO for the Heighway dragon does exactly in order to compute $P[i]$ is to search for the first 0 read from the LSB and check whether it is followed by 0 ($P[i] = {\rm R}$) or by 1 ($P[i] = {\rm L}$). 
+While folding into zigzag twice and one more zig (see Fig.~\ref{fig:abst_dfao}), the DFAO module does the search and check in the first and second zigzags, respectively, and interprets $P[i]$ properly in the last zig. 
+It employs the following six components: DFAO-zig1, -zag1, -zig2, -zag2, PFS, and AO (or $\overline{\rm AO}$). 
 
-The DFAO module is composed of the six components: DFAO-zig1, DFAO-zag1, DFAO-zig2, DFAO-zag2, PFS, and AO (or  ``$\overline{\rm AO}$").
-It folds into two zigzags and one more zig.
-In the first zigzag, DFAO-zig1's and -zag1's read $i$ from its LSB and ``mark" the first 0. 
-In the second zigzag, DFAO-zig2's and -zag2's check whether the marked 0 is followed by 0 ($P[i] = L$) or 1 ($P[i] = R$) and have PFS output $P[i]$ downward (see Fig.~\ref{fig:PFS} also for AO and $\overline{\rm AO}$). 
-The last zig is equipped with AO if this module is for a vertical segment or with $\overline{\rm AO}$ otherwise; AO interprets the output L of PFS as obtuse and A as acute, while $\overline{\rm AO}$ interprets them the other way around. 
-%The second zag is to end at the top if $P[i] = L$ or at the bottom if $P[i] = R$.
-%PFS takes one of the two conformations in Fig.~\ref{fig:PFS} and outputs $P[i]$ downward.
-%In vertical segments, AO interprets the output L as obtuse and R as acute as shown in Fig.~\ref{fig:PFS} (left), while in horizontal ones $\overline{\rm AO}$ interprets them the other way around as shown in Fig.~\ref{fig:PFS} (right). 
-Let us explain briefly how each of the components folds to fulfill its roles.
+%The DFAO module is composed of the six components: DFAO-zig1, DFAO-zag1, DFAO-zig2, DFAO-zag2, PFS, and AO (or  ``$\overline{\rm AO}$").
+%It folds into two zigzags and one more zig.
+%In the first zigzag, DFAO-zig1s and -zag1s read $i$ from its LSB and ``mark" the first 0. 
+%In the second zigzag, DFAO-zig2s and -zag2s check whether the marked 0 is followed by 0 ($P[i] = L$) or 1 ($P[i] = R$) and have PFS output $P[i]$ downward (see Fig.~\ref{fig:PFS} also for AO and $\overline{\rm AO}$). 
+%The last zig is equipped with AO if this module is for a vertical segment or with $\overline{\rm AO}$ otherwise; AO interprets the output L of PFS as obtuse and A as acute, while $\overline{\rm AO}$ interprets them the other way around. 
+%Let us explain briefly how each of the components folds to fulfill its roles.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\begin{figure}[h]
@@ -172,7 +172,7 @@ Let us explain briefly how each of the components folds to fulfill its roles.
 \end{wrapfigure}
 %\end{figure} 
 
-DFAO-zig1's collaboratively detect the first 0 read from the LSB in two phases.
+DFAO-zig1s collaboratively detect the first 0 in two phases.
 See Fig.~\ref{fig:DFAO-zig1} for its possible contexts and corresponding conformations. 
 Phase1 is to copy all the 1's prior to the first 0 and Phase2 is to copy all the bits after the first 0.
 These phases are distinguished by the relative position where a DFAO-zig1 starts folding to the input (far in Phase~1 while close in Phase~2).
@@ -182,7 +182,7 @@ Each of the succeeding DFAO-zig1s takes Dzig1-20 or -21 to copy all the remainin
 Note that there is a cushion between two DFAO-zig1s called \textit{spacer}.
 Spacers are used to prevent undesirable interference among components.
 They are implemented as a glider (see Sect.~\ref{sect:preliminaries}), hence capable of propagating 1bit on which phase the system is in.
-In the first zag, DFAO-zag1's just propagate 0's, 1's, and the first 0 using the three conformations in Fig.~\ref{fig:DFAO-zag1}.
+In the first zag, DFAO-zag1s just propagate 0's, 1's, and the first 0 using conformations in Fig.~\ref{fig:DFAO-zag1}.
 
 
 
