@@ -14,7 +14,7 @@ Oritatami systems fold their transcript, a sequence of beads, over the triangula
 Let $\mathbb{T} = (V, E)$ be the triangular grid graph. 
 A directed path $P = p_1 p_2 \cdots p_n$ in $\mathbb{T}$ is a sequence of \textit{pairwise-distinct} points $p_1, p_2, \ldots, p_n \in V$ such that $\{p_i, p_{i+1}\} \in E$ for all $1 \leq i < n$.
 Its $i$-th point is referred to as $P[i]$. 
-A \textit{rule set} $\mathcal{H} \subseteq \Sigma \times \Sigma$ is a symmetric relation over the set of pairs of bead types, that is, for all bead types $a, b \in \Sigma$, $(a, b) \in \mathcal{H}$ implies $(b, a) \in \mathcal{H}$. 
+A \textit{rule set} $\mathcal{H} \subseteq \Sigma \times \Sigma$ is a symmetric relation over the set of pairs of bead types. %, that is, for all bead types $a, b \in \Sigma$, $(a, b) \in \mathcal{H}$ implies $(b, a) \in \mathcal{H}$. 
 A (finite) \textit{conformation} $C$ is a triple $(P, w, H)$ of a directed path $P$ in $\mathbb{T}$, $w \in \Sigma^*$ of the same length as $P$, and a set of h-interactions $H \subseteq \{\{i,j\} \mid 1 \leq i, i+2 \leq j, \{P[i], P[j]\} \in E\}$.
 This is to be interpreted as the sequence $w$ being folded in such a manner that its $i$-th bead $w[i]$ is placed on the $i$-th point $P[i]$ along the path and there is an h-interaction between the $i$-th and $j$-th beads if and only if $(i, j) \in H$. 
 The condition $i+2 \leq j$ represents the topological restriction that two consecutive beads along the path cannot h-interact with each other.
@@ -51,9 +51,9 @@ C \in \mathcal{C}_{\le \alpha} s.t. \\
 C_i \xrightarrow{\mathcal{H}}_{w[i+1]}C \\
 }
 }
-\min \Big\{ \Delta G(C') \mid 
+\min \left\{ \Delta G(C') \Bigm| 
 C \xrightarrow{\mathcal{H}}^*_{w[i+2...i+k]}C', k\le \delta, C' \in \mathcal{C}_{\le \alpha}
-\Big\}.
+\right\}.
 \end{equation}
 We say that the bead $w[i+1]$ and the h-interactions it forms are \textit{stabilized} according to $C_{i+1}$.
 Note that an arity-$\alpha$ OS cannot fold any conformation of arity larger than $\alpha$.
