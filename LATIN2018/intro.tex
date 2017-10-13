@@ -4,11 +4,11 @@
 
 An RNA sequence, over nucleotides of four kinds {\tt A}, {\tt C}, {\tt G}, {\tt U}, is synthesized (\textit{transcribed}) from its template DNA sequence over {\tt A}, {\tt C}, {\tt G}, {\tt T} nucleotide by nucleotide by an RNA polymerase (RNAP) enzyme according to the one-to-one mapping ${\tt A} \to {\tt U}$, ${\tt C} \to {\tt G}$, ${\tt G} \to {\tt C}$, and ${\tt T} \to {\tt A}$ (for details, see, e.g., \cite{AJLMRRW2014}). 
 The yield, called \textit{transcript}, starts folding immediately after it emerges from RNAP. 
-This is the \textit{cotranscriptional folding}. 
-Geary, Rothemund, and Andersen have recently demonstrated the capability of cotranscriptional folding to manufacture an RNA molecule of an intended shape at nano-scale \cite{GearyRothemundAndersen2014}. 
-They actually proposed an architecture of a DNA sequence whose transcript folds cotranscriptionally into an RNA rectangular tile highly likely \textit{in vitro} (see Fig.~\ref{fig:rna_origami}). 
+This is the \textit{cotranscriptional folding} (see Fig.~\ref{fig:rna_origami}). 
+Geary, Rothemund, and Andersen have recently demonstrated the capability of cotranscriptional folding to self-assemble an RNA molecule of an intended shape at nano-scale \cite{GearyRothemundAndersen2014}. 
+They actually proposed an architecture of a DNA sequence whose transcript folds cotranscriptionally into an RNA tile of specific rectangular shape highly likely \textit{in vitro}. 
 
-\begin{figure}[htb]
+\begin{figure}[tb]
 \centering
 \includegraphics[width=\linewidth]{pic/rna_origami.pdf}
 \caption{RNA cotranscriptional folding. 
@@ -18,19 +18,22 @@ The RNA sequence begins to fold upon itself immediately as it emerges from polym
 \label{fig:rna_origami}
 \end{figure}
 
-In this paper, we shall initiate the theoretical study on algorithmic self-assembly of shapes by cotranscriptional folding using a novel computational model of cotranscriptional folding called the \textit{oritatami system} \cite{GeMeScSe2016}.
+%In this paper, we shall initiate the theoretical study on algorithmic self-assembly of shapes by cotranscriptional folding using a novel computational model of cotranscriptional folding called the \textit{oritatami system} \cite{GeMeScSe2016}.
 Algorithms and computation are fundamental to molecular self-assembly as illustrated in an enormous success of their use in DNA tile self-assembly (see, e.g., \cite{Doty2012,Patitz2016,WinfreePhD} and references therein). 
 %The concepts of computation and algorithms are yet to be as much utilized in the self-assembly of shapes by cotranscriptional folding as in the DNA tile self-assembly, where for example 
-A fractal pattern called Sierpinski triangle was algorithmically self-assembled from coalescence of DNA tiles that compute XOR \cite{RothemundPapadakisWinfree2004}. 
-Cotranscriptional folding exhibits highly sophisticated computational and algorithmic behaviors. 
-Fluoride riboswitches in the \textit{Bacillus cereus} bacteria cotranscriptionally fold a terminator stem that suppresses gene expression or not, depending on ligand concentration \cite{WaStYuLiLu2016}. 
-Cotranscriptional folding is in fact proved Turing-universal by the oritatami system \cite{GeMeScSe2015}. 
-The Turing-machine simulator is gigantic and intricate but oritatami systems have implemented basic computational devices such as binary counter \cite{GeMeScSe2016} as a module comparable in size to the gene expression regulator. 
-The binary counter module consists of half-adder components, which fold into one of possible four conformations depending on a 1-bit input and a 1-bit carry/non-carry encoded in their surroundings somehow. 
-It can be diverted as a copier for binary sequences by being fed with the non-carry. 
-They shall be reused in this paper. 
+The Sierpinski triangle fractal was algorithmically self-assembled even \textit{in vitro} from coalescence of DNA tiles that compute XOR \cite{RothemundPapadakisWinfree2004}. 
+Cotranscriptional folding exhibits highly sophisticated computational and algorithmic behaviors as well. 
+Indeed, fluoride riboswitches in \textit{Bacillus cereus} bacteria cotranscriptionally fold into a terminator stem or does not in order to regulate gene expression \cite{WaStYuLiLu2016}. %depending on ligand concentration \cite{WaStYuLiLu2016}. 
+This is just one example but should be enough to signify the context-sensitivity of cotranscriptional folding and shapes thus self-assembled. 
+Geary et al.~have proved the capability of context-sensitivity to count in binary using a novel mathematical model of cotranscriptional folding called \textit{oritatami system} \cite{GeMeScSe2016}. 
 
-\begin{figure}[htb]
+%Cotranscriptional folding is in fact proved Turing-universal by the oritatami system \cite{GeMeScSe2015}. 
+%The Turing-machine simulator is gigantic and intricate but oritatami systems have implemented basic computational devices such as binary counter \cite{GeMeScSe2016} as a module comparable in size to the gene expression regulator. 
+%The binary counter module consists of half-adder components, which fold into one of possible four conformations depending on a 1-bit input and a 1-bit carry/non-carry encoded in their surroundings somehow. 
+%It can be diverted as a copier for binary sequences by being fed with the non-carry. 
+%They shall be reused in this paper. 
+
+\begin{figure}[tb]
 \centering
 \begin{minipage}{0.4\linewidth}
 \centering
@@ -61,20 +64,21 @@ They shall be reused in this paper.
 \end{tikzpicture}}
 \end{minipage}
 \caption{
-Heighway dragon. 
-(Left) A DFAO that outputs the direction of the $i$-th turn (L/R) given the binary representation of $i \ge 0$ from the LSB as input. 
+%Heighway dragon. 
+(Left) A DFAO to output the direction (L/R) of $i$-th turn of the Heighway dragon given $i \ge 0$ in binary from the LSB as input. 
 (Right) The first $2^{10}{-}1$ turns of the dragon. 
 }
 \label{fig:heighway_dragon}
 \end{figure}
 
-Algorithmic cotranscriptional folding of Sierpinski triangle would allow oritatami systems to borrow rich insights from the DNA tile self-assembly. 
-On the other hand, in order to cut more directly to the heart of algorithmic self-assembly by cotranscriptional folding, we should study the fabrication of shapes that are traversable in some algorithmic way. 
-One such way is to feed a turtle program (see \cite{AbelsondiSessa1981}) with a binary \textit{automatic sequence} as commands (drawing a line segment, rotation, etc.), whose $i$-th bit (starting from 0) can be obtained by giving a binary representation of $i$ from the least significant bit (LSB) to one deterministic finite automaton with output (DFAO) \cite{AlloucheShallit2003}.
+We shall initiate theoretical study on algorithmic self-assembly of shapes by cotranscriptional folding using oritatami system. 
+Algorithmic cotranscriptional folding of Sierpinski triangle would allow us to borrow rich insights from the DNA tile self-assembly. 
+On the other hand, in order to cut directly to the heart of algorithmic self-assembly by cotranscriptional folding, shapes of choice should be traversable by a sequence somehow algorithmically. 
+One such way is to feed a turtle program (see \cite{AbelsondiSessa1981}) with an \textit{automatic sequence} as commands (drawing a line segment, rotation, etc.), whose $i$-th bit can be obtained by giving $i$ in binary from the least significant bit (LSB) to one deterministic finite automaton with output (DFAO) \cite{AlloucheShallit2003}.
 %which can be generated by a deterministic finite automaton with output (DFAO) \cite{AlloucheShallit2003}. 
 Shapes thus describable include the Heighway dragon \cite{AlloucheShallit2003} and von Koch curve \cite{MaHoldener2005}. 
-A DFAO for the Heighway dragon is shown in Fig.~\ref{fig:heighway_dragon} (Left). 
-It is to read the binary representation of $i \ge 0$ from the LSB and outputs the $i$-th direction $P[i]$ to turn (L or R) assigned to the state finally reached as follows: 
+A DFAO for the Heighway dragon is shown in Fig.~\ref{fig:heighway_dragon} (Left) and its output is as follows: 
+%It is to read the binary representation of $i \ge 0$ from the LSB and outputs the $i$-th direction $P[i]$ to turn (L or R) assigned to the state finally reached as follows: 
 \[
 %\begin{array}{cccrrrrc}
 %i 	&=& 0 &  2 & 6 & 14 & 30 & \cdots \\
@@ -82,10 +86,11 @@ It is to read the binary representation of $i \ge 0$ from the LSB and outputs th
 %\end{array}
 P 	= {\rm RRLRRLLRRRLLRLLRRRLRRLLLRRLLRLL} \cdots.
 \]
+For instance, $i = 2$ is given in binary from the LSB as 01, with which the DFAO transitions as $q_0 \to q_1 \to q_2$ and hence $P[2] = L$. 
 (The notation $P$ is after its appellative \textit{paperfolding sequence} \cite{AlloucheShallit2003}.) 
 %where only the values of $i$ at the end of the first five iterations are specified. 
 A turtle should interpret an L (resp.~R) as ``move forward by unit distance and turn left (resp. right) 90 degrees.''
-An arbitrary portion of the Heighway dragon can be represented by a factor of $P$; for instance, $P[0 .. 1022]$ represents the first $2^{10}-1$ turns of the dragon, shown in Fig.~\ref{fig:heighway_dragon} (Right). 
+Any portion of the dragon can be represented by a factor of $P$; for instance, Fig.~\ref{fig:heighway_dragon} (Right) depicts the factor $P[0 .. 1022]$, i.e., the first $2^{10}-1$ turns of the dragon. 
 
 %\begin{figure}[htb]
 \begin{wrapfigure}{l}{0.6\linewidth}
@@ -99,16 +104,15 @@ An arbitrary portion of the Heighway dragon can be represented by a factor of $P
 
 In this paper, we propose a generic design of oritatami system for the algorithmic cotranscriptional folding of an arbitrary finite portion of the Heighway dragon. 
 Fig.~\ref{fig:heighway6_oritatami} shows the portion $P[0 .. 62]$ thus folded (the dragon is slanted, but this is because the oritatami system operates on the triangular grid). 
-The systems consist of three modules: binary counter, DFAO module, and turning module. 
-The binary counter is a technical modification of the one proposed in \cite{GeMeScSe2016}. 
-It folds into one zigzag and increments a given binary number by 1 if carried-in or just propagates the number otherwise. 
-Binary counters fold into zigzags, yielding a (red) line segment of the dragon. 
-The system feeds only the first counter with carry so that the line segment amounts to increment the current count $i$ by 1. 
-At the end of the segment is a DFAO module, which computes the turn direction $P[i]$ while propagating the count $i$ to the following turning module. 
+The transcript is a repetition of three modules: a catenation of binary counters, DFAO module, and turning module. 
+The counter is a technical modification of the one proposed in \cite{GeMeScSe2016}. 
+By being fed with carry exactly once, the catenation can increment the count $i$ exactly by 1 while folding into a line segment, colored in red in Fig.~\ref{fig:heighway6_oritatami}. 
+%It folds into one zigzag and increments a given binary number by 1 if carried-in or just propagates the number otherwise. 
+%Binary counters fold into zigzags, yielding a (red) line segment of the dragon. 
+%The system feeds only the first counter with carry so that the line segment amounts to increment the current count $i$ by 1. 
+At the end of the segment comes a DFAO module, which computes the turn direction $P[i]$ while propagating the count $i$ to the following turning module. 
 A (green) L-shaped block is the turning module. 
 It is a concatenation of three bit-string bifurcation submodules, each of which folds into a rhombus, bifurcates the count $i$ and the direction $P[i]$ leftward as well as rightward, and directs the growth of further folding according to $P[i]$. 
-%A turning module consists of three rhombic components, each of which bifurcates the count $i$ and the direction $P[i]$ leftward as well as rightward and directs the growth of further folding leftward if $P[i] = {\rm L}$ or rightward if $P[i] = {\rm R}$. 
 We shall implement the DFAO and turning modules and verify them. 
-
 A JavaScript program to execute this oritatami system and websites on which this program is executable are freely available at \url{https://wolves13.github.io}. 
 
