@@ -93,7 +93,7 @@ A turtle should interpret an L (resp.~R) as ``move forward by unit distance and 
 Any portion of the dragon can be represented by a factor of $P$; for instance, Fig.~\ref{fig:heighway_dragon} (Right) depicts the factor $P[0 .. 1022]$, i.e., the first $2^{10}-1$ turns of the dragon. 
 
 %\begin{figure}[htb]
-\begin{wrapfigure}{l}{0.6\linewidth}
+\begin{wrapfigure}{l}{0.57\linewidth}
 \vspace*{-5mm}
 \centering
 \includegraphics[width=\linewidth]{pic/6bit_heighway.pdf}
@@ -114,12 +114,14 @@ By being fed with carry exactly once, the catenation increments the count $i$ ex
 At the end of the segment comes a DFAO module, which computes the turn direction $P[i]$ while propagating the count $i$ to the following turning module. 
 A (green) L-shaped block is the turning module. 
 It is a concatenation of three bit-sequence bifurcators, each of which folds into a rhombus, bifurcates $i$ and $P[i]$ leftward as well as rightward, and guides further folding according to $P[i]$. 
-We shall implement the DFAO and turning modules and verify them. 
-The generic design brings the following theorem (for terminologies used, see Sect.~\ref{sect:preliminaries}). 
+%We shall implement the DFAO and turning modules and verify them. 
+
+The generic design proves the next theorem (for terminologies, see Sect.~\ref{sect:preliminaries}). 
 
 \begin{theorem}\label{thm:main}
 	For any finite portion $P[i..j]$ of the Heighway dragon, there exist an integer $c$ and a deterministic cyclic oritatami system of delay 3 and arity 3 that weakly folds into the $c$-rhombus scaling of $P[i..j]$. 
 \end{theorem}
 
-A JavaScript program to execute this oritatami system is freely available at \url{{\tt https://wolves13.github.io}}. 
+\noindent
+A JavaScript program to run this OS is available at \url{{\tt https://wolves13.github.io}}. 
 
