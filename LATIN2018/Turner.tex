@@ -1,6 +1,9 @@
 %-------------------------------------------------------------------------------------------
-			\subsubsection{Turning module}
+			\paragraph{Turning module}
 %-------------------------------------------------------------------------------------------
+%
+The last module is for turn. 
+It consists of two submodules: bit-sequence bifurcator and steering arm (shaded in light blue in Fig.~\ref{fig:overall_turning}). 
 
 \begin{figure}[t]
 \centering
@@ -12,10 +15,7 @@ All the white components in the middle are spacers, some of which are implemente
 \label{fig:overall_turning}
 \end{figure}
 
-The last module is for turn. 
-It consists of two submodules: bit-sequence bifurcator and steering arm (shaded in light blue in Fig.~\ref{fig:overall_turning}). 
-
-The bifurcator bifurcates the bits of the current count $i$ and the reinterpreted signal (A or O) as shown in Fig.~\ref{fig:abst_dragon} while folding into zigzags.
+The bifurcator bifurcates the bits of the current count $i$ and the interpreted signal (A or O) as shown in Fig.~\ref{fig:abst_dragon} while folding into zigzags.
 For that, it employs components to handle the following four types of tasks: 
 \begin{enumerate}[itemsep=0pt]
 \item propagate 1-bit vertically: body-rpx (Fig.~\ref{fig:body-rpx} (left)), body-lpx1 (Fig.~\ref{fig:body-rpx} (right)), and body-lpx2 (Fig.~\ref{fig:half-adder});
@@ -53,7 +53,7 @@ The body-lgy and turn-lgp are their zig counterparts (Figs.~\ref{fig:body-lgy} a
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=\linewidth]{pic/change-route.png}
+\includegraphics[width=0.9\linewidth]{pic/change-route.png}
 \caption{The two conformations of change-route.}
 \label{fig:change_route}
 \end{figure}
@@ -63,11 +63,11 @@ Specifically, the signal has the component, change-route, of the steering arm ta
 The remaining arm is a catenation of move components (Fig.~\ref{fig:move}), which is capable of letting the bifurcated bit sequence through.  
 Note that the turning module need not bifurcate AO.
 Indeed, the second and third turning modules are supposed to turn in the same manner as the first one.
-It hence suffices to append A and O to the bifurcated bit sequences on the acute side and obtuse side, respectively, as shown in Fig.~\ref{fig:overall_turning}.
+It hence suffices to append A and O to the bifurcated bit sequences on the acute side and obtuse side, respectively. %, as shown in Fig.~\ref{fig:overall_turning}.
 
 \begin{remark}
-As suggested in Fig.~\ref{fig:overall_turning}, the bifurcation component actually outputs an input bit sequence also downward.
-That is, it trifurcates the input.
+As suggested in Fig.~\ref{fig:overall_turning}, the bifurcator actually outputs an input even downward.
+That is, it actually serves as a trifurcator.
 This provides a more space-efficient way to replicate a bit sequence many-folds.
 \end{remark}
 

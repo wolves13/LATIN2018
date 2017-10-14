@@ -7,13 +7,11 @@
 We propose a generic design of deterministic oritatami system that allows us to fold an arbitrary finite portion of the Heighway dragon. 
 %The design concept has been already explained in the introduction. 
 The folded dragon is actually slanted as illustrated in Fig.~\ref{fig:heighway6_oritatami}, which is more natural than the conventional (upright) one to be folded over the triangular grid. 
-Let $P[j_1 .. j_2]$ be the target portion and $n = \min\{m \mid j_2 < 2^m\}$. 
-%Let $n$ be the minimum integer such that if the last turn of a target portion corresponds to $P[j]$, then $j \le n$. 
-Independently of $n$, the design sets both delay and arity to 3 and employs 567 bead types and a fixed rule set $\mathcal{H}$ (some of the bead types could be saved but not easily due to the NP-hardness of minimizing the number of bead types \cite{HanKim2017}). 
+%Let $P[j_1 .. j_2]$ be the target portion and $n = \min\{m \mid j_2 < 2^m\}$. 
+Independently of which portion to be folded, the design sets both delay and arity to 3 and employs 567 bead types and a fixed rule set $\mathcal{H}$ (some of the bead types could be saved but not easily due to the NP-hardness of saving \cite{HanKim2017}). 
 The design also challenges to make its transcript periodic; a periodic RNA transcript is likely to be transcribed out of a circular DNA sequence \cite{GearyAndersen2014}. 
-Without requiring the periodicity, one could simply design left-turn and right-turn modules and concatenate their copies according to the sequence $P$. 
+Without requiring the periodicity, one could simply design left and right-turn modules and concatenate their copies according to the sequence $P$. 
 Such a ``hardcoding'' goes against the spirit of algorithmic self-assembly, and an OS that folds into the infinite Heighway dragon, if any, could not take this approach in order to be describable by a finite mean. 
-
 
 %Any finite portion of the Heighway dragon is expected to be foldable by \textit{hard-coding} if an arbitrary number of bead types is available and the shape can be scaled-up (though, if rescaling is not allowed, it is NP-hard to decide if for a given finite shape, there exists an oritatami system that folds into the shape \cite{PatitzRogers2017}). 
 %The proposed design cannot take this approach because the number of bead types available is fixed. 
@@ -22,8 +20,8 @@ Such a ``hardcoding'' goes against the spirit of algorithmic self-assembly, and 
 %One period corresponds to a successive two pairs of a red line segment and the following green L-shaped block. 
 
 One period folds into successive two line segments of the dragon. 
-Why do these segments have to be distinguished? 
-This is because the dragon is slanted. 
+Why does the design distinguish them? 
+The answer lies in that the dragon is slanted. 
 The slanted dragon involves two types of left turn as well as two types of right turn: acute and obtuse. 
 %Capability of one turning module to make all of the four possible turns would halve the period. 
 %Such a turning module, however, would have to take quite a number of conformations; recall that what the module has to turn is not a straw but a thick wire through which the current count $i$ propagates. 
@@ -31,11 +29,11 @@ Capability of one turning module to make all of the four possible turns would ha
 Recall that what the module has to turn is not a straw but a thick wire through which the count $i$ propagates. 
 Such a module is too advanced for the current oritatami technology.  
 Our approach makes it enough for a turning module to handle just two tasks: turning acutely and obtusely. 
-Observe that after (slanted) vertical segments, the left turn is obtuse while the right turn is acute, whereas after horizontal ones, the left turn is acute while the right turn is obtuse. 
-%In addition, we know \textit{a priori} which segments are vertical and which are horizontal; indeed vertical segments and horizontal segments occur alternately on the Heighway dragon. 
-Moreover, vertical and horizontal segments occur alternately on the dragon. 
+%Observe that after (slanted) vertical segments, the left turn is obtuse while the right turn is acute, whereas after horizontal ones, the left turn is acute while the right turn is obtuse. 
+Observe that after (slanted) vertical segments, the dragon turns left obtusely and right acutely, whereas after horizontal ones, it turns left acutely and right obtusely. 
+Moreover, vertical and horizontal segments alternate on the dragon. 
 %Hence, we can attach a proper interpreter \textit{a priori} to each DFAO module to convert its output L/R into a signal A(cute)/O(btuse). 
-The alternation enables to endow each segment with a proper interpreter \textit{a priori} of the direction L/R, computed through a line segment, into a signal A(cute)/O(btuse).  
+Thus, each segment can be equipped with a proper interpreter \textit{a priori} of the direction L/R into a signal A(cute)/O(btuse).  
 Two types of interpreters are hence needed: the vertical one interprets L as O and R as A, while the horizontal one does conversely. 
 
 \begin{figure}[tb]
@@ -50,32 +48,38 @@ The first and second halves of a period differ only in the type of interpreter (
 %Its transcript consists of three subsequences respectively for the counters, DFAO, and turning modules. 
 %It folds as abstracted in Fig.~\ref{fig:abst_dragon} into one line segment plus one turn of the dragon and has its three subsequences accomplish the following tasks, respectively: 
 Its transcript folds as abstracted in Fig.~\ref{fig:abst_dragon} into one line segment plus one turn of the dragon. 
-The transcript consists of three subsequences responsible for the following tasks, respectively:  
+The transcript consists of three subsequences (modules) responsible for the following tasks, respectively:  
 \begin{enumerate}[itemsep=0pt]
-\item $i \gets i + 1$ and propagate $i$, drawing a line segment;
-\item (DFAO module) Compute $P[i]$ and interpret it as either A or O;
+\item (Counter module) $i \gets i + 1$ and propagate $i$, drawing a line segment;
+\item (DFAO module) Compute $P[i]$ and interpret it properly as A or O;
 \item (Turning module) Make a turn accordingly.
 \end{enumerate}
-The length of the half is proportional to $n^2$ and hence so is that of a period. 
-The seed of the system replaces the first counter module of the first period and encodes the initial count $j_1$ as a sequence of bead types in a format that the following counters can ``read.'' 
-We shall explain how modules read something later. 
-Before explaining the implementation of each module, we should point out one significant issue specific to the folding by oritatami systems. 
-It rises when the dragon makes a turn where it has already turned before, that is, when two turns share a point. 
-By definition, oritatami systems cannot put a bead anywhere occupied by another bead. 
-This is the reason of the L-shape of the turning module. 
-As shown in Figs.~\ref{fig:heighway6_oritatami} and \ref{fig:abst_dragon}, the proposed system makes an acute turn by having three bifurcation components direct the growth of further folding acutely one after another, while it makes an obtuse turn by having them direct the growth rather obtusely. 
+%The length of the half is proportional to $n^2$ and hence so is that of a period. 
+%The seed of the system replaces the first counter module of the first period and encodes the initial count $j_1$ as a sequence of bead types in a format that the following counters can ``read.'' 
+%We shall explain how something is read later. 
+Before explaining them, one issue intrinsic to the folding by oritatami systems should be pointed. 
+It rises when the dragon makes a turn where it has already turned before. % that is, when two turns share a point. 
+By definition, OSs cannot put a bead anywhere occupied by another bead. 
+Being scaled sufficiently large, a rhombus corresponding to a point affords two turning modules, which otherwise collide, as long as they fold into an L-shape (Figs.~\ref{fig:heighway6_oritatami} and \ref{fig:abst_dragon}). 
+A turning module has its three bifurcator submodules direct further folding obtusely one after another when it receives O from the previous DFAO module (colored in blue in Fig.~\ref{fig:abst_dragon}) or acutely when it receives A (yellow), and folds into two L-shape conformations. 
+Note that two turns which share a point are both acute or both obtuse. 
 
 %-------------------------------------------------------------------------------------------
-%		\subsection{Modules}
+		\subsubsection{Modules}
 %-------------------------------------------------------------------------------------------
 
-Now we explain how modules and their components have been implemented, interlocked with each other, and collaborate. 
+Having outlined the generic design, now we explain how the design implements an OS for a specific target portion $P[j_1 .. j_2]$, or more precisely, how the three modules of the OS and their components are implemented, interlocked with each other, and collaborate. 
+%Now we explain how modules and their components have been implemented, interlocked with each other, and collaborate. 
+Let $n = \min\{m \mid j_2 < 2^m\}$. 
+The counter and turning modules, or more precisely, their transcripts, are of length $O(n^2)$ while the DFAO module is of length $O(n)$. 
+Thus, the period of the OS is of length proportional to $n^2$. 
+They consist of components of constant size. 
 Using s simulator developed for \cite{HaKiOtSe2016}, we verified that all of the components fold correctly in all possible environments, which are abstracted in Figs.~\ref{fig:abst_dragon}, \ref{fig:abst_dfao}, and \ref{fig:overall_turning}. 
 
 %-------------------------------------------------------------------------------------------
-			\subsubsection{Counter module}
+			\paragraph{Counter module}
 %-------------------------------------------------------------------------------------------
-
+%
 The existing binary counter \cite{GeMeScSe2016} was modified so as to operate in the dynamics \eqref{eq:cotranscriptional_folding}, which is more prevailing \cite{HanKim2017,HaKiOtSe2016,OtaSeki2017} though less tractable. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -101,9 +105,10 @@ Thus, the first half-adder encounters only the four surrounding environments (co
 Interpret the first bead {\tt 1} (resp.~last bead {\tt 12}) being far from the input as carry-in (resp.~carry-out) and close as no carry-in (resp.~no carry-out). 
 Then we can see carry be out only when $a_1 = 1$ and carry is in (the second context in Fig.~\ref{fig:half-adder}). 
 Being concatenated, half-adders ripple carry from one to the other. 
-The half-adder can expose four sequences below: {\tt HA-1a}, {\tt -0a}, {\tt -0b}, and {\tt -1b}. 
-They are pairwise distinct enough for another component to ``read'' the output. 
-After the left-turner guides the counter module from its zig to zag, $n$ formatters format each bit as {\tt HA-1a/1b} $\to$ {\tt HA-1} and {\tt HA-0a/0b} $\to$ {\tt HA-0} using its two conformations. 
+The half-adder can expose four sequences below: {\tt HA-1a}, {\tt -0a}, {\tt -0b}, and {\tt -1b} as output. 
+They are pairwise distinct enough for a formatter, which is supposed to come below the output in the next zag, to favor one of its two conformations if the output is {\tt HA-1a}/{\tt 1b} or the other {\tt HA-0} otherwise, which expose 1 and 0 downward, respectively. 
+%They are pairwise distinct enough for another component to ``read'' the output. 
+%After the left-turner guides the counter module from its zig to zag, $n$ formatters format each bit as {\tt HA-1a/1b} $\to$ {\tt HA-1} and {\tt HA-0a/0b} $\to$ {\tt HA-0} using its two conformations. 
 Thus, a counter module increments an input by 1 if its first half-adder is fed with carry (i.e., the right-turner locates its {\tt 1} away from $a_1$), or just propagates it otherwise. 
 Concatenating counter modules and feeding carry-in only to the first one yields a line segment through which the current count $i$ is incremented by 1 and propagated through. 
 
@@ -128,10 +133,9 @@ A counter module either increments an input by 1 if being fed with carry, or pro
 \end{comment}
 
 %-------------------------------------------------------------------------------------------
-			\subsubsection{DFAO module}
+			\paragraph{DFAO module}
 %-------------------------------------------------------------------------------------------
-
-
+%
 As abstracted in Fig.~\ref{fig:abst_dfao}, a DFAO module receives the current count $i$ from the previous counter module, computes $P[i]$, interprets it properly either A or O, and outputs it together with the count $i$. 
 
 \begin{figure}[tp]
@@ -156,8 +160,7 @@ It employs the following six components: DFAO-zig1, -zag1, -zig2, -zag2, PFS, an
 %It folds into two zigzags and one more zig.
 %In the first zigzag, DFAO-zig1s and -zag1s read $i$ from its LSB and ``mark" the first 0. 
 %In the second zigzag, DFAO-zig2s and -zag2s check whether the marked 0 is followed by 0 ($P[i] = L$) or 1 ($P[i] = R$) and have PFS output $P[i]$ downward (see Fig.~\ref{fig:PFS} also for AO and $\overline{\rm AO}$). 
-The last zig is equipped with AO if this module is for a vertical segment or with $\overline{\rm AO}$ otherwise; as shown in Fig.~\ref{fig:PFS}, AO interprets the output L of PFS as obtuse and A as acute, while $\overline{\rm AO}$ interprets them the other way around. 
-%Let us explain briefly how each of the components folds to fulfill its roles.
+The last zig is equipped with AO if this module is for a vertical segment or with $\overline{\rm AO}$ otherwise; as shown in Fig.~\ref{fig:PFS}, AO interprets the output L of PFS as obtuse and R as acute, while $\overline{\rm AO}$ interprets them the other way around. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\begin{figure}[h]
