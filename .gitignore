@@ -22,3 +22,13 @@ LATIN2018/LATIN2018_main.tex
 *.pdf
 *.gz
 LATIN2018/LATIN2018_main.tex
+*.aux
+*.log
+*.pdf
+*.gz
+LATIN2018/LATIN2018_main.tex
+*.pdf
+*.bbl
+*.blg
+*.tex
+LATIN2018/LATIN2018_main.tex
