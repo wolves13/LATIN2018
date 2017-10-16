@@ -1,5 +1,5 @@
 %-------------------------------------------------------------------------------------------
-	\section{Heighway dragon oritatami system}
+	\section{Generic OS design for Heighway dragon}
 %-------------------------------------------------------------------------------------------
 
 
@@ -9,9 +9,9 @@ We propose a generic design of deterministic oritatami system that allows us to 
 The folded dragon is actually slanted as illustrated in Fig.~\ref{fig:heighway6_oritatami}, which is more natural than the conventional (upright) one to be folded over the triangular grid. 
 %Let $P[j_1 .. j_2]$ be the target portion and $n = \min\{m \mid j_2 < 2^m\}$. 
 Independently of which portion to be folded, the design sets both delay and arity to 3 and employs 567 bead types and a fixed rule set $\mathcal{H}$ (some of the bead types could be saved but not easily due to the NP-hardness of saving \cite{HanKim2017}). 
-The design also challenges to make its transcript periodic; a periodic RNA transcript is likely to be transcribed out of a circular DNA sequence \cite{GearyAndersen2014}. 
-Without requiring the periodicity, one could simply design left and right-turn modules and concatenate their copies according to the sequence $P$. 
-Such a ``hardcoding'' goes against the spirit of algorithmic self-assembly, and an OS that folds into the infinite Heighway dragon, if any, could not take this approach in order to be describable by a finite mean. 
+It also challenges to make the OS cyclic. 
+Otherwise one could simply design left and right-turn modules and concatenate their copies according to the (non-periodic) sequence $P$. 
+Such a ``hardcoding'' however goes against the spirit of algorithmic self-assembly, and an OS that folds into the infinite Heighway dragon, if any, could not take this approach in order to be describable by a finite mean. 
 
 %Any finite portion of the Heighway dragon is expected to be foldable by \textit{hard-coding} if an arbitrary number of bead types is available and the shape can be scaled-up (though, if rescaling is not allowed, it is NP-hard to decide if for a given finite shape, there exists an oritatami system that folds into the shape \cite{PatitzRogers2017}). 
 %The proposed design cannot take this approach because the number of bead types available is fixed. 
@@ -37,7 +37,8 @@ Thus, each segment can be equipped with a proper interpreter \textit{a priori} o
 Two types of interpreters are hence needed: the vertical one interprets L as O and R as A, while the horizontal one does conversely. 
 
 \begin{figure}[tb]
-\includegraphics[width=0.9\linewidth]{pic/dragon_vol5.png}
+\centering
+\includegraphics[width=0.8\linewidth]{pic/dragon_vol5.png}
 \caption{
 Folding of one segment plus turn of the Heighway dragon, flow of information through it, and the two ways of collision avoidance between two turns.
 }
@@ -61,7 +62,7 @@ Before explaining them, one issue intrinsic to the folding by oritatami systems 
 It rises when the dragon makes a turn where it has already turned before. % that is, when two turns share a point. 
 By definition, OSs cannot put a bead anywhere occupied by another bead. 
 Being scaled sufficiently large, a rhombus corresponding to a point affords two turning modules, which otherwise collide, as long as they fold into an L-shape (Figs.~\ref{fig:heighway6_oritatami} and \ref{fig:abst_dragon}). 
-A turning module has its three bifurcator submodules direct further folding obtusely one after another when it receives O from the previous DFAO module (colored in blue in Fig.~\ref{fig:abst_dragon}) or acutely when it receives A (yellow), and folds into two L-shape conformations. 
+A turning module has its three bifurcator submodules direct further folding obtusely one after another guided by the signal O from the previous DFAO module, as colored in yellow in Figs.~\ref{fig:abst_dragon}, \ref{fig:PFS}, \ref{fig:change_route}, or acutely by A, as colored in green, and folds into two L-shape conformations. 
 Note that two turns which share a point are both acute or both obtuse. 
 
 %-------------------------------------------------------------------------------------------
@@ -80,7 +81,7 @@ Using s simulator developed for \cite{HaKiOtSe2016}, we verified that all of the
 			\paragraph{Counter module}
 %-------------------------------------------------------------------------------------------
 %
-The existing binary counter \cite{GeMeScSe2016} was modified so as to operate in the dynamics \eqref{eq:cotranscriptional_folding}, which is more prevailing \cite{HanKim2017,HaKiOtSe2016,OtaSeki2017} though less tractable. 
+We have modified the existing binary counter \cite{GeMeScSe2016} so as to operate in the dynamics \eqref{eq:cotranscriptional_folding}, which is more prevailing \cite{HanKim2017,HaKiOtSe2016,OtaSeki2017} though less tractable. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\begin{figure}[h]
