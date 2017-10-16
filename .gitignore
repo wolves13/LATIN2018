@@ -32,3 +32,13 @@ LATIN2018/LATIN2018_main.tex
 *.blg
 *.tex
 LATIN2018/LATIN2018_main.tex
+*.aux
+*.bbl
+*.aux
+*.bbl
+*.blg
+*.log
+*.pdf
+*.gz
+LATIN2018/LATIN2018_main.tex
+*.pdf
