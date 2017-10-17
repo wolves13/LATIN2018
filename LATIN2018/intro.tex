@@ -10,7 +10,7 @@ They actually proposed an architecture of a DNA sequence whose transcript folds 
 
 \begin{figure}[tb]
 \centering
-\includegraphics[width=\linewidth]{pic/rna_origami.pdf}
+\includegraphics[width=0.8\linewidth]{pic/rna_origami.pdf}
 \caption{RNA cotranscriptional folding. 
 An RNA polymerase attaches to a template DNA sequence (gray spiral), scans it through, and synthesizes its RNA copy. 
 The RNA sequence begins to fold upon itself immediately as it emerges from polymerase. 
@@ -37,7 +37,7 @@ Geary et al.~have proved the capability of context-sensitivity to count in binar
 \centering
 \begin{minipage}{0.4\linewidth}
 \centering
-\scalebox{0.8}{\begin{tikzpicture}[>=latex, node distance=2cm, initial text=, bend angle=15]
+\scalebox{0.7}{\begin{tikzpicture}[>=latex, node distance=2cm, initial text=, bend angle=15]
 	\tikzstyle{every initial by arrow} = [->, double];
 
 	\node [state, initial] (q_0)                        {$q_0/R$};
@@ -58,7 +58,7 @@ Geary et al.~have proved the capability of context-sensitivity to count in binar
 \end{minipage}
 \begin{minipage}{0.5\linewidth}
 \centering
-\scalebox{0.035}{\begin{tikzpicture}
+\scalebox{0.03}{\begin{tikzpicture}
   \draw[blue!50!black,rotate=270,l-system={rule set={X->X-YF,Y->FX+Y},
   step=100pt,angle=90,axiom=FX,order=10},-triangle 90] l-system;
 \end{tikzpicture}}
