@@ -16,7 +16,7 @@ All the white components in the middle are spacers, some of which are implemente
 \end{figure}
 
 The bifurcator bifurcates the bits of the current count $i$ and the interpreted signal (A or O) as shown in Fig.~\ref{fig:abst_dragon} while folding into zigzags.
-For that, it consists of components to handle the following four types of tasks: 
+For that, it employs components to handle the following four types of tasks: 
 \begin{enumerate}[itemsep=0pt]
 \item propagate 1-bit vertically: body-rpx (Fig.~\ref{fig:body-rpx} (left)), body-lpx1 (Fig.~\ref{fig:body-rpx} (right)), and body-lpx2 (Fig.~\ref{fig:half-adder});
 \item let 1-bit cross another 1-bit: body-gx (Fig.~\ref{fig:DFAO-zag2}); 
@@ -37,7 +37,7 @@ Components to handle the first two types of tasks have already been implemented 
 \includegraphics[width=\linewidth]{pic/turn-rgp.png}
 \caption{The two conformations of turn-rgp.}
 \label{fig:turn-rgp}
-\vspace*{-5mm}
+\vspace*{-3mm}
 \end{wrapfigure}
 %\end{figure}
 
@@ -70,7 +70,4 @@ As suggested in Fig.~\ref{fig:overall_turning}, the bifurcator actually outputs 
 That is, it actually serves as a trifurcator.
 This provides a more space-efficient way to replicate a bit sequence many-folds.
 \end{remark}
-
-\paragraph{Future direction} 
-It is natural to work on the folding of the (infinite) Heighway dragon by a deterministic cyclic OS at a constant scaling or to prove the impossibility of such folding. 
 
