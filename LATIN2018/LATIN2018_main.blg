@@ -1,50 +1,46 @@
-This is pBibTeX, Version 0.99d-j0.33 (utf8.euc) (TeX Live 2017)
+This is BibTeX, Version 0.99d (TeX Live 2016/W32TeX)
 Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: LATIN2018_main.aux
 The style file: splncs03.bst
 Database file #1: oritatami.bib
-Warning--entry type for "heighway_web" isn't style-file defined
---line 335 of file oritatami.bib
-You've used 17 entries,
+You've used 15 entries,
             2785 wiz_defined-function locations,
-            702 strings with 7306 characters,
-and the built_in function-call counts, 9148 in all, are:
-= -- 749
-> -- 274
-< -- 18
-+ -- 115
-- -- 96
-* -- 556
-:= -- 1173
+            693 strings with 6736 characters,
+and the built_in function-call counts, 8579 in all, are:
+= -- 710
+> -- 235
+< -- 21
++ -- 98
+- -- 82
+* -- 526
+:= -- 1078
 add.period$ -- 23
-call.type$ -- 17
-change.case$ -- 108
+call.type$ -- 15
+change.case$ -- 93
 chr.to.int$ -- 0
-cite$ -- 17
-duplicate$ -- 821
-empty$ -- 826
-format.name$ -- 110
-if$ -- 2023
+cite$ -- 15
+duplicate$ -- 777
+empty$ -- 780
+format.name$ -- 94
+if$ -- 1918
 int.to.chr$ -- 0
-int.to.str$ -- 17
-missing$ -- 170
-newline$ -- 56
-num.names$ -- 34
-pop$ -- 305
+int.to.str$ -- 15
+missing$ -- 159
+newline$ -- 50
+num.names$ -- 30
+pop$ -- 274
 preamble$ -- 1
-purify$ -- 82
+purify$ -- 71
 quote$ -- 0
-skip$ -- 266
+skip$ -- 258
 stack$ -- 0
-substring$ -- 491
-swap$ -- 456
-text.length$ -- 18
+substring$ -- 488
+swap$ -- 448
+text.length$ -- 21
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 62
+type$ -- 54
 warning$ -- 0
-while$ -- 70
-width$ -- 19
-write$ -- 175
-is.kanji.str$ -- 0
-(There was 1 warning)
+while$ -- 67
+width$ -- 17
+write$ -- 161
